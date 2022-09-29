@@ -3,3 +3,10 @@
 *.log
 *.aux
 *.synctex.gz
+*.4ct
+*.4tc
+*.dvi
+*.idv
+*.lg
+*.tmp
+*.xref
