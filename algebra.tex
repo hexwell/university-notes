@@ -1,0 +1,656 @@
+\documentclass[a4paper, twoside, italian, 11pt]{book}
+
+\usepackage{amsfonts}  % for mathbb
+\usepackage{amsmath}   % for implies
+\usepackage{centernot}
+\usepackage{amssymb}   % for nexists
+
+\newcommand{\braces}[1] {\left\{#1\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+
+\begin{document}
+
+\pagestyle{headings}
+
+\frontmatter
+
+\begin{titlepage}
+	\begin{center}
+		{\huge \bfseries Appunti di Algebra e Geometria\\}
+		\vspace{1.5cm}
+		{\Large \bfseries Ettore Forigo}
+	\end{center}
+\end{titlepage}
+
+\mainmatter
+
+
+\chapter{Insiemi}
+
+
+
+\section{Cardinalità di Insiemi Finiti}
+
+$\left | A \right | = n \in \N$ dove $n$ è il n° di elementi in $A$.
+
+
+
+\section{Multiinsiemi o Sistemi}
+
+Insieme con molteplicità, ovvero una collezione non ordinata di elementi con ripetizioni. \\
+
+$[a, b, c]$
+
+
+
+\section{Insiemi Famosi}
+
+$\N =$ Numeri Naturali $= \braces{0, 1, 2, 3, ...}$ \\
+$\Z =$ Numeri Interi \\
+$\Q =$ Numeri Razionali \\
+$\R =$ Numeri Reali \\
+$\C =$ Numeri Complessi \\
+$\N_0 = \N \setminus \braces{0}$ \\
+$\Q^x = \Q \setminus \braces{0}$ \\
+$\R^x = \R \setminus \braces{0}$ \\
+$\C^x = \C \setminus \braces{0}$
+
+
+
+\section{Definizione di Sequenza (o Ennupla / n-upla)}
+
+Collezione ordinata di elementi. \\
+
+$(a, b, c)$ \\
+
+\noindent
+$(a, b) := \braces{\braces{a}, \braces{a, b}}$ \\
+$(a, a) = \braces{\braces{a}, \braces{a, a}} = \braces{\braces{a}, \braces{a}} = \braces{\braces{a}}$
+
+
+
+\chapter{Relazioni}
+
+
+
+\section{Definizione di Relazione}
+
+Si dice che $R \subseteq A \times B$ è una relazione tra due insiemi $A$ e $B$.\\
+
+\noindent
+Se: \\
+$C = \braces{(a_1, b_1), (a_2, b_2)}$ \\\\
+Si scrive:\\
+$b_1 = C(a_1)$ \\
+$b_2 = C(a_2)$
+
+
+\subsection{Proprietà delle Relazioni}
+
+
+\subsubsection{Totalità a Sinistra}
+
+Una relazione $R$ tra $A$ e $B$ si dice \textbf{ovunque definita} (o totale a sinistra) se: \\
+
+$\forall x \in A \ldotp \exists y \in B : (x, y) \in R$
+
+
+\subsubsection{Funzionalità}
+
+Una relazione $R$ tra $A$ e $B$ si dice \textbf{funzionale} se: \\
+
+$\forall x \in A \ldotp \exists y \in B : (x, y) \in R \implies \exists! y \in B : (x, y) \in R$
+
+
+
+\section{Definizione di Funzione}
+
+Una relazione $f$ si dice funzione se è funzionale e ovunque definita. \\
+
+\noindent
+``Funzione'' si riferisce alla terna: associazione di elementi, dominio e codominio, non solo all'associazione di elementi. Specificare solo un'associazione non definisce una funzione: occorre specificare anche dominio e codominio. Infatti, due funzioni che hanno una ``stessa'' associazione di elementi ma diverso dominio e/o diverso codominio sono funzioni diverse. \\
+
+\noindent
+Si scrive: \\
+$f : A \rightarrow B$ \\
+dove $A$ è il dominio di $f$ e $B$ è il codominio di $f$.
+
+
+\subsection{Proprietà delle Funzioni}
+
+
+\subsubsection{Iniettività}
+
+Una funzione da $A$ a $B$ si dice \textbf{iniettiva} se: \\
+
+$\forall x, x' \in A \ldotp f(x) = f(x') \implies x = x'$
+
+
+\subsubsection{Suriettività}
+
+Una funzione da $A$ a $B$ si dice \textbf{suriettiva} (o totale a destra) se: \\
+
+$\forall y \in B \ldotp \exists x \in A : y = f(x)$ \\
+
+\noindent
+(equivalentemente: $im(f) = codom(f)$)
+
+
+\subsubsection{Biiettività}
+
+Una funzione si dice \textbf{biiettiva} (o biiezione, o anche corrispondenza 1 a 1 o biunivoca) se è sia iniettiva che suriettiva. \\
+
+\noindent
+Osservazione: \\
+
+$f : A \rightarrow B$ è biiettiva $\implies \left | A \right | = \left | B \right |$ \\
+
+\noindent
+$A$ e $B$ possono essere infiniti. \\
+
+\noindent
+$\left | X \right | < \left | Y \right | \iff \exists$ una funzione iniettiva $X \rightarrow Y \land \nexists$ una biiezione $X \rightarrow Y$.
+
+
+\subsection{Definizione di Immagine}
+
+L'insieme di tutti i valori di $f : A \rightarrow B$ valutata in ogni elemento di un insieme $S \subseteq A$ si dice l'immagine di S tramite $f$: \\
+
+$f[S] = f(S) := \braces{f(s) \in B : s \in S \subseteq A} \subseteq B$ \\
+
+Im$f = im(f) = f[A]$ \\
+
+\noindent
+L'immagine del dominio di una funzione $f$ tramite $f$ si dice immagine di $f$.\\
+
+\noindent
+Il valore di $f : A \rightarrow B$ valutata in $x \in A$ si dice immagine di $x$ tramite $f$. \\
+
+\noindent
+$im(f) \subseteq codom(f)$
+
+
+\subsection{Definizione di Controimmagine}
+
+L'insieme degli elementi del dominio di una funzione $f : A \rightarrow B$ che $f$ associa a tutti gli elementi di $S$ si dice controimmagine, preimmagine o immagine inversa di $S$ tramite $f$: \\
+
+$f^{-1}[S] = f^{-1}(S) := \braces{x \in A : f(x) \in S \subseteq B} \subseteq A$
+
+
+\subsection{Definizione di Restrizione}
+
+Detta anche restrizione del dominio o restrizione a sinistra. \\
+
+\noindent
+$f : A \rightarrow B, X \subseteq A$ \\
+
+\noindent
+Si dice restrizione di $f$ ad $X$ la funzione: \\
+
+$f_X : X \rightarrow B$ \\
+\indent
+$f_X(x) = f(x)$ $\forall x \in X$ \\
+
+\noindent
+O equivalentemente: \\
+
+$f_X : X \rightarrow B = \braces{(a, b) \in f : a \in X}$ \\
+
+\noindent
+O ancora: \\
+
+$f_X : X \rightarrow B = f \circ i$ \\
+
+\noindent
+Dove $i : X \rightarrow A$ è l'inclusione di $X$ in $A$ data da $i(a) = a$.
+
+
+\subsection{Definizione di Troncatura}
+
+Detta anche corestrizione, restrizione del codominio o restrizione a destra. \\
+
+\noindent
+Data $f : A \rightarrow B \land Im(f) \subseteq Y$, si dice \textbf{troncatura} di $f$ ad $Y$ la funzione: \\
+
+$f^Y : A \rightarrow Y = \braces{(a, y) \in A \times Y : y = f(a)}$ \\
+
+\noindent
+Osservazione: \\
+Il codominio viene ristretto.\\
+
+\noindent
+In generale prima si restringe e poi si tronca una funzione.
+
+
+\subsection{Composizione}
+
+L'elemento $b$ che compone in $(g \circ f)$ è unico $\forall a \in A$.
+
+
+
+\section{Strutture Algebriche}
+
+
+\subsection{Definizione di Operazione Binaria}
+
+Sia $U$ un insieme. Si dice \textbf{operazione binaria} una funzione $o : U \times U \rightarrow U$.
+
+
+\subsection{Definizione di Struttura Algebrica}
+
+Una \textbf{struttura algebrica} è una n-upla data da un insieme ed una o più operazioni su di esso: \\
+
+$(U, o)$
+
+
+\subsection{Definizione di Associatività}
+
+Si dice che $*$ è associativa se $\forall a,b,c \in A \ldotp a * (b * c) = (a * b) * c$.
+
+
+\subsection{Definizione di Elemento Neutro}
+
+Sia $(A, *)$ un insieme con una operazione binaria (magma): \\
+
+$* : A \times A \rightarrow A$ \\
+\indent
+$(a, b) = a * b$ \\
+
+\noindent
+Si dice che $e \in A$ è un \textbf{elemento neutro} per $*$ se: \\
+
+$\forall a \in A \ldotp e * a = a * e = a$
+
+
+\subsection{Definizione di Inverso, Inverso Destro e Inverso Sinistro}
+
+Se $(X, *)$ ammette elemento neutro $e$ si dice che $\forall x \in X$: \\
+
+$x'$ è inverso destro di $x$ se $\exists x' \in X : x * x' = e$ \\
+\indent
+$x''$ è inverso sinistro di $x$ se $\exists x'' \in X : x'' * x = e$ \\
+\indent
+$x'''$ è inverso di $x$ se $x'''$ è inverso destro di $x$ $\land$ $x'''$ è inverso sinistro $x$.
+
+
+\subsection{Definizione di Commutatività}
+
+Si dice che $*$ è commutativa se $\forall a,b \in A \ldotp a * b = b * a$.
+
+
+\subsection{Definizione di Monoide}
+
+$(A, *)$ (magma) è detto \textbf{monoide} se $*$ è associativa (semigruppo) e ammette elemento neutro.
+
+
+\subsection{Definizione di Gruppo}
+
+$(A, *)$ è detto \textbf{gruppo} se è un monoide $\land$ ogni elemento di $A$ ammette inverso (necessariamente unico, destro e sinistro, solitamente indicato con $a^{-1}$).
+
+
+\subsection{Definizione di Gruppo Abelliano}
+
+$(A, *)$ è detto \textbf{gruppo abelliano} o commutativo se oltre ad essere un gruppo, $*$ è commutativa.
+
+
+\subsection{Definizione di Sottrazione}
+
+La sottrazione è definita come somma con l'opposto di un elemento in $(\Z, +)$. \\
+
+$a - b = a + (-b)$
+
+
+
+\section{Definizione di Successione}
+
+Una funzione $f$ si dice successione se: \\
+
+$f : \N \rightarrow A$
+
+
+
+% TODO: TEOREMA: Se la funzione inversa esiste è unica.
+% TODO: TEOREMA: f è invertibile /iff f é biiettiva
+% TODO: PROPOSIZIONE: La composizione di funzioni è associativa
+
+
+
+\section {Matrici}
+
+Matrice $m \times n$ a coefficienti in $\K$: $Mat_{m,n}(\K)$ \\
+
+\noindent
+Elementi $a_{i, j}$ \\
+
+\noindent
+$m \neq n \rightarrow$ matrice rettangolare \\
+$m = n \rightarrow$ matrice quadrata \\
+
+\noindent
+$A \in Mat_{m,n}(\K)$ \\
+
+\noindent
+$\backslash$ = diagonale principale \\
+$/$ = diagonale secondaria \\
+
+
+\subsection{Matrici quadrate particolari}
+
+
+\subsubsection{Triangolare superiore}
+
+$a_{i,j} = 0$ $\forall i > j$ \\
+
+\noindent
+$\begin{pmatrix}
+a & b & c \\
+0 & d & e \\
+0 & 0 & f
+\end{pmatrix}$
+
+
+\subsubsection{Triangolare inferiore}
+
+$a_{i,j} = 0$ $\forall j > i$ \\
+
+\noindent
+$\begin{pmatrix}
+a & 0 & 0 \\
+b & c & 0 \\
+d & e & f
+\end{pmatrix}$
+
+
+\subsubsection{Diagonale}
+
+$a_{i,j} = 0$ $\forall i > j$ \\
+
+\noindent
+$\begin{pmatrix}
+a & 0 & 0 \\
+0 & b & 0 \\
+0 & 0 & c
+\end{pmatrix}$
+
+
+\subsubsection{Scalare (Diagonale)}
+
+con $a_{i,i} = k \in \K$ \\
+
+\noindent
+$\begin{pmatrix}
+a & 0 & 0 \\
+0 & a & 0 \\
+0 & 0 & a
+\end{pmatrix}$
+
+
+\subsubsection{Identica (o identità) di ordine $n$ (Scalare con $k = 1$)}
+
+$a_{i,i} = k$ \\
+
+\noindent
+$I_n$ \\
+
+\noindent
+$I_3 = \begin{pmatrix}
+a & b & c \\
+0 & d & e \\
+0 & 0 & f
+\end{pmatrix}$
+
+
+\subsubsection{Nulla $\underline{0}$}
+
+$a_{i,j} = 0$ $\forall i, j$ \\
+
+\noindent
+$\begin{pmatrix}
+0 & 0 \\
+0 & 0
+\end{pmatrix}$
+
+
+\subsection{Matrice Trasposta}
+
+$A \in Mat_{m,n}(\K)$ \\
+
+\noindent
+Matrice trasposta di A: \\
+$A^T$ \\
+
+\noindent
+Righe e colonne scambiate. \\
+$a_{i,j} = a{j,i}$ \\
+
+\noindent
+$A = (A^T)^T$ \\
+
+\noindent
+$A = A^T \implies A$ è simmetrica, $A$ è quadrata
+
+
+\subsection{Somma tra matrici}
+
+Somma elemento per elemento (per matrici di dimensioni uguali) \\
+
+\noindent
+$(Mat_{m,n}(\K), +)$ è un gruppo abelliano.
+
+
+\subsection{Prodotto per scalare}
+
+
+\subsubsection{Proprietà}
+
+Distributivo rispetto all'addizione
+
+
+\subsection{Prodotto righe per colonne}
+
+
+\subsubsection{Proprietà}
+
+Non commutativo \\
+Associativo \\
+Distributivo rispetto alla somma \\
+
+\noindent
+$A \cdot B = \underline{0} \centernot\implies A = \underline{0} \lor B = \underline{0}$ \\
+
+\noindent
+$(A \cdot B)^T = B^T \cdot A^T$
+
+
+\subsection{Calcolo del determinante}
+
+Solo per matrici quadrate. \\
+
+\noindent
+$\left | A \right |$ \\
+
+\noindent
+$det(A)$
+
+
+\subsubsection{$2 \times 2$}
+
+Differenza prodotto diagonali
+
+
+\subsubsection{$3 \times 3$ (Sarrus)}
+
+Differenza (somme prodotti diagonali e prodotti sovradiagonali). \\
+
+\noindent
+Se $A$ è triangolare superiore il determinante è il prodotto della diagonale
+
+
+\subsubsection{Regola di Laplace}
+
+$A \in Mat_n(\K),$ $n \geq 2$ \\
+
+\noindent
+$\left | A \right | = \sum_{j=1}^{n} (-1)^{i+j} a_{i,j} \cdot \left | A_{i,j} \right |$ \\
+
+\noindent
+Dove $A_{i,j}$ è la matrice ottenuta da $A$ togliendo ad $A$ la $i$-esima riga e la $j$-esima colonna. \\
+
+\noindent
+Il valore $(-1)^{i+j} \left | A_{i,j} \right |$ è detto complemento algebrico di $a_{i,j}$. \\
+
+\noindent
+Osservazione: \\
+Il termine $(-1)^{i+j}$ indica che se la somma degli indici di riga e colonna è dispari, il segno nella somma va cambiato, altrimenti va mantenuto.
+
+\noindent
+Osservazione: \\
+Si può applicare Laplace per righe / colonne qualsiasi, ma per snellire i conti conviene scegliere righe / colonne con il maggior n° di $0$.
+
+
+\subsubsection{Proprietà dei Determinanti}
+
+$\left | I_n \right | = 1$ \\
+
+\noindent
+$\left | A \right | = \prod_{i=1}^n a_{i,i}$ \\
+
+\noindent
+Quando $A$ è triangolare / diagonale (anche rispetto alla diagonale secondaria, anche se in quel caso non si chiama triangolare / diagonale) \\
+
+\noindent
+$\left | A \right | = \left | A^T \right |$ \\
+
+\noindent
+$\left | A \cdot B \right | = \left | A \right | \cdot \left | B \right |$ \\
+
+\noindent
+Osservazione: \\
+In generale non vale per la somma. \\
+
+\noindent
+Se in $A$ c'è una riga / colonna nulla, allora $\left | A \right | = 0$ \\
+
+\noindent
+Scambiando righe e colonne % TODO (trasposta?)
+il determinante cambia di segno. \\
+
+\noindent
+Se una riga / colonna è combinazione lineare di altre righe / colonne, allora $\left | A \right | = 0$ e viceversa.
+
+
+\subsubsection{Definizione di Combinazione Lineare}
+
+Quando una riga / colonna si può scrivere utilizzando le altre righe / colonne combinate solo con operazioni di somma / prodotto e/o prodotto per scalare. \\
+
+\noindent
+Osservazione: \\
+Se una riga / colonna è multipla di un'altra riga / colonna allora è una sua combinazione lineare. \\
+
+\noindent
+Sommando a una riga / colonna una combinazione lineare delle altre righe / colonne il determinante non cambia. \\
+
+
+\subsection{Definizione di Matrice Singolare}
+Una matrice quadrata si dice non singolare se il suo deteminante è $\neq 0$. Altrimenti si dice singolare.
+
+
+\subsection{Definizione di Matrice Inversa}
+
+Si dice inversa di $A$, se $\exists$, la matrice $A^{-1}$ tale che: \\
+
+\noindent
+$A \cdot A^{-1} = A^{-1} \cdot A = I_n$ \\
+
+\noindent
+Osservazione: \\
+Sia $A \in Mat_n(\K),$ $\exists A^{-1} \iff \left | A \right | \neq 0$ \\
+
+\noindent
+Cioè $A$ ammette inversa se e solo se $A$ è non singolare.
+
+
+\subsubsection{Calcolo della Matrice Inversa (Metodo del Complemento Algebrico)}
+
+Data $A = (a_{i,j}) \in Mat_n(\K)$ si dice aggiunta di $A$ la matrice $A_a \in Mat_n(\K)$ ottenuta sostituendo in $A$ ogni elemento col suo complemento algebrico ($c$). \\
+
+\noindent
+$c_{i,j} = (-1)^{i+j} \left | A_{i,j} \right |$ \\
+
+\noindent
+$\left | A \right | \neq 0 \implies A^{-1} = \frac{1}{\left | A \right |} \cdot A_a^T$
+
+
+\subsection{Rango}
+
+
+\subsubsection{Definizione di Minore di Ordine $p$}
+
+Data una matrice $A \in Mat_{m,n}(\K)$ si dice minore di ordine $p$ una matrice quadrata di ordine $p$ ottenuta da $A$ sopprimendo $n-p$ colonne e $m-p$ righe.
+
+\subsubsection{Definizione di Rango}
+
+Data una matrice $A \in Mat_{m,n}(\K)$ dire che il rango di $A$ è $p$: \\
+
+\noindent
+( \\
+$rg(A) = p$ \\
+$r(A) = p$ \\
+$\rho(A) = p$ \\
+) \\
+
+\noindent
+con $p \leq min(m, n)$ \\
+
+\noindent
+significa dire che $A$ ha un minore non singolare di ordine $p$, e che ogni eventuale minore di ordine $p + 1$ è singolare.
+
+\noindent
+$r(A) = 0 \iff A = \underline{0}$ \\
+
+\noindent
+Se $A \in Mat_n(\K)$ allora $r(A) = n \iff \left | A \right | \neq 0$ \\
+
+\noindent
+$A$ ha rango massimo $= A \in Mat_n(\K),$ $r(A) = n$ \\
+
+\noindent
+$1 \leq rg(A) \leq min(m,n),$ $A \in Mat_{m,n}(\K),$ $A \neq \underline{0}$
+
+
+\subsubsection{Teorema degli Orlati (Teorema di Kronecker)}
+
+$A \in Mat_{m,n}(\K)$.\\
+Il rango di $A$ è $p \iff \exists$ in $A$ un minore di ordine $p$ ($M_p$) non singolare $\land$ ogni minore di ordine $p + 1$ che contiene completamente $M_p$ è singolare.
+
+\subsubsection{Definizione di Contiene Completamente}
+Che ha al suo interno.
+
+\end{document}
+
+% Fonti:
+
+% - Miei appunti Andrea Ferraguti
+% - Miei appunti Luca Giuzzi
+% - Miei appunti Lara Ercoli
+% - Appunti Davide
+% - https://www.youmath.it/formulari/formulari-insiemistica/1586-cardinalita-di-un-insieme.html#:~:text=La%20cardinalit%C3%A0%20di%20un%20insieme,elementi%20che%20costituiscono%20l%27insieme.
+% - https://it.wikipedia.org/wiki/Relazione_(matematica)
+% - https://it.wikipedia.org/wiki/Relazione_totale
+% - https://en.wikipedia.org/wiki/Function_(mathematics)
+% - https://it.wikipedia.org/wiki/Funzione_(matematica)
+% - https://it.wikipedia.org/wiki/Funzione_iniettiva
+% - https://it.wikipedia.org/wiki/Funzione_suriettiva
+% - https://it.wikipedia.org/wiki/Corrispondenza_biunivoca
+% - https://en.wikipedia.org/wiki/Restriction_(mathematics)
+% - https://en.wikipedia.org/wiki/Magma_(algebra)
+% - https://it.wikipedia.org/wiki/Inverso_destro_e_sinistro
+% - https://en.wikipedia.org/wiki/Semigroup
+% - https://en.wikipedia.org/wiki/Monoid
+% - https://en.wikipedia.org/wiki/Group_(mathematics)
+% - https://en.wikipedia.org/wiki/Abelian_group

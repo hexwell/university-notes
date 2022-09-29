@@ -1,0 +1,444 @@
+\documentclass[a4paper, twoside, italian, 11pt]{book}
+
+\usepackage{amsfonts}  % for mathbb
+\usepackage{amsmath}   % for implies
+\usepackage{indentfirst}
+\usepackage{amssymb}   % for emptyset
+
+\newcommand{\braces}[1] {\left\{#1\right\}}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+
+\let\emptyset\varnothing
+
+\begin{document}
+
+\pagestyle{headings}
+
+\frontmatter
+
+\begin{titlepage}
+	\begin{center}
+		{\huge \bfseries Appunti di Analisi Matematica I\\}
+		\vspace{1.5cm}
+		{\Large \bfseries Ettore Forigo}
+	\end{center}
+\end{titlepage}
+
+\mainmatter
+
+\chapter{1}
+
+
+
+\section{Definizione del Principio di Induzione}
+
+\indent
+$(P(n_0) \land P(n) \implies P(n + 1)) \implies \forall n \in \N \ldotp P(n)$ \\
+
+($\implies$ ha precedenza su $\land$) \\
+
+\noindent
+Il caso base nell'induzione può essere anche un numero $\neq 0$.
+
+
+
+
+\section{Insiemi Famosi}
+
+\noindent
+$\N$ = Numeri Naturali $= \braces{0, 1, 2, 3, ...}$ \\
+$\Z$ = Numeri Interi \\
+$\Q$ = Numeri Razionali \\
+
+\noindent
+$\N \subset \Z \subset \Q$ \\
+
+\noindent
+Su $\Q$ è definita una relazione d'ordine totale  ($\leq$) \\
+
+\noindent
+Gli insiemi con relazioni d'ordine totale si chiamano totalmente ordinati.
+
+
+\section{Campo Ordinato dei Razionali}
+\noindent
+$(\Q, \leq)$ formano un Campo Ordinato.
+
+
+\section{Definizione di Completezza di un Campo}
+
+\noindent
+Un campo totalmente ordinato $(\K, \leq)$ si dice completo se vale il seguente \textbf{assioma di completezza} (Assioma di Dedekin): \\
+
+$\forall A, B, A \subseteq \K, B \subseteq K, A \neq \emptyset, B \neq \emptyset$ \\
+
+$\forall x \in A, \forall y \in B \ldotp x \leq y \implies \exists c \in \K : \forall x \in A, \forall y \in B \ldotp x \leq c \leq y$ \\
+
+\noindent
+Chiamiamo $c$ elemento separatore tra gli insiemi A e B. \\
+
+\noindent
+Il campo $(\Q, \leq)$ è totalmente ordinato ma non completo.
+
+
+\section{Definizione dei Numeri Reali}
+
+\noindent
+$\R$ è una estensione di $\Q$ tale che il campo $(\R, \leq)$ è totalmente ordinato e completo.
+
+
+\subsection{Interpretazione Geometrica}
+
+\noindent
+Ogni numero reale può essere univocamente associato ad un punto della retta reale e viceversa
+
+
+
+\section{Definizione Numeri Irrazionali}
+
+\noindent
+$\R \setminus \Q$ = Numeri Irrazionali
+
+
+
+\section{Definizione di Massimi e Minimi}
+
+$\E \subseteq \R, \E \neq \emptyset$ \\
+
+$\exists a \in \E : \forall x \in \E \ldotp a \leq x \implies a$ è un minimo di $\E$ \\
+
+$\exists b \in \E : \forall x \in \E \ldotp x \leq b \implies b$ è un massimo di $\E$ \\
+
+$min(\E) = a$ \\
+\indent
+$max(\E) = b$ \\
+
+\noindent
+Esistono insiemi limitati che non ammettono né massimo né minimo. \\
+
+$\E = \braces{x \in \R : 0 < x < 1}$
+
+
+\subsection{Lemma: Unicità di min e max}
+
+Se $\E \subseteq \R$ ammette minimo o massimo, allora è unico.
+
+% TODO: Dimostrazione
+
+
+
+\section{Definizione di Maggioranti e Minoranti}
+
+$\E \subseteq \R, \E \neq \emptyset$ \\
+
+$a \in \R$ è un maggiorante di $\E$ se $\forall x \in \E \ldotp a \leq x$ \\
+
+$b \in \R$ è un maggiorante di $\E$ se $\forall x \in \E \ldotp x \leq b$ \\
+
+\noindent
+\textbf{Non sono unici!} \\
+
+\noindent
+$M(\E)$ = Insieme dei maggioranti di $\E$\\
+$m(\E)$ = Insieme dei minoranti di $\E$
+
+
+
+\section{Definizione di Insieme Limitato}
+
+\noindent
+$E \subseteq \R, \E \neq \emptyset$ \\
+
+\noindent
+$M(\E) \neq \emptyset \implies \E$ è superiormente limitato \\
+$m(\E) \neq \emptyset \implies \E$ è inferiormente limitato \\
+$M(\E) \neq \emptyset \land m(\E) \neq \emptyset \implies \E$ è limitato
+
+
+
+\section{Teorema}
+
+\noindent
+$\E \subseteq \R, \E \neq \emptyset$ \\
+
+\noindent
+$\E$ è superiormente limitato $\implies M(\E)$ ammette minimo (estremo superiore di $\E$) \\
+
+\noindent
+$\E$ è inferiormente limitato $\implies m(\E)$ ammette massimo (estremo inferiore di $\E$)
+
+% TODO: Dimostrazione
+
+
+
+\section{Definizione di Estremo Superiore ed Inferiore}
+
+\noindent
+$\E$ è superiormente limitato $\implies sup(\E) = sup \E = min(M(\E))$ \\
+
+\noindent
+$\E$ è inferiormente limitato $\implies inf(\E) = inf \E = max(m(\E))$
+
+
+\subsection{Proprietà}
+
+\noindent
+$sup$ $\E \in \E \implies sup$ $\E = max$ $\E$ \\
+$inf$ $\E \in \E \implies inf$ $\E = min$ $\E$ \\
+$sup$ $\E$ e $inf$ $\E$ sono unici.
+
+
+
+\section{Caratterizzazione di sup e inf}
+
+\noindent
+$\E \subseteq \R,$ $\E \neq \emptyset,$ $\E$ superiormente limitato
+
+
+\subsection{Caratterizzazione di sup}
+
+\noindent
+$\iota = sup$ $\E \iff \forall x \in \E : x \leq \iota$ $\land$ $\forall \varepsilon > 0$ $\exists x \in \E : x > \iota - \varepsilon$
+
+
+\subsection{Caratterizzazione di inf}
+
+\noindent
+$\iota = inf$ $\E \iff \forall x \in \E : \iota \leq x$ $\land$ $\forall \varepsilon > 0$ $\exists x \in \E : x < \iota + \varepsilon$
+
+
+
+\section{Definizione di $\overbar \R$}
+
+\noindent
+Insieme dei numeri reali estesi: \\
+$\overbar \R = \R$ $\cup$ $\braces{-\infty, +\infty}$
+
+
+\subsection {Relazione d'ordine $\leq$ e le operazioni somma e prodotto su $\overbar \R$}
+
+
+\subsubsection{Relazione $\leq$}
+
+\noindent
+$\forall x \in \overbar \R: -\infty \leq x \leq +\infty$ \\
+$\forall x \in \R: -\infty < x < +\infty$
+
+
+\subsection{Somma}
+
+\noindent
+$\forall x \in \R: x + \infty = +\infty$ \\
+$\forall x \in \R: x + (-\infty) = -\infty$
+
+
+\subsection{Prodotto}
+
+\noindent
+$\forall x > 0, x \in \R$ \\
+$x \cdot (+\infty) = +\infty$ \\
+$x \cdot (-\infty) = -\infty$ \\
+
+
+\noindent
+$\forall x < 0,$ $x \in \R$ \\
+$x \cdot (+\infty) = -\infty$ \\
+$x \cdot (-\infty) = +\infty$ \\
+
+\noindent
+N.B. \\
+Non sono definite le operazioni: \\
+$0 \cdot (\pm \infty),$ $+ \infty - \infty$
+
+
+
+\section{Intervalli}
+
+\noindent
+$I \subseteq \overbar \R : \forall x, y \in I : x < z < y \implies z \in I$ \\
+$I$ è un detto intervallo. \\
+
+\noindent
+$a, b \in \overbar \R, a < b$ \\
+
+
+\subsection{Intervallo aperto di estremi $a$ e $b$}
+
+\noindent
+$(a, b) = ]a, b[ = \braces{ x \in \overbar \R a < x < b}$ \\
+
+
+\subsection{Intervallo semi-aperto a destra di estremi $a$ e $b$}
+
+\noindent
+$[a, b) = \braces{ x \in \overbar \R a \leq x < b}$ \\
+
+
+\subsection{Intervallo semi-aperto a sinistra di estremi $a$ e $b$}
+
+\noindent
+$(a, b] = \braces{ x \in \overbar \R a < x \leq b}$ \\
+
+
+\subsection{Intervallo chiuso di estremi $a$ e $b$}
+
+\noindent
+$[a, b] = \braces{ x \in \overbar \R a \leq x \leq b}$ \\
+
+
+\subsection{}
+
+\noindent
+$\E \subseteq \R,$ $\E \neq \emptyset,$ $M(\E) = \emptyset$ \\
+$sup$ $\E = +\infty$ \\
+
+\noindent
+$\E \subseteq \R,$ $\E \neq \emptyset,$ $m(\E) = \emptyset$ \\
+$inf$ $\E = -\infty$
+
+
+
+\section{Funzioni}
+
+\noindent
+Una funzione è definita da una terna $(f, A, B)$ dove: \\
+
+\noindent
+$A \subseteq \overbar \R,$ $B \subseteq \overbar \R,$ $A \neq \emptyset,$ $B \neq \emptyset$ \\
+$f$ è una legge che ad ogni elemento $x \in A$ associa univocamente un elemento $f(x) \in B$. \\
+
+\noindent
+Notazione: \\
+$A = dom(f)$ (dominio di $f$) \\
+$B = codom(f)$ (codominio di $f$) \\
+
+\noindent
+Si scrive: $f : A \rightarrow B$ \\
+
+\noindent
+N.B. \\
+Il codominio $B$ non è determinato univocamente da $f$. \\
+Se $B$ è codominio di $f$ e $B \subseteq C$ allora anche $C$ è codominio di $f$. \\
+
+\noindent
+Due funzioni $f_1 : A_1 \rightarrow \R$ e $f_2 : A_2 \rightarrow \R$ \\
+sono uguali $\iff A_1 = A_2$ $\land$ $\forall x \in A_1 = A_2 : f_1(x) = f_2(x)$
+
+
+\subsection{Definizione di Insieme Immagine}
+
+\noindent
+$f : A \rightarrow B$ \\
+$im(f) = f[A] =$ Im$f= \braces{y \in B : \exists x \in A : y = f(x)}$ \\
+
+\noindent
+$im(f) \subseteq codom(f)$
+
+
+\subsection{Definizione di Iniettività}
+
+\noindent
+Una funzione da $A$ a $B$ si dice \textbf{iniettiva} se: \\
+
+$\forall x, x' \in A \ldotp f(x) = f(x') \implies x = x'$
+
+
+\subsection{Definizione di Suriettività}
+
+\noindent
+$im(f) = codom(f)$
+
+
+\subsubsection{Interpretazione Geometrica}
+
+\noindent
+$\forall y_0 \in codom(f)$ la retta $y = y_0$ interseca il grafico di $f$ in almeno un punto. \\
+
+\noindent
+Equivalentemente: \\
+\indent
+$\forall y \in codom(f)$ \\
+\indent
+$f^{-1}({y}) \neq \emptyset$ \\
+
+\noindent
+Se $f : A \rightarrow B$ non è suriettiva si può rendere suriettiva restringendo il suo codominio alla sua immagine (Troncatura). \\
+
+\noindent
+Si può restringere anche il dominio per rendere la funzione iniettiva (Restrizione). % TODO Duplicate? Line 411
+
+
+\subsection{Definizione di Biiettività}
+
+Una funzione si dice \textbf{biiettiva} (o biiezione, o anche corrispondenza 1 a 1 o biunivoca) se è sia iniettiva che suriettiva.
+
+
+
+\section{Definizione di Invertibilità}
+
+\noindent
+$\forall y \in B$ $\exists! x \in A : y = f(x) \implies f : A \rightarrow B$ è invertibile. \\
+
+\noindent
+$f : A \rightarrow B$ è invertibile $\implies f^{-1} : im(f) \rightarrow dom(f)$ è la funzione inversa di f. \\
+
+\noindent
+$\forall y \in (B = im(f)) : y = f(x) \iff x = f^{-1}(y)$ \\
+
+\noindent
+Osservazione: \\
+
+\noindent
+$\forall y \in im(f) : y = f(f^{-1}(y))$ \\
+
+\noindent
+$f$ è invertibile $\iff f$ è biiettiva \\
+
+\noindent
+Il grafico della funzione inversa: \\
+$graf(f^{-1})$ \\
+$= \braces{(y, x) \in B \times A : x = f^{-1}(y)}$ \\
+$= \braces{(y, x) \in B \times A : y = f(x)}$ \\
+$= \braces{(y, x) \in B \times A : (x, y) \in graf(f)}$ \\
+
+\noindent
+$(y, x) \in graf(f^{-1}) \iff (x, y) \in graf(f)$ \\
+
+\noindent
+$graf(f^{-1})$ è simmetrico di $graf(f)$ rispetto alla retta $y = x$
+
+
+
+\section{Definizione di Restrizione}
+
+\noindent
+$f : A \rightarrow B,$ $E \subseteq A$ \\
+
+\noindent
+$f|_E : E \rightarrow B$ \\
+$f|_E(x) = f(x)$ $\forall x \in E$ \\
+
+\noindent
+$f|_E$ è chiamata restrizione di $f$ ad $E$. \\
+
+\noindent
+Una funzione non iniettiva si può rendere iniettiva considerandone opportune restrizioni. % TODO Duplicate? Line 367
+
+\end{document}
+
+% Fonti:
+
+% - Miei appunti Hynek Kovarik
+% - Appunti Davide
+% - https://it.wikipedia.org/wiki/Funzione_(matematica)
+% - https://it.wikipedia.org/wiki/Funzione_iniettiva
+% - https://it.wikipedia.org/wiki/Funzione_suriettiva
+% - https://it.wikipedia.org/wiki/Corrispondenza_biunivoca
+% - https://en.wikipedia.org/wiki/Restriction_(mathematics)
