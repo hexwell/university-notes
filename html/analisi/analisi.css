@@ -8,6 +8,7 @@
 .cmbx-12x-x-120{ font-weight: bold;}
 .cmbx-12x-x-120{ font-weight: bold;}
 .cmr-8{font-size:72%;}
+.cmr-6{font-size:54%;}
 .cmmi-10x-x-109{font-style: italic;}
 .cmmi-8{font-size:72%;font-style: italic;}
 .cmsy-10x-x-109{}
@@ -149,5 +150,7 @@ table.multline, table.multline-star {width:100%;}
 td.gather {text-align:center; }
 table.gather {width:100%;}
 div.gather-star {text-align:center;}
+span.accentset span.accent{font-size:80%; position:relative; top:-1.7ex; left:-0.6em;}
+span.underaccent span.accent{font-size:80%; position:relative; top:1.6ex; left:-0.6em;}
 /* end css.sty */
 
