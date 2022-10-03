@@ -4,6 +4,7 @@
 \usepackage{amsmath}   % for implies
 \usepackage{indentfirst}
 \usepackage{amssymb}   % for emptyset
+\usepackage{accents}   % for circle above characters (mathring)
 
 \newcommand{\braces}[1] {\left\{#1\right\}}
 \newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
@@ -486,6 +487,385 @@ $f|_E$ è chiamata restrizione di $f$ ad $E$. \\
 
 \noindent
 Una funzione non iniettiva si può rendere iniettiva considerandone opportune restrizioni. % TODO Duplicate? Line 367
+
+
+
+\section{Proprietà della Composizione di Funzioni}
+
+\noindent
+Se $f$ è invertibile, allora: \\
+
+$\forall x \in dom(f)\ldotp (f^{-1} \circ f)(x) = x$ \\
+\indent
+$\forall x \in im(f)\ldotp (f \circ f^{-1})(x) = x$ \\
+\indent
+$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$
+
+
+
+\section{Nozioni di Topologia in $\R$}
+
+\noindent
+Il valore del limite di una funzione può andare oltre il dominio della funzione, ma bisogna definire delle condizioni.
+
+
+\subsection{Definizione di Intorno}
+
+\noindent
+Dato $x_0 \in \R$ e dato $r > 0$, chiamiamo: \\
+
+$I_r(x_0) = (x_0 - r, x_0 + r)$ \\
+
+\noindent
+L'intorno di centro $x_0$ e raggio $r$. \\
+
+\noindent
+Nota: \\
+$x_0$ è detto ``x con zero''
+
+\subsection{Definizione di Intorno di Infinito}
+
+\noindent
+Sia $x_0 \in \braces{-\infty, +\infty}$ e sia $a \in \R$, chiamiamo: \\
+
+$(a, +\infty)$ intorno di infinito di estremo inferiore a \\
+\indent
+$(-\infty, a)$ intorno di meno infinito di estremo superiore a
+
+
+\subsection{Definizione di Punto Interno di un Insieme}
+
+\noindent
+$A \subseteq \R,$ $x_0 \in \R$ \\
+
+$\exists \varepsilon > 0 : I_\varepsilon(x_0) \subseteq A \implies x_0$ è \textbf{punto interno} di $A$
+
+
+\subsection{Definizione di Punto di Accumulazione}
+
+\noindent
+$A \subseteq \R,$ $x_0 \in \R$ \\
+
+$\forall \varepsilon > 0 \ldotp I_\varepsilon(x_0) \cap (A \setminus \braces{x_0}) \neq 0 \implies x_0$ è \textbf{punto di accumulazione} di $A$ \\
+
+\noindent
+Notazione: \\
+p.a. di $A$ = punto di accumulazione di $A$ \\
+
+\noindent
+Osservazioni: \\
+La definizione di punto di accumulazione non richiede che $x_0 \in A$ \\
+Ogni punto interno è anche un punto di accumulazione.
+
+
+\subsection{Definizione di Punto Isolato}
+
+\noindent
+$A \subseteq \R,$ $x_0 \in \R$ \\
+
+$\exists \varepsilon > 0 : I_\varepsilon(x_0) \cap A = \braces{x_0} \implies$ $x_0$ è un \textbf{punto isolato} di $A$
+
+
+\subsection{Definizione di Punto Aderente}
+
+\noindent
+$x_0$ è un punto di accumulazione di $A$ $\lor$ $x_0$ è un punto isolato di $A \implies x_0$ è un \textbf{punto aderente} ad $A$
+
+
+\subsection{Definizione di Parte Interna}
+
+\noindent
+$A \subseteq \R$ \\
+
+$\mathring{A} = \braces{x \in A : x \text{ è un punto interno di } A}$
+
+
+\subsection{Definizione di Chiusura}
+
+\noindent
+$A \subseteq \R$ \\
+
+$\overbar{A} = \braces{x \in A : x \text{ aderente ad } A}$
+
+
+\subsection{Definizione di Frontiera}
+
+\noindent
+$A \subseteq \R$ \\
+
+$\partial A = \overbar{A} \setminus \mathring{A} = \braces{x \in \overbar{A} : x \not\in \mathring{A}}$ \\
+
+\noindent
+N.B. \\
+$\mathring{A} \subseteq A \subseteq \overbar{A}$
+
+
+\subsection{Definizione di Insieme Aperto}
+
+\noindent
+$A \subseteq \R$ \\
+
+$A = \mathring{A} \implies A$ è aperto (contiene solo punti interni)
+
+
+\subsection{Definizione di Insieme Chiuso}
+
+$A = \overbar{A} \implies A$ è chiuso
+
+
+
+\chapter{Limiti}
+
+
+
+\section{Definizione di Limite}
+
+\noindent
+$A \subseteq \R,$ $x_0 \in \R$ punto di accumulazione di $A,$ $f: A \rightarrow \R$ \\
+
+$f$ converge a $L \in \R$ per $x$ che tende ad $x_0$ e scriviamo: \\
+
+$\lim_{x \to x_0} f(x) = L$ \\
+
+\noindent
+se: \\
+
+$\forall \varepsilon > 0 \ldotp \exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0} \ldotp \left | f(x) - L \right | < \varepsilon$ \\
+
+\noindent
+Osservazioni: \\
+La definizione non richiede che $x_0 \in A$ \\
+Anche se $x_0 \in dom(f) = A$ il valore della funzione in questo punto non ha nessuna influenza sul valore del limite. \\
+$x_0$ deve essere un p.a. di $A$ perché x deve potersi avvicinare a $x_0$ indefinitamente rimanendo in $A = dom(f)$.
+
+
+
+\section{Estensione della Definizione del Limite}
+
+\noindent
+Estensione della definizione di: \\
+
+$\lim_{x \to x_0} f(x) = L$ \\
+
+\noindent
+nei casi in cui $x_0 \in \braces{+\infty, -\infty}$ e/o $L \in \braces{+\infty, -\infty}$
+
+
+\subsection{$x_0 \in \R,$ $L \in \braces{+\infty, -\infty}$}
+
+\noindent
+$f : A \rightarrow \R,$ $x_0$ p.a. di $A$
+
+
+\subsubsection{$L = +\infty$}
+
+\noindent
+Scriviamo $\lim_(x \to x_0) = +\infty$ se: \\
+
+\noindent
+$\forall M \in \R \ldotp \exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp f(x) > M$ \\
+
+\noindent
+$f$ diverge positivamente per $x \to x_0$
+
+
+\subsubsection{$L = -\infty$}
+
+\noindent
+Scriviamo $\lim_(x \to x_0) = -\infty$ se: \\
+
+\noindent
+$\forall M \in \R \ldotp \exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp f(x) < M$ \\
+
+\noindent
+$f$ diverge negativamente per $x \to x_0$
+
+
+\subsection{$x_0 \in \braces{+\infty, -\infty},$ $L \in \R$}
+
+
+\subsubsection{$f: [R, +\infty) \rightarrow \R,$ $R \in \R$}
+
+\noindent
+Scriviamo $\lim_{x \to x_0} = L$ se: \\
+
+\noindent
+$\forall \varepsilon > 0 \ldotp \exists a > R : \forall x \in (a, +\infty) \ldotp \left | f(x) - L \right | < \varepsilon$
+
+
+\subsubsection{$f: (-\infty, R] \rightarrow \R,$ $R \in \R$}
+
+\noindent
+Scriviamo $\lim_{x \to x_0} = L$ se: \\
+
+\noindent
+$\forall \varepsilon > 0 \ldotp \exists a < R : \forall x \in (-\infty, a) \ldotp \left | f(x) - L \right | < \varepsilon$ \\
+
+\noindent
+$\left | f(x) - L \right | < \varepsilon \iff f(x) \in (L - \varepsilon, L + \varepsilon)$
+
+
+\subsection{$x_0 \in \braces{+\infty, -\infty},$ $L \in \braces{+\infty, -\infty}$}
+
+
+\subsubsection{$x_0 = +\infty,$ $L = +\infty,$ $f : [R, +\infty) \rightarrow \R,$ $R \in \R$}
+
+\noindent
+Scriviamo $\lim_{x \to x_0} f(x) = +\infty$ se: \\
+
+\noindent
+$\forall M \in \R \ldotp \exists a > R : \forall x \in (a, +\infty) \ldotp f(x) > M$
+
+
+\subsubsection{$x_0 = +\infty,$ $L = -\infty,$ $f : [R, +\infty) \rightarrow \R,$ $R \in \R$}
+
+\noindent
+Scriviamo $\lim_{x \to x_0} f(x) = -\infty$ se: \\
+
+\noindent
+$\forall M \in \R \ldotp \exists a > R : \forall x \in (a, +\infty) \ldotp f(x) < M$
+
+
+\subsubsection{$x_0 = -\infty,$ $L = +\infty,$ $f : (-\infty, R] \rightarrow \R,$ $R \in \R$}
+
+\noindent
+Scriviamo $\lim_{x \to x_0} f(x) = +\infty$ se: \\
+
+\noindent
+$\forall M \in \R \ldotp \exists a < R : \forall x \in (-\infty, a) \ldotp f(x) > M$
+
+
+\subsubsection{$x_0 = -\infty,$ $L = -\infty,$ $f : (-\infty, R] \rightarrow \R,$ $R \in \R$}
+
+\noindent
+Scriviamo $\lim_{x \to x_0} f(x) = -\infty$ se: \\
+
+\noindent
+$\forall M \in \R \ldotp \exists a < R : \forall x \in (-\infty, a) \ldotp f(x) < M$
+
+
+
+\section{Definizione Disuguaglianza Triangolare}
+
+\noindent
+$\forall a,b \in \R \ldotp \left | a + b \right | \leq \left | a \right | + \left | b \right |$ \\
+
+\noindent
+$\forall x \in \R \ldotp x \leq \left | x \right | \land -x \leq \left | x \right |$
+
+
+
+\section{Teorema di Unicità del Limite}
+
+\noindent
+$f : A \rightarrow \R,$ $x_{0} \in \R$ p.a. di $A$ \\
+
+\noindent
+Supponiamo che esistano due limiti $L \in \R$ e $L' \in \R$ tali che $\lim_{x \to x_0} f(x) = L$ e contemporaneamente $\lim_{x \to x_0} f(x) = L'$. \\
+
+\noindent
+Allora $L = L'$
+
+
+
+\subsection{Dimostrazione}
+
+\noindent
+Sia $\varepsilon > 0$ arbitrario. \\
+
+$\lim_{x \to x_0} f(x) = L \implies \exists \delta_1 > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp \left | f(x) - L \right | < \varepsilon$ \\
+
+$\lim_{x \to x_0} f(x) = L' \implies \exists \delta_2 > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp \left | f(x) - L' \right | < \varepsilon$ \\
+
+\noindent
+Ponendo $\delta = min(\delta_1, \delta_2)$ si ottiene: \\
+
+
+$\forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp \left | L - L' \right | = \left | L - f(x) + f(x) - L' \right | \leq \left | L - f(x) \right | + \left | f(x) - L' \right |$ \\
+
+\noindent
+(Applicazione della disuguaglianza triangolare) \\
+$\left | L - f(x) \right | < \varepsilon$ \\
+$\left | f(x) - L' \right | < \varepsilon$ \\
+
+\noindent
+Dunque $\forall \varepsilon < 0$ si ha: \\
+$0 \leq \left | L - L' \right | < 2 \varepsilon \implies \left | L - L' \right | = 0$ \\
+$\implies L = L'$ \\
+
+Q.E.D.
+
+
+
+\section{Algebra dei Limiti}
+
+\noindent
+$f, g : A \rightarrow \R,$ $x_0 \in \overbar{\R},$ $L, M \in \overbar{\R}$ tali che $x_0$ è un p.a. di $A$ e: \\
+
+\noindent
+$lim_{x \to x_0} f(x) = L$ \\
+$lim_{x \to x_0} g(x) = M$ \\
+
+\noindent
+Allora le seguenti identità: \\
+$lim_{x \to x_0} (f(x) + g(x)) = L + M$ \\
+$lim_{x \to x_0} (f(x) g(x)) = L \cdot M$ \\
+$lim_{x \to x_0} (\frac{f(x)}{g(x)}) = \frac{L}{M}$ \\
+
+\noindent
+valgono in assenza di forme indeterminate ($\infty - \infty, 0 \cdot (\pm \infty), \frac{\pm \infty}{\pm \infty}$)
+
+
+\subsection{Caso Particolare di $lim_{x \to x_0} (\frac{f(x)}{g(x)}) = \frac{L}{M}$}
+
+\noindent
+Supponiamo $lim_{x \to x_0} f(x) = L \neq 0 \land lim_{x \to x_0} g(x) = 0$ \\
+
+\noindent
+Allora valgono le seguenti regole: \\
+
+\noindent
+Se $\exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp g(x) > 0$ allora: \\
+
+\noindent
+$lim_{x \to x_0} (\frac{f(x)}{g(x)}) =$ \\
+
+\noindent
+$+\infty$ se $L > 0$ \\
+$-\infty$ se $L < 0$ \\
+
+\noindent
+Se $\exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp g(x) < 0$ allora: \\
+
+\noindent
+$lim_{x \to x_0} (\frac{f(x)}{g(x)}) =$ \\
+
+\noindent
+$-\infty$ se $L > 0$ \\
+$+\infty$ se $L < 0$ \\
+
+\noindent
+Se la funzione cambia segno in \underline{ogni} intorno di $x_0$, ovvero: \\
+$\forall \delta > 0 \ldotp \exists x_1, x_2 \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) : g(x_1)g(x_2) < 0$ allora: \\
+
+\noindent
+$lim_{x \to x_0} (\frac{f(x)}{g(x)})$ non esiste
+
+
+
+\section{Teorema della Permanenza del Segno}
+
+\noindent
+$A \subseteq \R,$ $x_0 \in \R$ p.a. di $A,$ $f : A \rightarrow \R$ \\
+
+\noindent
+Suppongo che: \\
+
+\noindent
+$lim_{x \to x_0} f(x) = L \neq 0$ \\
+
+\noindent
+allora $\exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp f(x)$ ha lo stesso segno di $L$.
 
 \end{document}
 
