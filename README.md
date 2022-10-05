@@ -1,6 +1,6 @@
 # unibs-appunti
 
-# [Versione online](https://hexwell.github.io/unibs-appunti)
+# [Versione Online](https://hexwell.github.io/unibs-appunti)
 # [PDF Analisi I](https://raw.githubusercontent.com/hexwell/unibs-appunti/main/analisi.pdf)
 # [PDF Algebra e Geometria](https://raw.githubusercontent.com/hexwell/unibs-appunti/main/algebra.pdf)
 
