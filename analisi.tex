@@ -187,7 +187,21 @@ $\E = \braces{x \in \R : 0 < x < 1}$
 
 Se $\E \subseteq \R$ ammette minimo o massimo, allora è unico.
 
-% TODO: Dimostrazione
+
+\subsubsection{Dimostrazione Unicità del Minimo}
+
+\noindent
+$a \in \E,$ $a' \in \E$ \\
+
+\noindent
+$\forall x \in \E \ldotp a \leq x \land a' \leq x$ per assurdo. \\
+
+\noindent
+Ponendo $x = a$ ottengo $a' \leq a$ \\
+Ponendo $x = a'$ ottengo $a \leq a'$ \\
+
+\noindent
+Siccome devono valere entrambe, $a = a'$. Q.E.D.
 
 
 
@@ -231,7 +245,24 @@ $\E$ è superiormente limitato $\implies M(\E)$ ammette minimo (estremo superior
 \noindent
 $\E$ è inferiormente limitato $\implies m(\E)$ ammette massimo (estremo inferiore di $\E$)
 
-% TODO: Dimostrazione
+
+\subsection{Dimostrazione}
+
+\noindent
+$\E \neq \emptyset,$ $M(\E) \neq \emptyset$ \\
+
+\noindent
+$\forall x \in \E, y \in M(\E) \ldotp x \leq y$ \\
+
+\noindent
+Quindi per l'assioma di completezza: \\
+
+\noindent
+$\exists c \in \R : \forall x \in \E, y \in M(\E) \ldotp x \leq c \leq y$ \\
+
+\noindent
+$\forall x \in \E \ldotp x \leq c \implies c \in M(\E)$ \\
+$\forall y \in M(\E) \ldotp c \leq y \implies x = min$ $M(\E)$
 
 
 
@@ -429,7 +460,7 @@ $f^{-1}({y}) \neq \emptyset$ \\
 Se $f : A \rightarrow B$ non è suriettiva si può rendere suriettiva restringendo il suo codominio alla sua immagine (Troncatura). \\
 
 \noindent
-Si può restringere anche il dominio per rendere la funzione iniettiva (Restrizione). % TODO Duplicate? Line 411
+Si può restringere anche il dominio per rendere la funzione iniettiva (Restrizione). % TODO Duplicato? Riga 411
 
 
 \subsection{Definizione di Biiettività}
@@ -486,7 +517,7 @@ $f|_E(x) = f(x)$ $\forall x \in E$ \\
 $f|_E$ è chiamata restrizione di $f$ ad $E$. \\
 
 \noindent
-Una funzione non iniettiva si può rendere iniettiva considerandone opportune restrizioni. % TODO Duplicate? Line 367
+Una funzione non iniettiva si può rendere iniettiva considerandone opportune restrizioni. % TODO Duplicato? Riga 367
 
 
 
@@ -585,7 +616,11 @@ $\mathring{A} = \braces{x \in A : x \text{ è un punto interno di } A}$
 \noindent
 $A \subseteq \R$ \\
 
-$\overbar{A} = \braces{x \in A : x \text{ aderente ad } A}$
+$\overbar{A} = \braces{x \in A : x \text{ aderente ad } A}$ \\
+
+\noindent
+N.B. \\
+$\mathring{A} \subseteq A \subseteq \overbar{A}$
 
 
 \subsection{Definizione di Frontiera}
@@ -593,11 +628,7 @@ $\overbar{A} = \braces{x \in A : x \text{ aderente ad } A}$
 \noindent
 $A \subseteq \R$ \\
 
-$\partial A = \overbar{A} \setminus \mathring{A} = \braces{x \in \overbar{A} : x \not\in \mathring{A}}$ \\
-
-\noindent
-N.B. \\
-$\mathring{A} \subseteq A \subseteq \overbar{A}$
+$\partial A = \overbar{A} \setminus \mathring{A} = \braces{x \in \overbar{A} : x \not\in \mathring{A}}$
 
 
 \subsection{Definizione di Insieme Aperto}
@@ -648,7 +679,11 @@ Estensione della definizione di: \\
 $\lim_{x \to x_0} f(x) = L$ \\
 
 \noindent
-nei casi in cui $x_0 \in \braces{+\infty, -\infty}$ e/o $L \in \braces{+\infty, -\infty}$
+nei casi in cui $x_0 \in \braces{+\infty, -\infty}$ e/o $L \in \braces{+\infty, -\infty}$ \\
+
+\noindent
+N.d.r. \\
+Tutte le definizioni possono essere riscritte equivalentemente sostituendo l'intorno di $\pm$ infinito $I_{\pm \infty}(a)$ dove compaiono gli intervalli $(a, +\infty)$ e $(-\infty, a)$.
 
 
 \subsection{$x_0 \in \R,$ $L \in \braces{+\infty, -\infty}$}
@@ -702,7 +737,7 @@ Scriviamo $\lim_{x \to x_0} = L$ se: \\
 $\forall \varepsilon > 0 \ldotp \exists a < R : \forall x \in (-\infty, a) \ldotp \left | f(x) - L \right | < \varepsilon$ \\
 
 \noindent
-$\left | f(x) - L \right | < \varepsilon \iff f(x) \in (L - \varepsilon, L + \varepsilon)$
+$\left | f(x) - L \right | < \varepsilon \iff f(x) \in (L - \varepsilon, L + \varepsilon) = I_\varepsilon(L)$
 
 
 \subsection{$x_0 \in \braces{+\infty, -\infty},$ $L \in \braces{+\infty, -\infty}$}
@@ -771,27 +806,84 @@ Allora $L = L'$
 \subsection{Dimostrazione}
 
 \noindent
-Sia $\varepsilon > 0$ arbitrario. \\
-
-$\lim_{x \to x_0} f(x) = L \implies \exists \delta_1 > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp \left | f(x) - L \right | < \varepsilon$ \\
-
-$\lim_{x \to x_0} f(x) = L' \implies \exists \delta_2 > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp \left | f(x) - L' \right | < \varepsilon$ \\
+Sia $\varepsilon > 0$ arbitrario.
 
 \noindent
-Ponendo $\delta = min(\delta_1, \delta_2)$ si ottiene: \\
-
-
-$\forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp \left | L - L' \right | = \left | L - f(x) + f(x) - L' \right | \leq \left | L - f(x) \right | + \left | f(x) - L' \right |$ \\
+Supponiamo per assurdo che estano due limiti $L$ ed $L'$, con $L \neq L'$: \\
 
 \noindent
-(Applicazione della disuguaglianza triangolare) \\
-$\left | L - f(x) \right | < \varepsilon$ \\
+$\lim_{x \to x_0} f(x) = L \implies \exists \delta_1 > 0 : \forall x \in {I_\delta}_1(x_0) \cap (A \setminus \braces{x_0}) \ldotp \left | f(x) - L \right | < \varepsilon$ \\
+
+\noindent
+$\lim_{x \to x_0} f(x) = L' \implies \exists \delta_2 > 0 : \forall x \in {I_\delta}_2(x_0) \cap (A \setminus \braces{x_0}) \ldotp \left | f(x) - L' \right | < \varepsilon$ \\\\
+
+\noindent
+$I_{min(a, b)}(x_0) \subseteq I_{max(a, b)}(x_0)$ \\
+
+\noindent
+Equivalentemente: \\
+
+\noindent
+$I_a(x_0) \cap I_b(x_0) = I_{min(a, b)}(x_0)$ \\\\
+
+
+\noindent
+Ponendo $\delta = min(\delta_1, \delta_2)$, nel risultante intorno: \\
+
+$I_\delta(x_0) \cap (A \setminus \braces{x_0})$ \\
+
+\noindent
+valgono entrambe le definizioni dei limiti: \\
+
+$\forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp$ \\\\
+\indent
+$\left | f(x) - L \right | < \varepsilon$ \\
+\indent
 $\left | f(x) - L' \right | < \varepsilon$ \\
 
 \noindent
-Dunque $\forall \varepsilon < 0$ si ha: \\
+La differenza assoluta è commutativa, quindi la prima si può riscrivere come: \\
+
+$\forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp$ \\\\
+\indent
+$\left | L - f(x) \right | < \varepsilon$ \\
+
+\noindent
+e applicando la disuguaglianza triangolare si ottiene: \\
+
+$\forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp$ \\\\
+\indent
+$\left | L - L' \right | = \left | L - f(x) + f(x) - L' \right | \leq \left | L - f(x) \right | + \left | f(x) - L' \right |$ \\
+
+\noindent
+Viste le disuguaglianze: \\
+
+$\forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp$ \\\\
+\indent
+$\left | f(x) - L \right | < \varepsilon$ \\
+\indent
+$\left | f(x) - L' \right | < \varepsilon$ \\
+
+\noindent
+e dato che: \\
+
+$a \geq 0,$ $b \geq 0,$ $c > 0$ \\
+\indent
+$a < c \land b < c \implies a + b < 2c$ \\
+
+\noindent
+è sicuramente vero che: \\
+
+$\forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp$ \\\\
+\indent
+$\left | L - L' \right | \leq \left | L - f(x) \right | + \left | f(x) - L' \right | < 2 \varepsilon$ \\
+
+\noindent
+Dunque $\forall \varepsilon > 0$ si ha: \\
+
 $0 \leq \left | L - L' \right | < 2 \varepsilon \implies \left | L - L' \right | = 0$ \\
-$\implies L = L'$ \\
+\indent
+$\left | L - L' \right | = 0 \implies L = L'$ \\
 
 Q.E.D.
 
