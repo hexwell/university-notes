@@ -56,9 +56,9 @@ $\Q =$ Numeri Razionali \\
 $\R =$ Numeri Reali \\
 $\C =$ Numeri Complessi \\
 $\N_0 = \N \setminus \braces{0}$ \\
-$\Q^x = \Q \setminus \braces{0}$ \\
-$\R^x = \R \setminus \braces{0}$ \\
-$\C^x = \C \setminus \braces{0}$
+$\Q^x = \Q^* = \Q \setminus \braces{0}$ \\
+$\R^x = \R^* = \R \setminus \braces{0}$ \\
+$\C^x = \C^* = \C \setminus \braces{0}$
 
 
 
@@ -67,6 +67,15 @@ $\C^x = \C \setminus \braces{0}$
 Collezione ordinata di elementi. \\
 
 $(a, b, c)$ \\
+
+\noindent
+Diciture per numeri di elementi: \\
+
+2 - Paio (pair), coppia (couple) o tupla (tuple) \\
+\indent
+3 - Terna (triplet) o tripla (triple) \\
+\indent
+4 - Quaterna (quatern) o quadrupla (quadruple) \\
 
 \noindent
 $(a, b) := \braces{\braces{a}, \braces{a, b}}$ \\
@@ -80,7 +89,7 @@ $(a, a) = \braces{\braces{a}, \braces{a, a}} = \braces{\braces{a}, \braces{a}} =
 
 \section{Definizione di Relazione}
 
-Si dice che $R \subseteq A \times B$ è una relazione tra due insiemi $A$ e $B$.\\
+Si dice che $R \subseteq A \times B$ è una relazione (binaria, anche detta corrispondenza) tra due insiemi $A$ e $B$.\\
 
 \noindent
 Se: \\
@@ -95,16 +104,20 @@ $b_2 = C(a_2)$
 
 \subsubsection{Totalità a Sinistra}
 
-Una relazione $R$ tra $A$ e $B$ si dice \textbf{ovunque definita} (o totale a sinistra) se: \\
+Una relazione $R$ tra $A$ e $B$ si dice \textbf{ovunque definita} (o totale a sinistra, duale della totalità a destra (suriettività)) se: \\
 
 $\forall x \in A \ldotp \exists y \in B : (x, y) \in R$
 
 
 \subsubsection{Funzionalità}
 
-Una relazione $R$ tra $A$ e $B$ si dice \textbf{funzionale} se: \\
+Una relazione $R$ tra $A$ e $B$ si dice \textbf{funzionale} (duale dell'iniettività) se: \\
 
 $\forall x \in A \ldotp \exists y \in B : (x, y) \in R \implies \exists! y \in B : (x, y) \in R$
+
+
+
+\chapter{Funzioni}
 
 
 
@@ -121,19 +134,19 @@ $f : A \rightarrow B$ \\
 dove $A$ è il dominio di $f$ e $B$ è il codominio di $f$.
 
 
-\subsection{Proprietà delle Funzioni}
+\section{Proprietà delle Funzioni}
 
 
-\subsubsection{Iniettività}
+\subsection{Iniettività}
 
-Una funzione da $A$ a $B$ si dice \textbf{iniettiva} se: \\
+Una funzione da $A$ a $B$ si dice \textbf{iniettiva} (injective) (duale della funzionalità) se: \\
 
 $\forall x, x' \in A \ldotp f(x) = f(x') \implies x = x'$
 
 
-\subsubsection{Suriettività}
+\subsection{Suriettività}
 
-Una funzione da $A$ a $B$ si dice \textbf{suriettiva} (o totale a destra) se: \\
+Una funzione da $A$ a $B$ si dice \textbf{suriettiva} (surjective) (o totale a destra, duale della totalità a sinistra) se: \\
 
 $\forall y \in B \ldotp \exists x \in A : y = f(x)$ \\
 
@@ -141,9 +154,9 @@ $\forall y \in B \ldotp \exists x \in A : y = f(x)$ \\
 (equivalentemente: $im(f) = codom(f)$)
 
 
-\subsubsection{Biiettività}
+\subsection{Biiettività}
 
-Una funzione si dice \textbf{biiettiva} (o biiezione, o anche corrispondenza 1 a 1 o biunivoca) se è sia iniettiva che suriettiva. \\
+Una funzione si dice \textbf{biiettiva} (bijective) (o biiezione, o anche corrispondenza 1 a 1 o biunivoca) se è sia iniettiva che suriettiva. \\
 
 \noindent
 Osservazione: \\
@@ -157,7 +170,8 @@ $A$ e $B$ possono essere infiniti. \\
 $\left | X \right | < \left | Y \right | \iff \exists$ una funzione iniettiva $X \rightarrow Y \land \nexists$ una biiezione $X \rightarrow Y$.
 
 
-\subsection{Definizione di Immagine}
+
+\section{Definizione di Immagine}
 
 L'insieme di tutti i valori di $f : A \rightarrow B$ valutata in ogni elemento di un insieme $S \subseteq A$ si dice l'immagine di S tramite $f$: \\
 
@@ -175,14 +189,16 @@ Il valore di $f : A \rightarrow B$ valutata in $x \in A$ si dice immagine di $x$
 $im(f) \subseteq codom(f)$
 
 
-\subsection{Definizione di Controimmagine}
+
+\section{Definizione di Controimmagine}
 
 L'insieme degli elementi del dominio di una funzione $f : A \rightarrow B$ che $f$ associa a tutti gli elementi di $S$ si dice controimmagine, preimmagine o immagine inversa di $S$ tramite $f$: \\
 
 $f^{-1}[S] = f^{-1}(S) := \braces{x \in A : f(x) \in S \subseteq B} \subseteq A$
 
 
-\subsection{Definizione di Restrizione}
+
+\section{Definizione di Restrizione}
 
 Detta anche restrizione del dominio o restrizione a sinistra. \\
 
@@ -210,7 +226,8 @@ $f_X : X \rightarrow B = f \circ i$ \\
 Dove $i : X \rightarrow A$ è l'inclusione di $X$ in $A$ data da $i(a) = a$.
 
 
-\subsection{Definizione di Troncatura}
+
+\section{Definizione di Troncatura}
 
 Detta anche corestrizione, restrizione del codominio o restrizione a destra. \\
 
@@ -227,33 +244,68 @@ Il codominio viene ristretto.\\
 In generale prima si restringe e poi si tronca una funzione.
 
 
-\subsection{Composizione}
+
+\section{Composizione}
 
 L'elemento $b$ che compone in $(g \circ f)$ è unico $\forall a \in A$.
 
 
 
-\section{Strutture Algebriche}
+\section{Definizione di Funzione Inversa Destra}
+
+$f : A \rightarrow B$ ammette inversa destra $g : B \rightarrow A$ $|$ $(f \circ g) : B \rightarrow B,$ $\forall x \in B \ldotp (f \circ g)(x) = x \iff f$ è suriettiva.
 
 
-\subsection{Definizione di Operazione Binaria}
+
+\section{Definizione di Funzione Inversa Sinistra}
+
+$f : A \rightarrow B$ ammette inversa sinistra $g : B \rightarrow A$ $|$ $(g \circ f) : A \rightarrow A,$ $\forall x \in A \ldotp (g \circ f)(x) = x \iff f$ è iniettiva.
+
+
+
+\section{Definizione di Funzione Inversa}
+
+$f : A \rightarrow B$ ammette inversa destra e sinistra $\implies f$ ammette inversa $f^{-1}$ che coincide con l'inversa dentra e sinistra. \\
+
+\noindent
+$f$ ammette inversa $\iff f$ è biettiva.
+
+
+% TODO: TEOREMA: Se la funzione inversa esiste è unica.
+% TODO: TEOREMA: f è invertibile /iff f é biiettiva
+% TODO: PROPOSIZIONE: La composizione di funzioni è associativa
+
+
+
+\section{Definizione di Successione}
+
+Una funzione $f$ si dice successione se: \\
+
+$f : \N \rightarrow A$
+
+
+
+\chapter{Strutture Algebriche}
+
+
+\section{Definizione di Operazione Binaria}
 
 Sia $U$ un insieme. Si dice \textbf{operazione binaria} una funzione $o : U \times U \rightarrow U$.
 
 
-\subsection{Definizione di Struttura Algebrica}
+\section{Definizione di Struttura Algebrica}
 
-Una \textbf{struttura algebrica} è una n-upla data da un insieme ed una o più operazioni su di esso: \\
+Una \textbf{struttura algebrica} è una collezione, in particolare una ennupla, data da un insieme ed una o più operazioni su di esso: \\
 
 $(U, o)$
 
 
-\subsection{Definizione di Associatività}
+\section{Definizione di Associatività}
 
 Si dice che $*$ è associativa se $\forall a,b,c \in A \ldotp a * (b * c) = (a * b) * c$.
 
 
-\subsection{Definizione di Elemento Neutro}
+\section{Definizione di Elemento Neutro}
 
 Sia $(A, *)$ un insieme con una operazione binaria (magma): \\
 
@@ -267,7 +319,7 @@ Si dice che $e \in A$ è un \textbf{elemento neutro} per $*$ se: \\
 $\forall a \in A \ldotp e * a = a * e = a$
 
 
-\subsection{Definizione di Inverso, Inverso Destro e Inverso Sinistro}
+\section{Definizione di Elemento Inverso, Inverso Destro e Inverso Sinistro}
 
 Se $(X, *)$ ammette elemento neutro $e$ si dice che $\forall x \in X$: \\
 
@@ -278,51 +330,165 @@ $x''$ è inverso sinistro di $x$ se $\exists x'' \in X : x'' * x = e$ \\
 $x'''$ è inverso di $x$ se $x'''$ è inverso destro di $x$ $\land$ $x'''$ è inverso sinistro $x$.
 
 
-\subsection{Definizione di Commutatività}
+\section{Definizione di Commutatività}
 
 Si dice che $*$ è commutativa se $\forall a,b \in A \ldotp a * b = b * a$.
 
 
-\subsection{Definizione di Monoide}
+\section{Definizione di Monoide (Monoid)}
 
 $(A, *)$ (magma) è detto \textbf{monoide} se $*$ è associativa (semigruppo) e ammette elemento neutro.
 
 
-\subsection{Definizione di Gruppo}
+\section{Definizione di Gruppo (Group)}
 
 $(A, *)$ è detto \textbf{gruppo} se è un monoide $\land$ ogni elemento di $A$ ammette inverso (necessariamente unico, destro e sinistro, solitamente indicato con $a^{-1}$).
 
 
-\subsection{Definizione di Gruppo Abeliano}
+\subsection{Sottogruppo}
+
+Un sottoinsieme di un gruppo è un sottogruppo se è a sua volta un gruppo con la stessa operazione
+
+
+\subsection{Esempi notevoli}
+
+$GL_n(\K) = \braces{M \in \K_{m,n} : det(M) \neq 0}$, chiamato gruppo lineare generale (general linear group) (o gruppo di matrici), è un gruppo rispetto al prodotto di matrici (righe per colonne). \\
+
+\noindent
+Esiste anche un suo sottogruppo, $SL_n(\K)$, detto gruppo lineare speciale (special linear group), formato dalle matrici con determinante uguale a 1.
+
+
+\section{Definizione di Gruppo Abeliano (Abelian Group)}
 
 $(A, *)$ è detto \textbf{gruppo abeliano} o commutativo se oltre ad essere un gruppo, $*$ è commutativa.
 
 
-\subsection{Definizione di Sottrazione}
+\section{Definizione di Sottrazione}
 
 La sottrazione è definita come somma con l'opposto di un elemento in $(\Z, +)$. \\
 
 $a - b = a + (-b)$
 
 
+\section{Definizione di Gruppo Simmetrico}
 
-\section{Definizione di Successione}
+$S(\Omega) = \braces{f : \Omega \rightarrow \Omega \text{ $|$ } \text{f è biiettiva}}$ è chiamato gruppo simmetrico (Symmetric Group) dell'insieme $\Omega$. \\
 
-Una funzione $f$ si dice successione se: \\
+\noindent
+È un gruppo rispetto alla composizione di funzioni. \\
+Contiene tutte le possibili permutazioni degli elementi di $\Omega$. \\
+Tutti i gruppi simmetrici di insiemi aventi la stessa cardinalità sono isomorfi. \\
+L'elemento neutro è la funzione $id$.
 
-$f : \N \rightarrow A$
+
+\subsection{Gruppi Simmetrici Finiti (Finite Symmetric Group)}
+
+Se $\Omega$ è finito, il suo gruppo simmetrico si denota con $S_n$. \\
+In genere in questi casi si preferisce considerare il gruppo delle permutazioni degli interi $1..n$ dato che è isomorfo.
+
+
+\section{Definizione di Anello Unitario (o con Unità) (Ring)}
+
+Un insieme $A$ dotato di due operazioni binarie $\tilde{+}$ e $\tilde{\cdot}$ è un anello $(A, \tilde{+}, \tilde{\cdot})$ se: \\
+
+$(A, \tilde{+})$ è un gruppo abelliano. \\
+\indent
+$(A, \tilde{\cdot})$ è un monoide. \\
+\indent
+$\tilde{\cdot}$ è distributiva rispetto a $\tilde{+}$.
+
+
+\subsection{Definizione di Anello (Rng)}
+
+Il requisito di monoide per $(A, \cdot)$ è rilassato a semigruppo.
+
+
+\subsection{Definizione di Anello Commutativo (Commutative Ring)}
+
+Se $\tilde{\cdot}$ è commutativa l'anello si dice commutativo.
 
 
 
-% TODO: TEOREMA: Se la funzione inversa esiste è unica.
-% TODO: TEOREMA: f è invertibile /iff f é biiettiva
-% TODO: PROPOSIZIONE: La composizione di funzioni è associativa
+\section{Definizione di Campo (Field)}
+
+Un campo $(\K, +, \cdot)$ è un anello commutativo unitario in cui $(\K^*, \cdot)$ è un gruppo abelliano, dove $\K^* := \K \setminus \braces{0}$. \\
+
+\noindent
+Alternativamente: \\
+
+$(\K, +)$ è un gruppo abelliano con elemento neutro 0 \\
+\indent
+$(\K^*, \cdot)$ è un gruppo abelliano con elemento neutro 1 \\
+\indent
+$\cdot$ è distributiva rispetto a $+$.
+
+
+% TODO Dimostrazione della legge di annullamento del prodotto
+
+
+
+\section{Definizione di Spazio Vettoriale}
+
+$(V, \oplus, *)$ è detto spazio vettoriale (vector space) su di un campo $(\K, +, \cdot)$ se: \\
+
+\noindent
+$V$ è dotato di una operazione interna $\oplus : V \times V \rightarrow V$ detta (somma o legge di composizione interna) \\
+
+\noindent
+$V$ è dotato di una operazione esterna $* : \K \times V \rightarrow V$ (detta prodotto per scalare (gli elementi di $\K$ sono detti scalari) o legge di composizione esterna) \\
+
+\noindent
+$(V, \oplus)$ è un gruppo abelliano \\
+
+\noindent
+$*$ è distributiva rispetto a $\oplus$ (distributività a destra) \\
+
+\noindent
+$*$ è distributiva rispetto a $+ : \K \times \K \rightarrow \K$ (distributività a sinistra, insieme alla precedente \textbf{pseudo-distributività}) \\
+
+\noindent
+$*$ è \textbf{pseudo-associativa}: \\
+\indent
+$\forall a, b \in \K, \textbf{v} \in V \ldotp (ab)\textbf{v} = a(b\textbf{v})$ \\
+
+\noindent
+$*$ ammette elemento neutro (\textbf{unitarietà}) \\
+
+\noindent
+Notazione: \\
+\indent
+$\K(V)$ \\
+
+\noindent
+Un campo $\K$ è spazio vettoriale su se stesso con: \\
+\indent
+$* = \cdot$ \\
+\indent
+$\oplus = +$\\\\
+
+\noindent
+Curiosità: \\
+Le ultime quattro proprietà dicono che il prodotto per scalare definisce un omomorfismo tra l'anello del campo $\K$ ($(\K, +)$) e l'anello degli endomorfismi del gruppo $(V, \oplus)$.
+
+
+\subsection{Interpretazione Geometrica}
+
+Gli elementi di V sono vettori geometrici, cioè freccie orientate. \\
+La somma di vettori è definita con la regola del parallelogramma. \\
+Ogni vettore ammette inverso. \\
+Il prodotto per scalare è un vettore con la stessa direzione di quello originale ma con lunghezza moltiplicata per lo scalare e verso in base al segno. \\
+
+
+
+
+\chapter{Matrici}
 
 
 
 \section {Matrici}
 
-Matrice $m \times n$ a coefficienti in $\K$: $Mat_{m,n}(\K) = \K^{m,n}$ \\
+Matrice $m \times n$ (righe $\times$ colonne) a coefficienti in $\K$: \\
+$Mat_{m,n}(\K) = \K^{m,n} = \K_{m,n}$ \\
 
 \noindent
 Elementi $a_{i, j}$ \\
@@ -339,10 +505,11 @@ $\backslash$ = diagonale principale \\
 $/$ = diagonale secondaria \\
 
 
-\subsection{Matrici quadrate particolari}
+
+\section{Matrici quadrate particolari}
 
 
-\subsubsection{Triangolare superiore}
+\subsection{Triangolare superiore}
 
 $a_{i,j} = 0$ $\forall i > j$ \\
 
@@ -354,7 +521,7 @@ a & b & c \\
 \end{pmatrix}$
 
 
-\subsubsection{Triangolare inferiore}
+\subsection{Triangolare inferiore}
 
 $a_{i,j} = 0$ $\forall j > i$ \\
 
@@ -366,7 +533,7 @@ d & e & f
 \end{pmatrix}$
 
 
-\subsubsection{Diagonale}
+\subsection{Diagonale}
 
 $a_{i,j} = 0$ $\forall i > j$ \\
 
@@ -378,7 +545,7 @@ a & 0 & 0 \\
 \end{pmatrix}$
 
 
-\subsubsection{Scalare (Diagonale)}
+\subsection{Scalare (Diagonale)}
 
 con $a_{i,i} = k \in \K$ \\
 
@@ -390,7 +557,7 @@ a & 0 & 0 \\
 \end{pmatrix}$
 
 
-\subsubsection{Identica (o Identità) di ordine $n$ (Scalare con $k = 1$)}
+\subsection{Identica (o Identità) di ordine $n$ (Scalare con $k = 1$)}
 
 $a_{i,i} = 1$ \\
 
@@ -405,7 +572,7 @@ $I_3 = \begin{pmatrix}
 \end{pmatrix}$
 
 
-\subsubsection{Nulla $\underline{0}$}
+\subsection{Nulla $\underline{0}$}
 
 $a_{i,j} = 0$ $\forall i, j$ \\
 
@@ -416,7 +583,8 @@ $\begin{pmatrix}
 \end{pmatrix}$
 
 
-\subsection{Matrice Trasposta}
+
+\section{Matrice Trasposta}
 
 $A \in Mat_{m,n}(\K)$ \\
 
@@ -435,7 +603,8 @@ $A = (A^T)^T$ \\
 $A = A^T \implies A$ è simmetrica, $A$ è quadrata
 
 
-\subsection{Somma tra matrici}
+
+\section{Somma tra matrici}
 
 Somma elemento per elemento (per matrici di dimensioni uguali) \\
 
@@ -443,18 +612,22 @@ Somma elemento per elemento (per matrici di dimensioni uguali) \\
 $(Mat_{m,n}(\K), +)$ è un gruppo abeliano.
 
 
-\subsection{Prodotto per scalare}
+
+\section{Prodotto per scalare}
 
 
-\subsubsection{Proprietà}
+
+\subsection{Proprietà}
 
 Distributivo rispetto all'addizione
 
 
-\subsection{Prodotto righe per colonne}
+
+\section{Prodotto righe per colonne}
 
 
-\subsubsection{Proprietà}
+
+\subsection{Proprietà}
 
 Non commutativo \\
 Associativo \\
@@ -464,10 +637,28 @@ Distributivo rispetto alla somma \\
 $A \cdot B = \underline{0} \centernot\implies A = \underline{0} \lor B = \underline{0}$ \\
 
 \noindent
-$(A \cdot B)^T = B^T \cdot A^T$
+$(A \cdot B)^T = B^T \cdot A^T$ \\
+
+\noindent
+Se: \\
+
+$A \cdot X = B$ \\
+
+\noindent
+dato che la divisione tra matrici non è definita, \textbf{non si scrive:} \\
+
+$X = B / A$ \\
+\indent
+$X = \frac{B}{A}$ \\
+
+\noindent
+ma: \\
+
+$X = A^{-1} \cdot B$
 
 
-\subsection{Calcolo del determinante}
+
+\section{Calcolo del determinante}
 
 Solo per matrici quadrate. \\
 
@@ -478,12 +669,13 @@ $\left | A \right |$ \\
 $det(A)$
 
 
-\subsubsection{$2 \times 2$}
+
+\subsection{$2 \times 2$}
 
 Differenza prodotto diagonali
 
 
-\subsubsection{$3 \times 3$ (Sarrus)}
+\subsection{$3 \times 3$ (Sarrus)}
 
 Differenza (somme prodotti diagonali e prodotti sovradiagonali). \\
 
@@ -491,12 +683,12 @@ Differenza (somme prodotti diagonali e prodotti sovradiagonali). \\
 Se $A$ è triangolare superiore il determinante è il prodotto della diagonale
 
 
-\subsubsection{Regola di Laplace}
+\subsection{Regola di Laplace}
 
 $A \in Mat_n(\K),$ $n \geq 2$ \\
 
 \noindent
-$\left | A \right | = \sum_{j=1}^{n} (-1)^{i+j} a_{i,j} \cdot \left | A_{i,j} \right |$ \\
+$\left | A \right | = \sum\limits_{j=1}^{n} (-1)^{i+j} a_{i,j} \cdot \left | A_{i,j} \right |$ \\
 
 \noindent
 Dove $A_{i,j}$ è la matrice ottenuta da $A$ togliendo ad $A$ la $i$-esima riga e la $j$-esima colonna. \\
@@ -513,7 +705,7 @@ Osservazione: \\
 Si può applicare Laplace per righe / colonne qualsiasi, ma per snellire i conti conviene scegliere righe / colonne con il maggior n° di $0$.
 
 
-\subsubsection{Proprietà dei Determinanti}
+\subsection{Proprietà dei Determinanti}
 
 $\left | I_n \right | = 1$ \\
 
@@ -544,7 +736,7 @@ il determinante cambia di segno. \\
 Se una riga / colonna è combinazione lineare di altre righe / colonne, allora $\left | A \right | = 0$ e viceversa.
 
 
-\subsubsection{Definizione di Combinazione Lineare}
+\subsection{Definizione di Combinazione Lineare}
 
 Quando una riga / colonna si può scrivere utilizzando le altre righe / colonne combinate solo con operazioni di somma / prodotto e/o prodotto per scalare. \\
 
@@ -556,11 +748,13 @@ Se una riga / colonna è multipla di un'altra riga / colonna allora è una sua c
 Sommando a una riga / colonna una combinazione lineare delle altre righe / colonne il determinante non cambia. \\
 
 
-\subsection{Definizione di Matrice Singolare}
+
+\section{Definizione di Matrice Singolare}
 Una matrice quadrata si dice non singolare se il suo deteminante è $\neq 0$. Altrimenti si dice singolare.
 
 
-\subsection{Definizione di Matrice Inversa}
+
+\section{Definizione di Matrice Inversa}
 
 Si dice inversa di $A$, se $\exists$, la matrice $A^{-1}$ tale che: \\
 
@@ -575,7 +769,7 @@ Sia $A \in Mat_n(\K),$ $\exists A^{-1} \iff \left | A \right | \neq 0$ \\
 Cioè $A$ ammette inversa se e solo se $A$ è non singolare.
 
 
-\subsubsection{Calcolo della Matrice Inversa (Metodo del Complemento Algebrico)}
+\subsection{Calcolo della Matrice Inversa (Metodo del Complemento Algebrico)}
 
 Data $A = (a_{i,j}) \in Mat_n(\K)$ si dice aggiunta di $A$ la matrice $A_a \in Mat_n(\K)$ ottenuta sostituendo in $A$ ogni elemento col suo complemento algebrico ($c$). \\
 
@@ -586,14 +780,17 @@ $c_{i,j} = (-1)^{i+j} \left | A_{i,j} \right |$ \\
 $\left | A \right | \neq 0 \implies A^{-1} = \frac{1}{\left | A \right |} \cdot A_a^T$
 
 
-\subsection{Rango}
+
+\section{Rango (Rank)}
 
 
-\subsubsection{Definizione di Minore di Ordine $p$}
+
+\subsection{Definizione di Minore di Ordine $p$}
 
 Data una matrice $A \in Mat_{m,n}(\K)$ si dice minore di ordine $p$ una matrice quadrata di ordine $p$ ottenuta da $A$ sopprimendo $n-p$ colonne e $m-p$ righe.
 
-\subsubsection{Definizione di Rango}
+
+\subsection{Definizione di Rango}
 
 Data una matrice $A \in Mat_{m,n}(\K)$ dire che il rango di $A$ è $p$: \\
 
@@ -621,12 +818,13 @@ $A$ ha rango massimo $= A \in Mat_n(\K),$ $r(A) = n$ \\
 $1 \leq rg(A) \leq min(m,n),$ $A \in Mat_{m,n}(\K),$ $A \neq \underline{0}$
 
 
-\subsubsection{Teorema degli Orlati (Teorema di Kronecker)}
+\subsection{Teorema degli Orlati (Teorema di Kronecker)}
 
 $A \in Mat_{m,n}(\K)$.\\
 Il rango di $A$ è $p \iff \exists$ in $A$ un minore di ordine $p$ ($M_p$) non singolare $\land$ ogni minore di ordine $p + 1$ che contiene completamente $M_p$ è singolare.
 
-\subsubsection{Definizione di Contiene Completamente}
+
+\subsection{Definizione di Contiene Completamente}
 Che ha al suo interno.
 
 \end{document}
@@ -645,6 +843,9 @@ Che ha al suo interno.
 % - https://it.wikipedia.org/wiki/Funzione_iniettiva
 % - https://it.wikipedia.org/wiki/Funzione_suriettiva
 % - https://it.wikipedia.org/wiki/Corrispondenza_biunivoca
+% - https://it.wikipedia.org/wiki/Dualit%C3%A0_(matematica)
+% - https://en.wikipedia.org/wiki/Duality_(mathematics)
+% - https://en.wikipedia.org/wiki/Dual_(category_theory)
 % - https://en.wikipedia.org/wiki/Restriction_(mathematics)
 % - https://en.wikipedia.org/wiki/Magma_(algebra)
 % - https://it.wikipedia.org/wiki/Inverso_destro_e_sinistro
@@ -652,3 +853,11 @@ Che ha al suo interno.
 % - https://en.wikipedia.org/wiki/Monoid
 % - https://en.wikipedia.org/wiki/Group_(mathematics)
 % - https://en.wikipedia.org/wiki/Abelian_group
+% - https://it.wikipedia.org/wiki/Gruppo_simmetrico
+% - https://en.wikipedia.org/wiki/Symmetric_group
+% - https://it.wikipedia.org/wiki/Anello_(algebra)
+% - https://en.wikipedia.org/wiki/Rng_(algebra)
+% - https://en.wikipedia.org/wiki/Ring_(mathematics)
+% - https://it.wikipedia.org/wiki/Campo_(matematica)
+% - https://it.wikipedia.org/wiki/Spazio_vettoriale
+% - https://en.wikipedia.org/wiki/Vector_space
