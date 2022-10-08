@@ -54,7 +54,7 @@ $\N =$ Numeri Naturali $= \braces{0, 1, 2, 3, ...}$ \\
 $\Z =$ Numeri Interi \\
 $\Q =$ Numeri Razionali \\
 $\R =$ Numeri Reali \\
-$\C =$ Numeri Complessi \\
+$\C =$ Numeri Complessi $\cong \R \times \R = \R^2$ \\
 $\N_0 = \N \setminus \braces{0}$ \\
 $\Q^x = \Q^* = \Q \setminus \braces{0}$ \\
 $\R^x = \R^* = \R \setminus \braces{0}$ \\
@@ -79,7 +79,21 @@ Diciture per numeri di elementi: \\
 
 \noindent
 $(a, b) := \braces{\braces{a}, \braces{a, b}}$ \\
-$(a, a) = \braces{\braces{a}, \braces{a, a}} = \braces{\braces{a}, \braces{a}} = \braces{\braces{a}}$
+$(a, a) = \braces{\braces{a}, \braces{a, a}} = \braces{\braces{a}, \braces{a}} = \braces{\braces{a}}$ \\
+
+\noindent
+Alternativamente: \\
+\indent
+Sequenza di $k$ elementi di A: $A^k = A \times (A \times (... \times A))$ \\
+\indent
+$k$ volte \\
+
+\noindent
+Alternativamente: \\
+\indent
+$I_n = {i \in \N : 0 < i \leq n}$ \\
+\indent
+Sequenza di $n$ elementi di $A = a : I_n \rightarrow A$ (funzione di accesso)
 
 
 
@@ -342,7 +356,7 @@ $(A, *)$ (magma) è detto \textbf{monoide} se $*$ è associativa (semigruppo) e 
 
 \section{Definizione di Gruppo (Group)}
 
-$(A, *)$ è detto \textbf{gruppo} se è un monoide $\land$ ogni elemento di $A$ ammette inverso (necessariamente unico, destro e sinistro, solitamente indicato con $a^{-1}$).
+$(A, *)$ è detto \textbf{gruppo} se è un monoide e ogni elemento di $A$ ammette inverso (necessariamente unico, destro e sinistro, solitamente indicato con $a^{-1}$).
 
 
 \subsection{Sottogruppo}
@@ -409,9 +423,15 @@ Se $\tilde{\cdot}$ è commutativa l'anello si dice commutativo.
 
 
 
+\section{Definizione di Corpo (Division Ring)}
+
+$(A, \tilde{+}, \tilde{\cdot})$ è un anello e $(A^*, \tilde{\cdot})$ è un gruppo, dove $A^* := A \setminus \braces{0}$. \\
+
+
+
 \section{Definizione di Campo (Field)}
 
-Un campo $(\K, +, \cdot)$ è un anello commutativo unitario in cui $(\K^*, \cdot)$ è un gruppo abelliano, dove $\K^* := \K \setminus \braces{0}$. \\
+Un campo (o corpo commutativo) $(\K, +, \cdot)$ è un anello commutativo unitario in cui $(\K^*, \cdot)$ è un gruppo abelliano, dove $\K^* := \K \setminus \braces{0}$. \\
 
 \noindent
 Alternativamente: \\
@@ -449,10 +469,10 @@ $*$ è distributiva rispetto a $+ : \K \times \K \rightarrow \K$ (distributivit�
 \noindent
 $*$ è \textbf{pseudo-associativa}: \\
 \indent
-$\forall a, b \in \K, \textbf{v} \in V \ldotp (ab)\textbf{v} = a(b\textbf{v})$ \\
+$\forall a, b \in \K, \textbf{v} \in V \ldotp (a \cdot b) * \textbf{v} = a * (b * \textbf{v})$ \\
 
 \noindent
-$*$ ammette elemento neutro (\textbf{unitarietà}) \\
+$*$ ammette elemento neutro sinistro $\in \K$ (\textbf{unitarietà}) \\
 
 \noindent
 Notazione: \\
@@ -468,7 +488,7 @@ $\oplus = +$\\\\
 
 \noindent
 Curiosità: \\
-Le ultime quattro proprietà dicono che il prodotto per scalare definisce un omomorfismo tra l'anello del campo $\K$ ($(\K, +)$) e l'anello degli endomorfismi del gruppo $(V, \oplus)$.
+Le ultime quattro proprietà dicono che il prodotto per scalare definisce un omomorfismo tra l'anello del campo $\K$ ($(\K, +, \cdot)$) e l'anello degli endomorfismi del gruppo $(V, \oplus)$.
 
 
 \subsection{Interpretazione Geometrica}
