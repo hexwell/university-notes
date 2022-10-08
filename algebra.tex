@@ -6,6 +6,8 @@
 \usepackage{amssymb}   % for nexists
 
 \newcommand{\braces}[1] {\left\{#1\right\}}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -237,7 +239,12 @@ O ancora: \\
 $f_X : X \rightarrow B = f \circ i$ \\
 
 \noindent
-Dove $i : X \rightarrow A$ è l'inclusione di $X$ in $A$ data da $i(a) = a$.
+Dove $i : X \rightarrow A$ è l'inclusione di $X$ in $A$ data da $i(a) = a$. \\
+
+\noindent
+Una notazione equivalente è: \\
+
+$f|_X = f_X$
 
 
 
@@ -252,7 +259,12 @@ $f^Y : A \rightarrow Y = \braces{(a, y) \in A \times Y : y = f(a)}$ \\
 
 \noindent
 Osservazione: \\
-Il codominio viene ristretto.\\
+Il codominio viene ristretto. \\
+
+\noindent
+Una notazione equivalente è: \\
+
+$f|^Y = f^Y$ \\
 
 \noindent
 In generale prima si restringe e poi si tronca una funzione.
@@ -304,12 +316,12 @@ $f : \N \rightarrow A$
 
 \section{Definizione di Operazione Binaria}
 
-Sia $U$ un insieme. Si dice \textbf{operazione binaria} una funzione $o : U \times U \rightarrow U$.
+Sia $U$ un insieme. Si dice \textbf{operazione binaria} (chiusa) ((closed) binary operation) una funzione $o : U \times U \rightarrow U$.
 
 
 \section{Definizione di Struttura Algebrica}
 
-Una \textbf{struttura algebrica} è una collezione, in particolare una ennupla, data da un insieme ed una o più operazioni su di esso: \\
+Una \textbf{struttura algebrica} (algebraic structure) è una collezione, in particolare una ennupla, data da un insieme ed una o più operazioni su di esso: \\
 
 $(U, o)$
 
@@ -351,17 +363,20 @@ Si dice che $*$ è commutativa se $\forall a,b \in A \ldotp a * b = b * a$.
 
 \section{Definizione di Monoide (Monoid)}
 
-$(A, *)$ (magma) è detto \textbf{monoide} se $*$ è associativa (semigruppo) e ammette elemento neutro.
+$(A, *)$ (magma) è detto \textbf{monoide} (struttura algebrica) se $*$ è associativa (semigruppo, semigroup) e ammette elemento neutro.
 
 
 \section{Definizione di Gruppo (Group)}
 
-$(A, *)$ è detto \textbf{gruppo} se è un monoide e ogni elemento di $A$ ammette inverso (necessariamente unico, destro e sinistro, solitamente indicato con $a^{-1}$).
+$(A, *)$ è detto \textbf{gruppo} (struttura algebrica) se è un monoide e ogni elemento di $A$ ammette inverso (necessariamente unico, destro e sinistro, solitamente indicato con $a^{-1}$).
 
 
 \subsection{Sottogruppo}
 
-Un sottoinsieme di un gruppo è un sottogruppo se è a sua volta un gruppo con la stessa operazione
+Un sottoinsieme di un gruppo è un sottogruppo se è a sua volta un gruppo con la stessa operazione. \\
+
+\noindent
+In generale un sottoinsieme di un insieme con una struttura algebrica è sua sottostruttura se anch'esso ha la stessa struttura algebrica.
 
 
 \subsection{Esempi notevoli}
@@ -374,7 +389,7 @@ Esiste anche un suo sottogruppo, $SL_n(\K)$, detto gruppo lineare speciale (spec
 
 \section{Definizione di Gruppo Abeliano (Abelian Group)}
 
-$(A, *)$ è detto \textbf{gruppo abeliano} o commutativo se oltre ad essere un gruppo, $*$ è commutativa.
+$(A, *)$ è detto \textbf{gruppo abeliano} (struttura algebrica) o commutativo se oltre ad essere un gruppo, $*$ è commutativa.
 
 
 \section{Definizione di Sottrazione}
@@ -386,19 +401,19 @@ $a - b = a + (-b)$
 
 \section{Definizione di Gruppo Simmetrico}
 
-$S(\Omega) = \braces{f : \Omega \rightarrow \Omega \text{ $|$ } \text{f è biiettiva}}$ è chiamato gruppo simmetrico (Symmetric Group) dell'insieme $\Omega$. \\
+$S(\Omega) = \braces{f : \Omega \rightarrow \Omega \text{ $|$ } \text{f è biiettiva}}$ è chiamato gruppo simmetrico (Symmetric Group) (struttura algebrica) dell'insieme $\Omega$. \\
 
 \noindent
 È un gruppo rispetto alla composizione di funzioni. \\
 Contiene tutte le possibili permutazioni degli elementi di $\Omega$. \\
-Tutti i gruppi simmetrici di insiemi aventi la stessa cardinalità sono isomorfi. \\
+Tutti i gruppi simmetrici di insiemi aventi la stessa cardinalità sono isomorfi (isomorph). \\
 L'elemento neutro è la funzione $id$.
 
 
 \subsection{Gruppi Simmetrici Finiti (Finite Symmetric Group)}
 
 Se $\Omega$ è finito, il suo gruppo simmetrico si denota con $S_n$. \\
-In genere in questi casi si preferisce considerare il gruppo delle permutazioni degli interi $1..n$ dato che è isomorfo.
+In genere in questi casi si preferisce considerare il gruppo delle permutazioni degli interi $1...n$ dato che è isomorfo.
 
 
 \section{Definizione di Anello Unitario (o con Unità) (Ring)}
@@ -443,7 +458,7 @@ $(\K^*, \cdot)$ è un gruppo abelliano con elemento neutro 1 \\
 $\cdot$ è distributiva rispetto a $+$.
 
 
-% TODO Dimostrazione della legge di annullamento del prodotto
+% TODO Dimostrazione della legge di annullamento del prodotto in un campo
 
 
 
@@ -472,23 +487,29 @@ $*$ è \textbf{pseudo-associativa}: \\
 $\forall a, b \in \K, \textbf{v} \in V \ldotp (a \cdot b) * \textbf{v} = a * (b * \textbf{v})$ \\
 
 \noindent
-$*$ ammette elemento neutro sinistro $\in \K$ (\textbf{unitarietà}) \\
+$*$ ammette elemento neutro sinistro $\in \K$ (\textbf{unitarietà}) \\\\
+
+\noindent
+Curiosità: \\
+Le ultime quattro proprietà (dette assiomi degli spazi vettoriali) dicono che il prodotto per scalare definisce un omomorfismo (trasformazione che preserva la struttura algebrica) (homomorphism, structure preserving map) tra l'anello del campo $\K$ ($(\K, +, \cdot)$) e l'anello degli endomorfismi (endomorphism ring) (morfismi da un oggetto a se stesso) del gruppo $(V, \oplus)$. \\\\
 
 \noindent
 Notazione: \\
 \indent
-$\K(V)$ \\
+$V(\K)$ \\
 
 \noindent
 Un campo $\K$ è spazio vettoriale su se stesso con: \\
 \indent
 $* = \cdot$ \\
 \indent
-$\oplus = +$\\\\
+$\oplus = +$\\
 
 \noindent
-Curiosità: \\
-Le ultime quattro proprietà dicono che il prodotto per scalare definisce un omomorfismo tra l'anello del campo $\K$ ($(\K, +, \cdot)$) e l'anello degli endomorfismi del gruppo $(V, \oplus)$.
+$\K^n$ è dotato di struttura di spazio vettoriale su $\K$ rispetto a $\oplus$ e $*$ definiti componente per componente. $(\K^n, \oplus)$ è gruppo abelliano. \\
+
+\noindent
+Tutti gli spazi vettoriali di dimensione uguale sono isomorfi.
 
 
 \subsection{Interpretazione Geometrica}
@@ -498,6 +519,51 @@ La somma di vettori è definita con la regola del parallelogramma. \\
 Ogni vettore ammette inverso. \\
 Il prodotto per scalare è un vettore con la stessa direzione di quello originale ma con lunghezza moltiplicata per lo scalare e verso in base al segno. \\
 
+
+% TODO: Dimostrazione della legge di annullamento del prodotto per scalare in uno spazio vettoriale
+
+
+
+\section{Definizione di Combinazione Lineare}
+
+$V(\K)$ spazio vettoriale, $\overbar{v_1} ... \overbar{v_n} \in V$ \\
+
+\noindent
+Si dice cominazione lineare dei vettori $\overbar{v_1} ... \overbar{v_n}$ mediante gli scalari $\alpha_1 ... \alpha_n$ il vettore: \\
+
+$\overbar{v} = \alpha_1 \overbar{v_1} + \alpha_2 \overbar{v_2} + ... + \alpha_n \overbar{v_n}$
+
+
+
+\section{Definizione di Sottospazio Vettoriale}
+
+$S \subseteq V$ è sottospazio vettoriale di $V(\K)$ se: \\
+
+\noindent
+$S$ è dotato dell'operazione si somma di $(V, +)$ ristretta ad $S \times S$ e troncata ad $S$ ($Im(+_{S \times S}) \subseteq S$)\\
+
+\noindent
+$S$ è dotato dell'operazione di prodotto per scalare di $V(\K)$ ristretto a $\K \times S$ e troncato ad $S$ ($Im(*_{\K \times S}) \subseteq S$) \\
+
+\noindent
+$(S, +|_{S \times S}^S, *|_{\K \times S}^S)$ è uno spazio vettoriale su $\K$ \\\\
+
+\noindent
+Se $S \subseteq V$ gli assiomi degli spazi vettoriali sono già verificati (devono valere per tutti gli elementi in V). \\
+Dunque ciò a cui va fatta attenzione sono le proprietà di chiusura della somma di vettori e del prodotto per scalare.
+
+
+\subsection{Teorema}
+
+\noindent
+$S$ è sottospazio vettoriale di $V(\K) \iff S$ è chiuso rispetto alle combinazioni lineari \\
+
+\noindent
+Ovvero:
+
+$\forall \alpha, \beta \in \K, \overbar{v}, \overbar{w} \in S \ldotp \alpha \overbar{v} + \beta \overbar{w} \in S$
+
+% TODO Dimostrazione
 
 
 
@@ -881,3 +947,6 @@ Che ha al suo interno.
 % - https://it.wikipedia.org/wiki/Campo_(matematica)
 % - https://it.wikipedia.org/wiki/Spazio_vettoriale
 % - https://en.wikipedia.org/wiki/Vector_space
+% - https://en.wikipedia.org/wiki/Isomorphism
+% - https://en.wikipedia.org/wiki/Homomorphism
+% - https://en.wikipedia.org/wiki/Endomorphism
