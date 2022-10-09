@@ -6,8 +6,9 @@
 \usepackage{amssymb}   % for emptyset
 \usepackage{accents}   % for circle above characters (mathring)
 
-\newcommand{\braces}[1] {\left\{#1\right\}}
-\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\braces}[1] {\left \{ #1 \right \}}
+\newcommand{\abs}[1] {\left | #1 \right |}
+\newcommand{\overbar}[1] {\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -207,18 +208,19 @@ Siccome devono valere entrambe, $a = a'$. Q.E.D.
 
 \section{Definizione di Maggioranti e Minoranti}
 
+\noindent
 $\E \subseteq \R, \E \neq \emptyset$ \\
 
-$a \in \R$ è un maggiorante di $\E$ se $\forall x \in \E \ldotp a \leq x$ \\
+$a \in \R$ è un \textbf{maggiorante} di $\E$ se $\forall x \in \E \ldotp a \leq x$ \\
 
-$b \in \R$ è un maggiorante di $\E$ se $\forall x \in \E \ldotp x \leq b$ \\
+$b \in \R$ è un \textbf{maggiorante} di $\E$ se $\forall x \in \E \ldotp x \leq b$ \\
 
 \noindent
 \textbf{Non sono unici!} \\
 
 \noindent
-$M(\E)$ = Insieme dei maggioranti di $\E$\\
-$m(\E)$ = Insieme dei minoranti di $\E$
+$M(\E)$ = \textbf{Insieme dei maggioranti} di $\E$\\
+$m(\E)$ = \textbf{Insieme dei minoranti} di $\E$
 
 
 
@@ -227,10 +229,11 @@ $m(\E)$ = Insieme dei minoranti di $\E$
 \noindent
 $E \subseteq \R, \E \neq \emptyset$ \\
 
-\noindent
-$M(\E) \neq \emptyset \implies \E$ è superiormente limitato \\
-$m(\E) \neq \emptyset \implies \E$ è inferiormente limitato \\
-$M(\E) \neq \emptyset \land m(\E) \neq \emptyset \implies \E$ è limitato
+$M(\E) \neq \emptyset \implies \E$ è \textbf{superiormente limitato} \\
+\indent
+$m(\E) \neq \emptyset \implies \E$ è \textbf{inferiormente limitato} \\
+\indent
+$M(\E) \neq \emptyset \land m(\E) \neq \emptyset \implies \E$ è \textbf{limitato}
 
 
 
@@ -287,7 +290,11 @@ $sup$ $\E$ e $inf$ $\E$ sono unici.
 \section{Caratterizzazione di sup e inf}
 
 \noindent
-$\E \subseteq \R,$ $\E \neq \emptyset,$ $\E$ superiormente limitato
+$\E \subseteq \R,$ $\E \neq \emptyset,$ $\E$ superiormente limitato \\
+
+\noindent
+N.d.r. \\
+Tutti gli $\varepsilon$ nelle dimostrazioni sono da considerarsi $\in \R$.
 
 
 \subsection{Caratterizzazione di sup}
@@ -654,14 +661,14 @@ $A = \overbar{A} \implies A$ è chiuso
 \noindent
 $A \subseteq \R,$ $x_0 \in \R$ punto di accumulazione di $A,$ $f: A \rightarrow \R$ \\
 
-$f$ converge a $L \in \R$ per $x$ che tende ad $x_0$ e scriviamo: \\
+$f$ converge a $L \in \R$ per $x$ che tende ad $x_0$ scritto: \\
 
-$\lim_{x \to x_0} f(x) = L$ \\
+$\lim\limits_{x \to x_0} f(x) = L$ \\
 
 \noindent
 se: \\
 
-$\forall \varepsilon > 0 \ldotp \exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0} \ldotp \left | f(x) - L \right | < \varepsilon$ \\
+$\forall \varepsilon > 0 \ldotp \exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0} \ldotp \abs{f(x) - L} < \varepsilon$ \\
 
 \noindent
 Osservazioni: \\
@@ -676,7 +683,7 @@ $x_0$ deve essere un p.a. di $A$ perché x deve potersi avvicinare a $x_0$ indef
 \noindent
 Estensione della definizione di: \\
 
-$\lim_{x \to x_0} f(x) = L$ \\
+$\lim\limits_{x \to x_0} f(x) = L$ \\
 
 \noindent
 nei casi in cui $x_0 \in \braces{+\infty, -\infty}$ e/o $L \in \braces{+\infty, -\infty}$ \\
@@ -695,7 +702,7 @@ $f : A \rightarrow \R,$ $x_0$ p.a. di $A$
 \subsubsection{$L = +\infty$}
 
 \noindent
-Scriviamo $\lim_(x \to x_0) = +\infty$ se: \\
+Si scrive $\lim\limits_{x \to x_0} = +\infty$ se: \\
 
 \noindent
 $\forall M \in \R \ldotp \exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp f(x) > M$ \\
@@ -707,7 +714,7 @@ $f$ diverge positivamente per $x \to x_0$
 \subsubsection{$L = -\infty$}
 
 \noindent
-Scriviamo $\lim_(x \to x_0) = -\infty$ se: \\
+Si scrive $\lim\limits_{x \to x_0} = -\infty$ se: \\
 
 \noindent
 $\forall M \in \R \ldotp \exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp f(x) < M$ \\
@@ -722,22 +729,22 @@ $f$ diverge negativamente per $x \to x_0$
 \subsubsection{$f: [R, +\infty) \rightarrow \R,$ $R \in \R$}
 
 \noindent
-Scriviamo $\lim_{x \to x_0} = L$ se: \\
+Si scrive $\lim\limits_{x \to x_0} = L$ se: \\
 
 \noindent
-$\forall \varepsilon > 0 \ldotp \exists a > R : \forall x \in (a, +\infty) \ldotp \left | f(x) - L \right | < \varepsilon$
+$\forall \varepsilon > 0 \ldotp \exists a > R : \forall x \in (a, +\infty) \ldotp \abs{f(x) - L} < \varepsilon$
 
 
 \subsubsection{$f: (-\infty, R] \rightarrow \R,$ $R \in \R$}
 
 \noindent
-Scriviamo $\lim_{x \to x_0} = L$ se: \\
+Si scrive $\lim\limits_{x \to x_0} = L$ se: \\
 
 \noindent
-$\forall \varepsilon > 0 \ldotp \exists a < R : \forall x \in (-\infty, a) \ldotp \left | f(x) - L \right | < \varepsilon$ \\
+$\forall \varepsilon > 0 \ldotp \exists a < R : \forall x \in (-\infty, a) \ldotp \abs{f(x) - L} < \varepsilon$ \\
 
 \noindent
-$\left | f(x) - L \right | < \varepsilon \iff f(x) \in (L - \varepsilon, L + \varepsilon) = I_\varepsilon(L)$
+$\abs{f(x) - L} < \varepsilon \iff f(x) \in (L - \varepsilon, L + \varepsilon) = I_\varepsilon(L)$
 
 
 \subsection{$x_0 \in \braces{+\infty, -\infty},$ $L \in \braces{+\infty, -\infty}$}
@@ -746,7 +753,7 @@ $\left | f(x) - L \right | < \varepsilon \iff f(x) \in (L - \varepsilon, L + \va
 \subsubsection{$x_0 = +\infty,$ $L = +\infty,$ $f : [R, +\infty) \rightarrow \R,$ $R \in \R$}
 
 \noindent
-Scriviamo $\lim_{x \to x_0} f(x) = +\infty$ se: \\
+Si scrive $\lim\limits_{x \to x_0} f(x) = +\infty$ se: \\
 
 \noindent
 $\forall M \in \R \ldotp \exists a > R : \forall x \in (a, +\infty) \ldotp f(x) > M$
@@ -755,7 +762,7 @@ $\forall M \in \R \ldotp \exists a > R : \forall x \in (a, +\infty) \ldotp f(x) 
 \subsubsection{$x_0 = +\infty,$ $L = -\infty,$ $f : [R, +\infty) \rightarrow \R,$ $R \in \R$}
 
 \noindent
-Scriviamo $\lim_{x \to x_0} f(x) = -\infty$ se: \\
+Si scrive $\lim\limits_{x \to x_0} f(x) = -\infty$ se: \\
 
 \noindent
 $\forall M \in \R \ldotp \exists a > R : \forall x \in (a, +\infty) \ldotp f(x) < M$
@@ -764,7 +771,7 @@ $\forall M \in \R \ldotp \exists a > R : \forall x \in (a, +\infty) \ldotp f(x) 
 \subsubsection{$x_0 = -\infty,$ $L = +\infty,$ $f : (-\infty, R] \rightarrow \R,$ $R \in \R$}
 
 \noindent
-Scriviamo $\lim_{x \to x_0} f(x) = +\infty$ se: \\
+Si scrive $\lim\limits_{x \to x_0} f(x) = +\infty$ se: \\
 
 \noindent
 $\forall M \in \R \ldotp \exists a < R : \forall x \in (-\infty, a) \ldotp f(x) > M$
@@ -773,7 +780,7 @@ $\forall M \in \R \ldotp \exists a < R : \forall x \in (-\infty, a) \ldotp f(x) 
 \subsubsection{$x_0 = -\infty,$ $L = -\infty,$ $f : (-\infty, R] \rightarrow \R,$ $R \in \R$}
 
 \noindent
-Scriviamo $\lim_{x \to x_0} f(x) = -\infty$ se: \\
+Si scrive $\lim\limits_{x \to x_0} f(x) = -\infty$ se: \\
 
 \noindent
 $\forall M \in \R \ldotp \exists a < R : \forall x \in (-\infty, a) \ldotp f(x) < M$
@@ -783,10 +790,10 @@ $\forall M \in \R \ldotp \exists a < R : \forall x \in (-\infty, a) \ldotp f(x) 
 \section{Definizione Disuguaglianza Triangolare}
 
 \noindent
-$\forall a,b \in \R \ldotp \left | a + b \right | \leq \left | a \right | + \left | b \right |$ \\
+$\forall a,b \in \R \ldotp \abs{a + b} \leq \abs{a} + \abs{b}$ \\
 
 \noindent
-$\forall x \in \R \ldotp x \leq \left | x \right | \land -x \leq \left | x \right |$
+$\forall x \in \R \ldotp x \leq \abs{x} \land -x \leq \abs{x}$
 
 
 
@@ -796,7 +803,7 @@ $\forall x \in \R \ldotp x \leq \left | x \right | \land -x \leq \left | x \righ
 $f : A \rightarrow \R,$ $x_{0} \in \R$ p.a. di $A$ \\
 
 \noindent
-Supponiamo che esistano due limiti $L \in \R$ e $L' \in \R$ tali che $\lim_{x \to x_0} f(x) = L$ e contemporaneamente $\lim_{x \to x_0} f(x) = L'$. \\
+Supponiamo che esistano due limiti $L \in \R$ e $L' \in \R$ tali che $\lim\limits_{x \to x_0} f(x) = L$ e contemporaneamente $\lim\limits_{x \to x_0} f(x) = L'$. \\
 
 \noindent
 Allora $L = L'$
@@ -812,10 +819,10 @@ Sia $\varepsilon > 0$ arbitrario.
 Supponiamo per assurdo che estano due limiti $L$ ed $L'$, con $L \neq L'$: \\
 
 \noindent
-$\lim_{x \to x_0} f(x) = L \implies \exists \delta_1 > 0 : \forall x \in {I_\delta}_1(x_0) \cap (A \setminus \braces{x_0}) \ldotp \left | f(x) - L \right | < \varepsilon$ \\
+$\lim\limits_{x \to x_0} f(x) = L \implies \exists \delta_1 > 0 : \forall x \in {I_\delta}_1(x_0) \cap (A \setminus \braces{x_0}) \ldotp \abs{f(x) - L} < \varepsilon$ \\
 
 \noindent
-$\lim_{x \to x_0} f(x) = L' \implies \exists \delta_2 > 0 : \forall x \in {I_\delta}_2(x_0) \cap (A \setminus \braces{x_0}) \ldotp \left | f(x) - L' \right | < \varepsilon$ \\\\
+$\lim\limits_{x \to x_0} f(x) = L' \implies \exists \delta_2 > 0 : \forall x \in {I_\delta}_2(x_0) \cap (A \setminus \braces{x_0}) \ldotp \abs{f(x) - L'} < \varepsilon$ \\\\
 
 \noindent
 $I_{min(a, b)}(x_0) \subseteq I_{max(a, b)}(x_0)$ \\
@@ -837,32 +844,32 @@ valgono entrambe le definizioni dei limiti: \\
 
 $\forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp$ \\\\
 \indent
-$\left | f(x) - L \right | < \varepsilon$ \\
+$\abs{f(x) - L} < \varepsilon$ \\
 \indent
-$\left | f(x) - L' \right | < \varepsilon$ \\
+$\abs{f(x) - L'} < \varepsilon$ \\
 
 \noindent
 La differenza assoluta è commutativa, quindi la prima si può riscrivere come: \\
 
 $\forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp$ \\\\
 \indent
-$\left | L - f(x) \right | < \varepsilon$ \\
+$\abs{L - f(x)} < \varepsilon$ \\
 
 \noindent
 e applicando la disuguaglianza triangolare si ottiene: \\
 
 $\forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp$ \\\\
 \indent
-$\left | L - L' \right | = \left | L - f(x) + f(x) - L' \right | \leq \left | L - f(x) \right | + \left | f(x) - L' \right |$ \\
+$\abs{L - L'} = \abs{L - f(x) + f(x) - L'} \leq \abs{L - f(x)} + \abs{f(x) - L'}$ \\
 
 \noindent
 Viste le disuguaglianze: \\
 
 $\forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp$ \\\\
 \indent
-$\left | f(x) - L \right | < \varepsilon$ \\
+$\abs{f(x) - L} < \varepsilon$ \\
 \indent
-$\left | f(x) - L' \right | < \varepsilon$ \\
+$\abs{f(x) - L'} < \varepsilon$ \\
 
 \noindent
 e dato che: \\
@@ -876,14 +883,14 @@ $a < c \land b < c \implies a + b < 2c$ \\
 
 $\forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp$ \\\\
 \indent
-$\left | L - L' \right | \leq \left | L - f(x) \right | + \left | f(x) - L' \right | < 2 \varepsilon$ \\
+$\abs{L - L'} \leq \abs{L - f(x)} + \abs{f(x) - L'} < 2 \varepsilon$ \\
 
 \noindent
 Dunque $\forall \varepsilon > 0$ si ha: \\
 
-$0 \leq \left | L - L' \right | < 2 \varepsilon \implies \left | L - L' \right | = 0$ \\
+$0 \leq \abs{L - L'} < 2 \varepsilon \implies \abs{L - L'} = 0$ \\
 \indent
-$\left | L - L' \right | = 0 \implies L = L'$ \\
+$\abs{L - L'} = 0 \implies L = L'$ \\
 
 C.V.D.
 
@@ -895,23 +902,23 @@ C.V.D.
 $f, g : A \rightarrow \R,$ $x_0 \in \overbar{\R},$ $L, M \in \overbar{\R}$ tali che $x_0$ è un p.a. di $A$ e: \\
 
 \noindent
-$lim_{x \to x_0} f(x) = L$ \\
-$lim_{x \to x_0} g(x) = M$ \\
+$\lim\limits_{x \to x_0} f(x) = L$ \\
+$\lim\limits_{x \to x_0} g(x) = M$ \\
 
 \noindent
 Allora le seguenti identità: \\
-$lim_{x \to x_0} (f(x) + g(x)) = L + M$ \\
-$lim_{x \to x_0} (f(x) g(x)) = L \cdot M$ \\
-$lim_{x \to x_0} (\frac{f(x)}{g(x)}) = \frac{L}{M}$ \\
+$\lim\limits_{x \to x_0} (f(x) + g(x)) = L + M$ \\
+$\lim\limits_{x \to x_0} (f(x) g(x)) = L \cdot M$ \\
+$\lim\limits_{x \to x_0} (\frac{f(x)}{g(x)}) = \frac{L}{M}$ \\
 
 \noindent
 valgono in assenza di forme indeterminate ($\infty - \infty, 0 \cdot (\pm \infty), \frac{\pm \infty}{\pm \infty}$)
 
 
-\subsection{Caso Particolare di $lim_{x \to x_0} (\frac{f(x)}{g(x)}) = \frac{L}{M}$}
+\subsection{Caso Particolare di $\lim\limits_{x \to x_0} (\frac{f(x)}{g(x)}) = \frac{L}{M}$}
 
 \noindent
-Supponiamo $lim_{x \to x_0} f(x) = L \neq 0 \land lim_{x \to x_0} g(x) = 0$ \\
+Supponiamo $\lim\limits_{x \to x_0} f(x) = L \neq 0 \land \lim\limits_{x \to x_0} g(x) = 0$ \\
 
 \noindent
 Allora valgono le seguenti regole: \\
@@ -920,7 +927,7 @@ Allora valgono le seguenti regole: \\
 Se $\exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp g(x) > 0$ allora: \\
 
 \noindent
-$lim_{x \to x_0} (\frac{f(x)}{g(x)}) =$ \\
+$\lim\limits_{x \to x_0} (\frac{f(x)}{g(x)}) =$ \\
 
 \noindent
 $+\infty$ se $L > 0$ \\
@@ -930,7 +937,7 @@ $-\infty$ se $L < 0$ \\
 Se $\exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp g(x) < 0$ allora: \\
 
 \noindent
-$lim_{x \to x_0} (\frac{f(x)}{g(x)}) =$ \\
+$\lim\limits_{x \to x_0} (\frac{f(x)}{g(x)}) =$ \\
 
 \noindent
 $-\infty$ se $L > 0$ \\
@@ -941,7 +948,7 @@ Se la funzione cambia segno in \underline{ogni} intorno di $x_0$, ovvero: \\
 $\forall \delta > 0 \ldotp \exists x_1, x_2 \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) : g(x_1)g(x_2) < 0$ allora: \\
 
 \noindent
-$lim_{x \to x_0} (\frac{f(x)}{g(x)})$ non esiste
+$\lim\limits_{x \to x_0} (\frac{f(x)}{g(x)})$ non esiste
 
 
 
@@ -954,10 +961,43 @@ $A \subseteq \R,$ $x_0 \in \R$ p.a. di $A,$ $f : A \rightarrow \R$ \\
 Suppongo che: \\
 
 \noindent
-$lim_{x \to x_0} f(x) = L \neq 0$ \\
+$\lim\limits_{x \to x_0} f(x) = L \neq 0$ \\
 
 \noindent
 allora $\exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp f(x)$ ha lo stesso segno di $L$.
+
+% TODO Dimostrazione
+
+
+\section{Teorema del confronto}
+
+% TODO + Dimostrazione
+
+
+
+\section{Teorema dei Due Carabinieri}
+
+% TODO + Dimostrazione
+
+
+
+\section{Limiti Unilaterali}
+
+% TODO
+
+
+
+\section{Funzioni Monotone}
+
+% TODO
+
+
+
+\section{Limiti Notevoli}
+
+
+
+\section{Limiti di Funzioni Composte}
 
 \end{document}
 
