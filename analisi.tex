@@ -140,7 +140,7 @@ $\forall A, B, A \subseteq \K, B \subseteq K, A \neq \emptyset, B \neq \emptyset
 $\forall x \in A, \forall y \in B \ldotp x \leq y \implies \exists c \in \K : \forall x \in A, \forall y \in B \ldotp x \leq c \leq y$ \\
 
 \noindent
-Chiamiamo $c$ elemento separatore tra gli insiemi A e B. \\
+$c$ è chiamato elemento separatore tra gli insiemi A e B. \\
 
 \noindent
 Il campo $(\Q, \leq)$ è totalmente ordinato ma non completo.
@@ -272,10 +272,10 @@ $\forall y \in M(\E) \ldotp c \leq y \implies x = min$ $M(\E)$
 \section{Definizione di Estremo Superiore ed Inferiore}
 
 \noindent
-$\E$ è superiormente limitato $\implies sup(\E) = sup \E = min(M(\E))$ \\
+$\E$ è superiormente limitato $\implies sup(\E) = sup$ $\E = min(M(\E))$ \\
 
 \noindent
-$\E$ è inferiormente limitato $\implies inf(\E) = inf \E = max(m(\E))$
+$\E$ è inferiormente limitato $\implies inf(\E) = inf$ $\E = max(m(\E))$
 
 
 \subsection{Proprietà}
@@ -294,7 +294,7 @@ $\E \subseteq \R,$ $\E \neq \emptyset,$ $\E$ superiormente limitato \\
 
 \noindent
 N.d.r. \\
-Tutti gli $\varepsilon$ nelle dimostrazioni sono da considerarsi $\in \R$.
+Tutti gli $\varepsilon$ nelle definizioni e dimostrazioni sono da considerarsi $\in \R$ salvo diversamente specificato.
 
 
 \subsection{Caratterizzazione di sup}
@@ -310,20 +310,20 @@ $\iota = inf$ $\E \iff \forall x \in \E : \iota \leq x$ $\land$ $\forall \vareps
 
 
 
-\section{Definizione di $\overbar \R$}
+\section{Definizione di $\overbar\R$}
 
 \noindent
 Insieme dei numeri reali estesi: \\
-$\overbar \R = \R$ $\cup$ $\braces{-\infty, +\infty}$
+$\overbar\R = \R$ $\cup$ $\braces{-\infty, +\infty}$
 
 
-\subsection {Relazione d'ordine $\leq$ e le operazioni somma e prodotto su $\overbar \R$}
+\subsection {Relazione d'ordine $\leq$ e le operazioni somma e prodotto su $\overbar\R$}
 
 
 \subsubsection{Relazione $\leq$}
 
 \noindent
-$\forall x \in \overbar \R: -\infty \leq x \leq +\infty$ \\
+$\forall x \in \overbar\R: -\infty \leq x \leq +\infty$ \\
 $\forall x \in \R: -\infty < x < +\infty$
 
 
@@ -357,35 +357,35 @@ $0 \cdot (\pm \infty),$ $+ \infty - \infty$
 \section{Intervalli}
 
 \noindent
-$I \subseteq \overbar \R : \forall x, y \in I : x < z < y \implies z \in I$ \\
-$I$ è un detto intervallo. \\
+$I \subseteq \overbar\R : \forall x, y \in I : x < z < y \implies z \in I$ \\
+$I$ è un detto \textbf{intervallo}. \\
 
 \noindent
-$a, b \in \overbar \R, a < b$ \\
+$a, b \in \overbar\R, a < b$ \\
 
 
 \subsection{Intervallo aperto di estremi $a$ e $b$}
 
 \noindent
-$(a, b) = ]a, b[ = \braces{ x \in \overbar \R : a < x < b}$ \\
+$(a, b) = ]a, b[ = \braces{ x \in \overbar\R : a < x < b}$ \\
 
 
 \subsection{Intervallo semi-aperto a destra di estremi $a$ e $b$}
 
 \noindent
-$[a, b) = \braces{ x \in \overbar \R : a \leq x < b}$ \\
+$[a, b) = \braces{ x \in \overbar\R : a \leq x < b}$ \\
 
 
 \subsection{Intervallo semi-aperto a sinistra di estremi $a$ e $b$}
 
 \noindent
-$(a, b] = \braces{ x \in \overbar \R : a < x \leq b}$ \\
+$(a, b] = \braces{ x \in \overbar\R : a < x \leq b}$ \\
 
 
 \subsection{Intervallo chiuso di estremi $a$ e $b$}
 
 \noindent
-$[a, b] = \braces{ x \in \overbar \R : a \leq x \leq b}$ \\
+$[a, b] = \braces{ x \in \overbar\R : a \leq x \leq b}$ \\
 
 
 \subsection{}
@@ -406,7 +406,7 @@ $inf$ $\E = -\infty$
 Una funzione è definita da una terna $(f, A, B)$ dove: \\
 
 \noindent
-$A \subseteq \overbar \R,$ $B \subseteq \overbar \R,$ $A \neq \emptyset,$ $B \neq \emptyset$ \\
+$A \subseteq \overbar\R,$ $B \subseteq \overbar\R,$ $A \neq \emptyset,$ $B \neq \emptyset$ \\
 $f$ è una legge che ad ogni elemento $x \in A$ associa univocamente un elemento $f(x) \in B$. \\
 
 \noindent
@@ -479,7 +479,7 @@ Una funzione si dice \textbf{biiettiva} (o biiezione, o anche corrispondenza 1 a
 \section{Definizione di Invertibilità}
 
 \noindent
-$\forall y \in B$ $\exists! x \in A : y = f(x) \implies f : A \rightarrow B$ è invertibile. \\
+$\forall y \in B$ $\exists! x \in A : y = f(x) \implies f : A \rightarrow B$ è \textbf{invertibile}. \\
 
 \noindent
 $f : A \rightarrow B$ è invertibile $\implies f^{-1} : im(f) \rightarrow dom(f)$ è la funzione inversa di f. \\
@@ -521,7 +521,7 @@ $f|_E : E \rightarrow B$ \\
 $f|_E(x) = f(x)$ $\forall x \in E$ \\
 
 \noindent
-$f|_E$ è chiamata restrizione di $f$ ad $E$. \\
+$f|_E$ è chiamata \textbf{restrizione} di $f$ ad $E$. \\
 
 \noindent
 Una funzione non iniettiva si può rendere iniettiva considerandone opportune restrizioni. % TODO Duplicato? Riga 367
@@ -550,12 +550,12 @@ Il valore del limite di una funzione può andare oltre il dominio della funzione
 \subsection{Definizione di Intorno}
 
 \noindent
-Dato $x_0 \in \R$ e dato $r > 0$, chiamiamo: \\
+Dato $x_0 \in \R$ e dato $r > 0$ \\
 
 $I_r(x_0) = (x_0 - r, x_0 + r)$ \\
 
 \noindent
-L'intorno di centro $x_0$ e raggio $r$. \\
+È chiamato l'\textbf{intorno} di centro $x_0$ e raggio $r$. \\
 
 \noindent
 Nota: \\
@@ -564,11 +564,11 @@ $x_0$ è detto ``x con zero''
 \subsection{Definizione di Intorno di Infinito}
 
 \noindent
-Sia $x_0 \in \braces{-\infty, +\infty}$ e sia $a \in \R$, chiamiamo: \\
+Sia $x_0 \in \braces{-\infty, +\infty}$ e sia $a \in \R$, si chiama: \\
 
-$(a, +\infty)$ intorno di infinito di estremo inferiore a \\
+$(a, +\infty)$ \textbf{intorno di infinito} di estremo inferiore a \\
 \indent
-$(-\infty, a)$ intorno di meno infinito di estremo superiore a
+$(-\infty, a)$ \textbf{intorno di meno infinito} di estremo superiore a
 
 
 \subsection{Definizione di Punto Interno di un Insieme}
@@ -615,7 +615,7 @@ $x_0$ è un punto di accumulazione di $A$ $\lor$ $x_0$ è un punto isolato di $A
 \noindent
 $A \subseteq \R$ \\
 
-$\mathring{A} = \braces{x \in A : x \text{ è un punto interno di } A}$
+$\mathring A = \braces{x \in A : x \text{ è un punto interno di } A}$
 
 
 \subsection{Definizione di Chiusura}
@@ -623,11 +623,11 @@ $\mathring{A} = \braces{x \in A : x \text{ è un punto interno di } A}$
 \noindent
 $A \subseteq \R$ \\
 
-$\overbar{A} = \braces{x \in A : x \text{ aderente ad } A}$ \\
+$\overbar A = \braces{x \in A : x \text{ aderente ad } A}$ \\
 
 \noindent
 N.B. \\
-$\mathring{A} \subseteq A \subseteq \overbar{A}$
+$\mathring A \subseteq A \subseteq \overbar A$
 
 
 \subsection{Definizione di Frontiera}
@@ -635,7 +635,7 @@ $\mathring{A} \subseteq A \subseteq \overbar{A}$
 \noindent
 $A \subseteq \R$ \\
 
-$\partial A = \overbar{A} \setminus \mathring{A} = \braces{x \in \overbar{A} : x \not\in \mathring{A}}$
+$\partial A = \overbar A \setminus \mathring A = \braces{x \in \overbar A : x \not\in \mathring A}$
 
 
 \subsection{Definizione di Insieme Aperto}
@@ -643,12 +643,12 @@ $\partial A = \overbar{A} \setminus \mathring{A} = \braces{x \in \overbar{A} : x
 \noindent
 $A \subseteq \R$ \\
 
-$A = \mathring{A} \implies A$ è aperto (contiene solo punti interni)
+$A = \mathring{A} \implies A$ è \textbf{aperto} (contiene solo punti interni)
 
 
 \subsection{Definizione di Insieme Chiuso}
 
-$A = \overbar{A} \implies A$ è chiuso
+$A = \overbar A \implies A$ è \textbf{chiuso}
 
 
 
@@ -669,6 +669,10 @@ $\lim\limits_{x \to x_0} f(x) = L$ \\
 se: \\
 
 $\forall \varepsilon > 0 \ldotp \exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0} \ldotp \abs{f(x) - L} < \varepsilon$ \\
+
+\noindent
+N.d.r. \\
+Tutti i $\delta$ nelle definizioni e dimostrazioni sono da considerarsi $\in \R$ salvo diversamente specificato. \\
 
 \noindent
 Osservazioni: \\
@@ -803,7 +807,7 @@ $\forall x \in \R \ldotp x \leq \abs{x} \land -x \leq \abs{x}$
 $f : A \rightarrow \R,$ $x_{0} \in \R$ p.a. di $A$ \\
 
 \noindent
-Supponiamo che esistano due limiti $L \in \R$ e $L' \in \R$ tali che $\lim\limits_{x \to x_0} f(x) = L$ e contemporaneamente $\lim\limits_{x \to x_0} f(x) = L'$. \\
+Supponendo che esistano due limiti $L \in \R$ e $L' \in \R$ tali che $\lim\limits_{x \to x_0} f(x) = L$ e contemporaneamente $\lim\limits_{x \to x_0} f(x) = L'$. \\
 
 \noindent
 Allora $L = L'$
@@ -816,7 +820,7 @@ Allora $L = L'$
 Sia $\varepsilon > 0$ arbitrario.
 
 \noindent
-Supponiamo per assurdo che estano due limiti $L$ ed $L'$, con $L \neq L'$: \\
+Supponendo per assurdo che estano due limiti $L$ ed $L'$, con $L \neq L'$: \\
 
 \noindent
 $\lim\limits_{x \to x_0} f(x) = L \implies \exists \delta_1 > 0 : \forall x \in {I_\delta}_1(x_0) \cap (A \setminus \braces{x_0}) \ldotp \abs{f(x) - L} < \varepsilon$ \\
@@ -899,7 +903,7 @@ C.V.D.
 \section{Algebra dei Limiti}
 
 \noindent
-$f, g : A \rightarrow \R,$ $x_0 \in \overbar{\R},$ $L, M \in \overbar{\R}$ tali che $x_0$ è un p.a. di $A$ e: \\
+$f, g : A \rightarrow \R,$ $x_0 \in \overbar\R,$ $L, M \in \overbar\R$ tali che $x_0$ è un p.a. di $A$ e: \\
 
 \noindent
 $\lim\limits_{x \to x_0} f(x) = L$ \\
@@ -918,7 +922,7 @@ valgono in assenza di forme indeterminate ($\infty - \infty, 0 \cdot (\pm \infty
 \subsection{Caso Particolare di $\lim\limits_{x \to x_0} (\frac{f(x)}{g(x)}) = \frac{L}{M}$}
 
 \noindent
-Supponiamo $\lim\limits_{x \to x_0} f(x) = L \neq 0 \land \lim\limits_{x \to x_0} g(x) = 0$ \\
+Supponendo $\lim\limits_{x \to x_0} f(x) = L \neq 0 \land \lim\limits_{x \to x_0} g(x) = 0$ \\
 
 \noindent
 Allora valgono le seguenti regole: \\
@@ -966,45 +970,458 @@ $\lim\limits_{x \to x_0} f(x) = L \neq 0$ \\
 \noindent
 allora $\exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp f(x)$ ha lo stesso segno di $L$.
 
-% TODO Dimostrazione
+
+\subsection{Dimostrazione}
+
+\noindent
+Supponendo che $L > 0$ si pone nella definizione di $\lim\limits_{x \to x_0} = L$ $\varepsilon = \frac{L}{2} > 0$. \\
+
+\noindent
+Quindi $\exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp \abs{f(x) - L} < \frac{L}{2} \iff f(x) \in (\frac{L}{2}, \frac{3L}{2}) \implies f(x) > 0$ \\
+
+\noindent Q.E.D.
 
 
 \section{Teorema del confronto}
 
-% TODO + Dimostrazione
+\noindent
+$f, g : A \rightarrow \R,$ $x_0$ p.a. di $A$. \\
+
+\noindent
+Supponendo che: \\
+
+$\forall x \in A \ldotp f(x) \leq g(x)$ \\
+
+\noindent
+Se i limiti: \\
+
+$\lim\limits_{x \to x_0} f(x) = L$ \\
+\indent
+$\lim\limits_{x \to x_0} g(x) = M$ \\
+
+\noindent
+esistono e sono finiti, allora $L \leq M$
+
+
+\subsection{Dimostrazione}
+
+\noindent
+Supponendo per assurdo che $L > M$ si considera la funzione $f(x) - g(x)$ in $A$ e si osserva che: \\
+
+$\lim\limits_{x \to x_0} (f(x) - g(x)) = L - M > 0$ \\
+
+\noindent
+Quindi per il teorema della permanenza del segno: \\
+
+$\exists \delta > 0 : \forall x \in I_\delta(x_0) \cap (A \setminus \braces{x_0}) \ldotp f(x) - g(x) > 0$ \\
+
+\noindent
+Contraddizione con l'ipotesi! Q.E.D.
+
+
+\subsubsection{Attenzione}
+
+\noindent
+Da $f(x) < g(x)$ non segue che: \\
+
+$\lim\limits_{x \to x_0} f(x) < \lim\limits_{x \to x_0} g(x)$
 
 
 
 \section{Teorema dei Due Carabinieri}
 
-% TODO + Dimostrazione
+\noindent
+$f, g, h : A \rightarrow \R,$ $x_0$ p.a. di $A$. \\
+
+\noindent
+Supponendo che: \\
+
+$\forall x \in A \ldotp h(x) \leq f(x) \leq g(x)$ \\
+
+\noindent
+$\lim\limits_{x \to x_0} h(x) = \lim\limits_{x \to x_0} g(x) = L \implies \lim\limits_{x \to x_0} f(x) = L$
+
+
+\subsection{Dimostrazione}
+
+\noindent
+$\varepsilon$ arbitrario. \\
+
+$\lim\limits_{x \to x_0} h(x) = L \implies \exists \delta_1 > 0 : \forall x \in I_{\delta_1}(x_0) \cap (A \setminus \braces{x_0}) \ldotp \abs{h(x) - L} < \varepsilon$
+
+$\lim\limits_{x \to x_0} g(x) = L \implies \exists \delta_2 > 0 : \forall x \in I_{\delta_2}(x_0) \cap (A \setminus \braces{x_0}) \ldotp \abs{g(x) - L} < \varepsilon$ \\
+
+\noindent
+Ponendo $\delta = min(\delta_1, \delta_2)$ si ha che: \\
+
+$\forall x \in I_{\delta}(x_0) \cap (A \setminus \braces{x_0})$ \\
+
+\noindent
+valgono: \\
+
+$f(x) - L \leq g(x) - L < \varepsilon$
+
+$f(x) - L \geq h(x) - L \geq -\abs{h(x) - L} > -\varepsilon$
+
+\noindent
+Che implicano: \\
+
+$-\varepsilon < f(x) - L < \varepsilon \iff \abs{f(x) - L} < \varepsilon$ \\
+
+\noindent
+Q.E.D.
+
+
+\subsection{Corollario}
+
+\noindent
+$f, g : A \rightarrow \R,$ $x_0$ p.a. di $A$. \\
+
+\noindent
+Supponendo che: \\
+
+$\lim\limits_{x \to x_0} f(x) = 0$ \\
+
+la funzione $g$ è limitata in $A$, cioè:
+
+$\exists M \in R : \forall x \in A \ldotp \abs{g(x)} \leq M$ \\
+
+\noindent
+Allora: \\
+
+$\lim\limits_{x \to x_0} f(x) g(x) = 0$
+
+
+\subsubsection{Dimostrazione}
+
+\noindent
+Siccome $\forall x \in A \ldotp \abs{g(x)} \leq M$ si ha che: \\
+
+$\forall x \in A \ldotp 0 \leq \abs{f(x)g(x)} \leq M \abs{f(x)}$ \\
+
+\noindent
+Applico il teorema dei due carabinieri con $h(x) = 0$ e $g(x) = M \abs{f(x)}$. \\
+
+\noindent
+Si ha $\lim\limits_{x \to x_0} M \abs{f(x)} = M \lim\limits_{x \to x_0} \abs{f(x)} = 0$ \\
+
+\noindent
+$\lim\limits_{x \to x_0} \abs{f(x)} = 0$ \\
+
+\noindent
+Quindi: \\
+
+$\lim\limits_{x \to x_0} \abs{f(x)g(x)} = 0$ da cui la tesi. \\
+
+\noindent
+Q.E.D
 
 
 
 \section{Limiti Unilaterali}
 
-% TODO
+
+\subsection{Limite Destro}
+
+\noindent
+$f : A \rightarrow \R,$ $x_0 \in \R$ p.a. di $A \cap (x_0, +\infty)$ \\
+
+\noindent
+$f$ ammette \textbf{limite destro} in $x_0$, scritto: \\
+
+$\lim\limits_{x \to x_0^+} f(x) = L \in \R$ \\
+
+\noindent
+se: \\
+
+$\forall \varepsilon > 0 \ldotp \exists \delta > 0 : \forall x \in (x_0, x_0 + \delta) \cap A \ldotp \abs{f(x) - L} < \varepsilon$ \\
+
+\noindent
+N.B. \\
+
+\noindent
+Se $A = (a, b)$ allora $b$ è un p.a. di $A$, ma non è un p.a. di $A \cap (b, +\infty) = \emptyset$
+
+
+\subsection{Limite Sinistro}
+
+\noindent
+$f : A \rightarrow \R,$ $x_0 \in \R$ p.a. di $A \cap (-\infty, x_0)$ \\
+
+\noindent
+$f$ ammette \textbf{limite sinistro} in $x_0$, scritto: \\
+
+$\lim\limits_{x \to x_0^-} f(x) = L \in \R$ \\
+
+\noindent
+se: \\
+
+$\forall \varepsilon > 0 \ldotp \exists \delta > 0 : \forall x \in (x_0 - \delta, x_0) \cap A \ldotp \abs{f(x) - L} < \varepsilon$
+
+
+\subsection{Caso $L \in \braces{+\infty, -\infty}$}
+
+
+\subsubsection{Limite Destro}
+
+\noindent
+$f : A \rightarrow \R,$ $x_0 \in \R$ p.a. di $A \cap (x_0, +\infty)$ \\
+
+\noindent
+Si scrive: \\
+
+$\lim\limits_{x \to x_0^+} f(x) = +\infty$ \\
+
+\noindent
+se: \\
+
+$\forall M \in \R \ldotp \exists \delta > 0 : \forall x \in (x_0, x_0 + \delta) \cap A \ldotp f(x) > M$ \\
+
+\noindent
+Analogamente, si scrive: \\
+
+$\lim\limits_{x \to x_0^+} f(x) = -\infty$ \\
+
+\noindent
+se: \\
+
+$\forall m \in \R \ldotp \exists \delta > 0 : \forall x \in (x_0, x_0 + \delta) \cap A \ldotp f(x) < m$
+
+
+\subsection{Limite Sinistro}
+
+\noindent
+$f : A \rightarrow \R,$ $x_0 \in \R$ p.a. di $A \cap (-\infty, x_0)$ \\
+
+\noindent
+Si scrive: \\
+
+$\lim\limits_{x \to x_0^-} f(x) = +\infty$ \\
+
+\noindent
+se: \\
+
+$\forall M \in \R \ldotp \exists \delta > 0 : \forall x \in (x_0 - \delta, x_0) \cap A \ldotp f(x) > M$ \\
+
+\noindent
+Analogamente si scrive: \\
+
+$\lim\limits_{x \to x_0^-} f(x) = -\infty$ \\
+
+\noindent
+se: \\
+
+$\forall m \in \R \ldotp \exists \delta > 0 : \forall x \in (x_0 - \delta, x_0) \cap A \ldotp f(x) < m$
+
+
+\subsection{Legame con il Limite}
+
+\noindent
+$f : A \rightarrow \R,$ $x_0 \in \R$ p.a. di $A \cap (x_0, +\infty)$ e di $A \cap (-\infty, x_0)$ \\
+
+\noindent
+Allora $f$ ammette limite per $x \to x_0$ se e solo se: \\
+
+$\exists \lim\limits_{x \to x_0^+} f(x) = L^+ \in \overbar\R$ \\
+
+$\exists \lim\limits_{x \to x_0^-} f(x) = L^- \in \overbar\R$ \\
+
+$L^+ = L^-$ \\
+
+\noindent
+In tal caso: \\
+
+$\lim\limits_{x \to x_0} f(x) = L^+ = L^-$ \\
+
+\noindent
+N.B. \\
+Il teorema implica che: \\
+
+$\lim\limits_{x \to x_0} f(x)$ \textbf{non esiste} se: \\
+
+\noindent
+Almeno uno fra: \\
+
+$\lim\limits_{x \to x_0^+} f(x)$ \\
+
+$\lim\limits_{x \to x_0^-} f(x)$ \\
+
+\noindent
+non esiste, oppure se: \\
+
+$\lim\limits_{x \to x_0^+} f(x) \neq \lim\limits_{x \to x_0^-} f(x)$
 
 
 
 \section{Funzioni Monotone}
 
-% TODO
+\noindent
+Si dice che $f : A \rightarrow \R$ è: \\
+
+\noindent
+\textbf{Crescente} in $A$ se: \\
+
+$\forall x, y \in A \ldotp x < y \implies f(x) \leq f(y)$ \\
+
+\noindent
+\textbf{Decrescente} in $A$ se: \\
+
+$\forall x, y \in A \ldotp x < y \implies f(x) \geq f(y)$ \\
+
+\noindent
+\textbf{Strettamente Crescente} in $A$ se: \\
+
+$\forall x, y \in A \ldotp x < y \implies f(x) < f(y)$ \\
+
+\noindent
+\textbf{Strettamente Decrescente} in $A$ se: \\
+
+$\forall x, y \in A \ldotp x < y \implies f(x) > f(y)$ \\
+
+\noindent
+N.B. \\
+$f$ è strettamente monotona $\implies f$ è iniettiva \\
+$f$ è crescente e decrescente $\implies f$ è costante
+
+
+\subsection{Teorema}
+
+\noindent
+$f : A \rightarrow \R,$ $x_0 \in \R$ p.a. di $A \cap (x_0, +\infty)$ e di $A \cap (-\infty, x_0)$ \\
+
+\noindent
+$f$ è crescente in $A \implies f$ ammette in $x_0$ entrambi i limiti unilaterali e vale: \\
+
+$\lim\limits_{x \to x_0^+} f(x) = inf$ $\braces{f(x) : x > x_0, x \in A}$ \\
+
+$\lim\limits_{x \to x_0^-} f(x) = sup$ $\braces{f(x) : x < x_0, x \in A}$
+
+
+\subsubsection{Dimostrazione}
+
+\noindent
+$l = inf$ $\braces{f(x) : x > x_0, x \in A}$ \\
+
+\noindent
+Quindi: \\
+
+\noindent
+$\forall x > x_0, x \in A \ldotp l \leq f(x)$ \\
+
+\noindent
+$\forall \varepsilon > 0 \ldotp \exists x_\varepsilon > x_0, x_\varepsilon \in A : f(x_\varepsilon) < l + \varepsilon$ \\
+
+\noindent
+$\varepsilon > 0$, ponendo $\delta = x_\varepsilon - x_0 > 0$ allora: \\
+
+\noindent
+$\forall x \in (x_0, x_0 + \delta) \cap A = (x_0, x_\varepsilon) \cap A \ldotp$ \\
+
+$0 \leq f(x) - l \leq f(x_\varepsilon) - l < \varepsilon$ \\
+
+\noindent
+$f$ è crescente, quindi: \\
+
+$\abs{f(x) - l} < \varepsilon$ \\
+
+$\lim\limits_{x \to x_0^+} f(x) = l$ \\
+
+\noindent
+$L = sup$ $\braces{f(x) : x < x_0; x \in A}$ \\
+
+\noindent
+Quindi: \\
+
+$\forall x < x_0, x \in A \ldotp f(x) \leq L$ \\
+
+$\forall \varepsilon > 0 \ldotp \exists x_\varepsilon < x_0, x_\varepsilon \in A : f(x_\varepsilon) > L - \varepsilon$ \\
+
+\noindent
+$\varepsilon > 0$, ponendo $\delta = x_0 - x_\varepsilon > 0$ allora: \\
+
+\noindent
+$\forall x \in (x_0 - \delta, x_0) \cap A = (x_\varepsilon, x_0) \cap A \ldotp$ \\
+
+$0 \leq L - f(x) \leq L - f(x_\varepsilon) < \varepsilon$ \\
+
+\noindent
+$f$ è crescente, quindi: \\
+
+$x_\varepsilon < x \implies f(x_\varepsilon) < f(x)$ \\
+
+$\abs{f(x) - L} < \varepsilon$ \\
+
+$\lim\limits_{x \to x_0^-} f(x) = L$ \\
+
+\noindent
+Q.E.D. \\
+
+\noindent
+N.B. \\
+$L$ e $l$ possono essere diversi.
+
+
+\subsection{Teorema}
+
+\noindent
+$f : A \rightarrow \R,$ $x_0 \in \R$ p.a. di $A \cap (x_0, +\infty)$ e di $A \cap (-\infty, x_0)$ \\
+
+\noindent
+$f$ è decrescente in $A \implies f$ ammette in $x_0$ entrambi i limiti unilaterali e vale: \\
+
+$\lim\limits_{x \to x_0^+} f(x) = sup$ $\braces{f(x) : x > x_0, x \in A}$ \\
+
+$\lim\limits_{x \to x_0^-} f(x) = inf$ $\braces{f(x) : x < x_0, x \in A}$ \\
+
+\noindent
+``La monotonia è madre dei limiti unilaterali''
 
 
 
 \section{Limiti Notevoli}
 
+\noindent
+$\forall a \in \R \ldotp \lim\limits_{x \to 0} \frac{sin(ax)}{x} = a$ \\
+
+\noindent
+$\forall a \in \R \ldotp \lim\limits_{x \to 0} \frac{e^{ax} - 1}{x} = a$ \\
+
+\noindent
+$\forall a \in \R \ldotp \lim\limits_{x \to 0} \frac{log(1+ax)}{x} = a$ \\
+
+\noindent
+$\forall a \in \R \ldotp \lim\limits_{x \to 0} \frac{(1+x)^a-1}{x} = a$ \\
+
+\noindent
+$\forall a \in \R \ldotp \lim\limits_{x \to +\infty} (1 + \frac a x)^x = e^a$ \\
+
+\noindent
+$e$ = costante di Eulero.
+
 
 
 \section{Limiti di Funzioni Composte}
+
+\noindent
+$f : A \rightarrow B \subseteq \R,$ $g : B \rightarrow \R$ \\
+
+$\lim\limits_{x \to x_0} f(x) = y_0$ \\
+
+$\lim\limits_{y \to y_0} g(y) = L$ \\
+
+$\exists \delta > 0 : 0 < \abs{x - x_0} < \delta \implies f(x) \neq y_0$ \\
+
+\noindent
+$\lim\limits_{x \to x_0} g(f(x)) = L$
 
 \end{document}
 
 % Fonti:
 
 % - Miei appunti Hynek Kovarik
+% - https://hynek-kovarik.unibs.it/courses/analisi-1-22.htm
 % - Appunti Davide
+% - Appunti Mary
 % - https://it.wikipedia.org/wiki/Funzione_(matematica)
 % - https://it.wikipedia.org/wiki/Funzione_iniettiva
 % - https://it.wikipedia.org/wiki/Funzione_suriettiva
