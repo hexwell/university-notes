@@ -88,7 +88,7 @@ Diciture per numeri di elementi: \\
 \noindent
 $(a, b) \coloneqq \braces{\braces{a}, \braces{a, b}}$ \\
 $(a, a) = \braces{\braces{a}, \braces{a, a}} = \braces{\braces{a}, \braces{a}} = \braces{\braces{a}}$ \\
-$(a, ..., y, z) = (a, (..., (y, z)))$ \\
+$(a, b, ..., y, z) = (a, (..., (y, z)))$ oppure $(((a, b), ...), z)$ \\
 
 \noindent
 Alternativamente: \\
@@ -247,7 +247,10 @@ $im(f) \subseteq codom(f)$
 
 L'insieme degli elementi del dominio di una funzione $f : A \rightarrow B$ che $f$ associa a tutti gli elementi di $S \subseteq B$ si dice controimmagine, preimmagine o immagine inversa di $S$ tramite $f$: \\
 
-$f^{-1}[S] = f^{-1}(S) \coloneqq \braces{x \in A : f(x) \in S \subseteq B} \subseteq A$
+$f^{-1}[S] = f^{-1}(S) \coloneqq \braces{x \in A : f(x) \in S \subseteq B} \subseteq A$ \\
+
+\noindent
+La controimmagine di un singolo elemento $e \in S$ tramite $f$ è definita come $f^{-1}[{e}]$.
 
 
 
@@ -608,6 +611,10 @@ $(\C, +, \cdot)$
 
 
 
+\chapter {Spazi Vettoriali}
+
+
+
 \section{Definizione di Spazio Vettoriale}
 
 $(V, \oplus, *)$ è detto spazio vettoriale (vector space) (struttura algebrica) su di un campo $(\K, +, \cdot)$ se: \\
@@ -803,7 +810,8 @@ $S$ è legata $= S$ non è libera. \\
 $\underline 0 \in S \implies S$ è legata. \\
 $\overbar v_1 \in S \land \exists \alpha \neq 0 : \overbar v_2 = \alpha \overbar v_1 \in S \implies S$ è legata (quindi anche se ci sono due vettori uguali, con $\alpha = 1$). \\
 $X$ è libera $\land$ $Y \subseteq X \implies Y$ è libera. \\
-$X$ è legata $\land$ $X \subseteq Y \implies Y$ è legata.
+$X$ è legata $\land$ $X \subseteq Y \implies Y$ è legata. \\
+$\exists \overbar v \neq \underline 0 \in S \implies \exists X \subseteq S : X$ è libera
 
 \subsection{Teorema}
 
@@ -811,6 +819,137 @@ $S$ è legata $\iff$ almeno uno dei suoi vettori si può scrivere come combinazi
 
 % - TODO Dimostrazione
 % https://www.youtube.com/watch?v=zBukIJ9ZwYQ 1:19
+
+
+% \subsection{Osservazione} % TODO
+% $S$ legata $\implies \mathcal L(S) = \mathcal L(S \setminus \braces {\overbar v_i$ dove $\overbar v_i$ è un vettore $\in S$ che è combinazione lineare di altri vettori in $S$.
+
+
+% \subsubsection{Dimostrazione}
+
+% TODO
+
+
+
+\section{Metodo degli Scarti Successivi}
+
+% TODO
+
+
+
+\section{Definizione di Base di uno Spazio Vettoriale}
+
+Si dice \textbf{base} (ordinata) (ordered basis) di uno spazio vettoriale ogni sua sequenza di generatori libera. \\
+
+\noindent
+Osservazione: \\
+
+$V(\K) \neq \braces{\underline 0} \implies V(\K)$ ammette basi \\
+
+\noindent
+(Non esistono in $V(\K)$ vettori linearmente indipendenti $\implies V(\K)$ è uno spazio vettoriale banale. \\
+Ogni spazio vettoriale finitamente generato non banale ammette base)
+
+
+\subsection{Teorema}
+
+$B = (\overbar b_1, ..., \overbar b_n)$ è una base ordinata per $V(\K) \iff$ ogni vettore di $V(\K)$ si scrive in modo unico come combinazione lineare degli elementi di $B$.
+
+
+\subsubsection{Dimostrazione}
+
+% TODO
+
+
+
+\section{Definizione di Componenti di un Vettore}
+
+Si dicono \textbf{componenti} (components) di un vettore $\overbar v \in V_n(\K)$ rispetto ad una base $B$ di $V_n(\K)$ gli elementi della ennupla dei coefficienti che danno la combinazione lineare dei vettori di $B$ che fornisce $\overbar v$.
+
+
+
+\section{Definizione di Base Canonica}
+
+La base di uno spazio vettoriale composta da vettori i cui componenti sono tutti 0 eccetto uno, che è 1, è detta \textbf{base canonica} (standard/canonical basis).
+
+
+
+\section{Lemma di Steinitz}
+
+% TODO
+
+\noindent
+Conseguenze: \\
+
+\noindent
+Ogni base di $V(\K)$ ha il medesimo numero di elementi. \\
+
+\noindent
+Ogni sequenza di vettori in $V(\K)$ con numero di elementi maggiore di quello di una base di $V(\K)$ è legata. \\
+
+\noindent
+Ogni sequenza di generatori di $V(\K)$ con lo stesso numero di elementi  di una base di $V(\K)$ è libera, e dunque base. \\
+
+\noindent
+Ogni sequenza libera di $V(\K)$ con lo stesso numero di elementi  di una base di $V(\K)$ genera lo spazio, e dunque è base.
+
+
+\subsection{Dimostrazione}
+
+% TODO
+
+
+\subsection{Dimostrazione Conseguenze}
+
+
+
+\section{Definizione di Dimensione di Spazio Vettoriale}
+
+Per il lemma di Steinitz ogni base di uno spazio vettoriale $V(\K)$ ha il medesimo numero di elementi. \\
+Questo numero è detto \textbf{dimensione} (dimension) di $V(\K)$.
+
+
+
+\section{Metodo di Completamento della Base}
+
+% TODO
+
+
+
+\section{Definizione di Trasformazione Lineare}
+
+Una funzione $f : V(\K) \rightarrow W(\K)$ è detta \textbf{trasformazione}/\textbf{applicazione}/mappa lineare (o omomorphismo di spazi vettoriali) (linear transformation/map o vector space homomorphism) se associa combinazioni lineari in uno spazio vettoriale $V(\K)$ a combinazioni lineari in un altro spazio vettoriale $W(\K)$. \\
+
+\noindent
+In simboli: \\
+
+$\forall \overbar v, \overbar u \in V, \alpha, \beta \in \K \ldotp f(\alpha \overbar v + \beta \overbar u) = \alpha f(\overbar v) + \beta f(\overbar u)$ \\
+
+\noindent
+Una trasformazione lineare è invertibile $\iff$ è un isomorfismo (lineare) ((linear) isomorphism)
+
+
+
+\section{Definizione di Nucleo di una Trasformazione Lineare}
+
+Si dice \textbf{nucleo} (kernel) di una trasformazione lineare la controimmagine del vettore nullo tramite $f$. \\
+
+\noindent
+In simboli: \\
+
+$ker$ $f = \braces{\overbar v \in V : f(\overbar v) = \underline 0}$ \\\\
+
+\noindent
+Osservazioni: \\
+
+$ker$ $f \leq V(\K)$ \\
+
+f è iniettiva $\iff ker$ $f = \braces{\underline 0}$
+
+
+\subsection{Dimostrazioni}
+
+% TODO
 
 
 
@@ -1114,7 +1253,7 @@ $\detm A \neq 0 \implies A^{-1} = \frac{1}{\detm A} \cdot A_a^T$
 
 
 
-\section{Rango (Rank)}
+\section{Rango}
 
 
 
@@ -1125,7 +1264,7 @@ Data una matrice $A \in Mat_{m,n}(\K)$ si dice minore di ordine $p$ una matrice 
 
 \subsection{Definizione di Rango}
 
-Data una matrice $A \in Mat_{m,n}(\K)$ dire che il rango di $A$ è $p$: \\
+Data una matrice $A \in Mat_{m,n}(\K)$ dire che il rango (rank) di $A$ è $p$: \\
 
 \noindent
 $rg(A) = p$ \\
