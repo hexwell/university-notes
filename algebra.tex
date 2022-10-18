@@ -557,29 +557,29 @@ $\forall a, b \in A, c \in C \ldotp (a + b) * c = (a * c) + (b * c)$
 
 \section{Definizione di Anello}
 
-Un insieme $A$ dotato di due operazioni binarie interne $\tilde{+}$ e $\tilde{\cdot}$ è un \textbf{anello} (rng/non-unital ring) (struttura algebrica) $(A, \tilde{+}, \tilde{\cdot})$ se: \\
+Un insieme $A$ dotato di due operazioni binarie interne $\tilde +$ e $\tilde\cdot$ è un \textbf{anello} (rng/non-unital ring) (struttura algebrica) $(A, \tilde +, \tilde\cdot)$ se: \\
 
-$(A, \tilde{+})$ è un gruppo abelliano. \\
+$(A, \tilde +)$ è un gruppo abelliano. \\
 \indent
-$(A, \tilde{\cdot})$ è un semigruppo. \\
+$(A, \tilde\cdot)$ è un semigruppo. \\
 \indent
-$\tilde{\cdot}$ è distributiva rispetto a $\tilde{+}$.
+$\tilde\cdot$ è distributiva rispetto a $\tilde +$.
 
 
 \subsection{Definizione di Anello Unitario}
 
-Un anello $(A, \tilde{+}, \tilde{\cdot})$ è un \textbf{anello unitario} (ring) (o con unità) (struttura algebrica) se $(A, \tilde{\cdot}$) è anche un monoide ($\tilde{\cdot}$ ammette elemento neutro).
+Un anello $(A, \tilde +, \tilde\cdot)$ è un \textbf{anello unitario} (ring) (o con unità) (struttura algebrica) se $(A, \tilde\cdot$) è anche un monoide ($\tilde\cdot$ ammette elemento neutro).
 
 
 \subsection{Definizione di Anello Commutativo}
 
-Se $\tilde{\cdot}$ è commutativa l'anello si dice commutativo (commutative) (struttura algebrica).
+Se $\tilde\cdot$ è commutativa l'anello si dice commutativo (commutative) (struttura algebrica).
 
 
 
 \section{Definizione di Corpo}
 
-Se $(A, \tilde{+}, \tilde{\cdot})$ è un anello e $(A^*, \tilde{\cdot})$ è un gruppo, dove $A^* \coloneqq A \setminus \braces{0}$ e $0$ è l'elemento neutro di $\tilde{+}$, allora $(A, \tilde{+}, \tilde{\cdot})$ è anche un corpo (division ring) (struttura algebrica). \\
+Se $(A, \tilde +, \tilde \cdot)$ è un anello e $(A^*, \tilde\cdot)$ è un gruppo, dove $A^* \coloneqq A \setminus \braces{0}$ e $0$ è l'elemento neutro di $\tilde +$, allora $(A, \tilde +, \tilde\cdot)$ è anche un corpo (division ring) (struttura algebrica). \\
 
 
 
@@ -876,7 +876,10 @@ La base di uno spazio vettoriale composta da vettori i cui componenti sono tutti
 
 \section{Lemma di Steinitz}
 
-% TODO
+% TODO IMPORTANT!!
+% https://www.youtube.com/watch?v=d_9SfHH89RA at about 0:20:00
+
+Il Lemma di Steinitz formalizza la nozione che la lunghezza di una sequenza di generatori $\geq$ la lunghezza di una sequenza libera in uno spazio vettoriale. \\
 
 \noindent
 Conseguenze: \\
@@ -888,10 +891,13 @@ Ogni base di $V(\K)$ ha il medesimo numero di elementi. \\
 Ogni sequenza di vettori in $V(\K)$ con numero di elementi maggiore di quello di una base di $V(\K)$ è legata. \\
 
 \noindent
-Ogni sequenza di generatori di $V(\K)$ con lo stesso numero di elementi  di una base di $V(\K)$ è libera, e dunque base. \\
+Ogni sequenza di generatori di $V(\K)$ con lo stesso numero di elementi di una base di $V(\K)$ è libera, e dunque base. \\
 
 \noindent
-Ogni sequenza libera di $V(\K)$ con lo stesso numero di elementi  di una base di $V(\K)$ genera lo spazio, e dunque è base.
+Ogni sequenza libera di $V(\K)$ con lo stesso numero di elementi di una base di $V(\K)$ genera lo spazio, e dunque è base. \\
+
+\noindent
+Nessuna sequenza con meno vettori di una base di $V(\K)$ genera lo spazio.
 
 
 \subsection{Dimostrazione}
@@ -910,23 +916,46 @@ Questo numero è detto \textbf{dimensione} (dimension) di $V(\K)$.
 
 
 
-\section{Metodo di Completamento della Base}
+\section{Metodo di Completamento a Base}
 
-% TODO
+% TODO + Dimostrazione
+% https://www.youtube.com/watch?v=d_9SfHH89RA at about 1:06:00
 
 
 
 \section{Definizione di Trasformazione Lineare}
 
-Una funzione $f : V(\K) \rightarrow W(\K)$ è detta \textbf{trasformazione}/\textbf{applicazione}/mappa lineare (o omomorphismo di spazi vettoriali) (linear transformation/map o vector space homomorphism) se associa combinazioni lineari in uno spazio vettoriale $V(\K)$ a combinazioni lineari in un altro spazio vettoriale $W(\K)$. \\
+Una funzione $f : V(\K) \rightarrow W(\K)$ è detta \textbf{trasformazione}/\textbf{applicazione}/mappa lineare (o omomorfismo di spazi vettoriali) (linear transformation/map o vector space homomorphism) se associa combinazioni lineari in uno spazio vettoriale $V(\K)$ a combinazioni lineari in un altro spazio vettoriale $W(\K)$. \\
 
 \noindent
 In simboli: \\
 
 $\forall \overbar v, \overbar u \in V, \alpha, \beta \in \K \ldotp f(\alpha \overbar v + \beta \overbar u) = \alpha f(\overbar v) + \beta f(\overbar u)$ \\
 
+
+
+\section{Definizione di Isomorfismo}
+
+Una trasformazione lineare è detta \textbf{isomorfismo} (lineare) ((linear) isomorphism) $\iff$ è invertibile. \\
+
 \noindent
-Una trasformazione lineare è invertibile $\iff$ è un isomorfismo (lineare) ((linear) isomorphism)
+La funzione che associa ad ogni vettore di uno spazio vettoriale la ennupla dei suoi componenti rispetto ad una base B è un isomorfismo. \\
+
+\noindent
+In simboli:
+
+$f_B : V(\K) \rightarrow \K^n$ \\
+\indent
+$f_B(\overbar v = \alpha_1 \overbar e_1 + ... + \alpha_n \overbar e_n) = (\alpha_1, ..., \alpha_n)$ \\
+
+$V(\K) \cong \K^n$ \\
+
+\noindent
+Uno spazio vettoriale è quindi univocamente descritto dal campo $\K$ su cui è definito e da un numero $n$ pari alla sua dimensione (uguale al numero di elementi di tutte le sue basi, vedi definizione di dimensione), dato che è isomorfo a $\K^n$. \\
+% TODO Link Definition
+
+\noindent
+Tutti gli spazi vettoriali di uguale dimensione sul medesimo campo sono isomorfi (cioè esiste un isomorfismo tra di loro (e viceversa se esiste un isomorfismo hanno la stessa dimensione)).
 
 
 
@@ -953,17 +982,186 @@ f è iniettiva $\iff ker$ $f = \braces{\underline 0}$
 
 
 
+\section{Teorema}
+
+Una trasformazione lineare manda sequenze libere in sequenze libere $\iff$ il suo nucleo è banale ($\braces{0}$) (cioè è iniettiva).
+
+
+\subsection{Dimostrazione}
+
+% TODO https://www.youtube.com/watch?v=ZzEIkKbpN00 at around 30:00
+
+
+
+\section{Intersezione di Spazi Vettoriali}
+
+$U(\K), W(\K) \leq V(\K)$ \\
+
+\noindent
+$U \cap W$ è un sottospazio vettoriale di $V(\K)$ \\
+
+\noindent
+Osservazione: \\
+
+\noindent
+$U, W \leq V(\K) \implies \underline 0 \in U \cap W$ \\
+Due sottospazi di $V(\K)$ non possono mai essere disgiunti! (cioè $U \cap W \neq \underline 0$).
+
+
+
+\section{Dimensione dell'Intersezione di Spazi Vettoriali}
+
+$W \leq V \implies dim(W) \leq dim(V)$ \\
+$dim(W) = dim(V) \iff W = V$ \\
+
+\noindent
+$0 \leq dim(U \cap W) \leq min(dim(U), dim(W))$
+
+\subsection{Dimostrazione Prima}
+
+% TODO
+
+Si dimostrano le proprietà di chiusura.
+
+
+\subsection{Dimostrazione Seconda e Terza}
+
+% TODO
+
+
+
+\section{Teorema}
+
+$\forall 0 \leq i \leq n \ldotp \exists W \leq V_n(\K) : dim(W) = i$
+
+
+\subsection {Dimostrazione}
+
+% TODO
+
+
+
+\section{Teorema}
+
+$U(\K), W(\K) \leq V(\K)$ \\
+
+\noindent
+$U \cup W  \leq V(\K) \iff U \subseteq W \lor W \subseteq U$
+
+
+\subsection{Dimostrazione}
+
+% TODO
+
+
+
+\section{Somma di Spazi Vettoriali}
+
+$U(\K), W(\K) \leq V(\K)$ \\
+
+\noindent
+$U \cup W$ in generale non è un sottospazio di $V(\K)$. \\
+Per questo motivo viene introdotta la nozione di \textbf{somma} di spazi vettoriali. \\
+
+\noindent
+$U + W = \braces{\overbar u + \overbar w : \overbar u \in U, \overbar w \in W}$
+
+
+\subsection{Teorema}
+
+$U + W  = \mathcal L (U \cap W)$ \\
+
+\noindent
+Cioè $U + W$ è il più piccolo sottospazio di $V(\K)$ che contiene $U$ e $W$.
+
+
+\subsubsection{Dimostrazione}
+
+% TODO
+
+
+
+\section{Dimensione della Somma di Spazi Vettoriali}
+
+$U, W \leq U + W \leq V_n(\K)$ \\
+
+\noindent
+$max(dim(U), dim(W)) \leq dim(U + W) \leq V_n(\K)$
+
+
+
+\section{Definizione di Somma Diretta di Spazi Vettoriali}
+
+$U(\K), W(\K) \leq V(\K)$ \\
+
+\noindent
+La somma $U + W$ si dice \textbf{diretta} e si scrive $U \oplus W$ se ogni elementi di $U + W$ si scrive in modo unico come somma di un elemento di $U$ ed un elemento di $W$. \\
+
+\noindent
+In simboli: \\
+
+$\forall \overbar x \in U + W \ldotp \exists! \overbar u \in U, \overbar w \in W : \overbar x = \overbar u + \overbar w$
+
+
+\subsection{Teorema}
+
+$U \oplus W \iff U \cap W = \braces{\underline 0}$ \\
+
+\noindent
+Conseguenze: \\
+
+\noindent
+$B_U$ una base di $U$ e $B_W$ una base di $W$. \\
+$B_U \cap B_W$ è una base di $U \oplus W$ \\
+
+\noindent
+$dim(U \oplus W) = dim(U \oplus W)$
+
+
+\subsubsection{Dimostrazione}
+
+% TODO
+
+
+\subsubsection{Dimostrazione Conseguenze}
+
+% TODO
+
+
+
+\section{Formula di Grassman}
+
+$dim(U + W) = dim(U) + dim(W) - dim(U \cap W)$ \\\\
+
+\noindent
+Analogia con la formula per la cardinalità dell'unione di due insiemi, che usa anch'essa il principio di inclusione ed esclusione: \\
+
+\noindent
+Siano $X, Y$ insiemi. \\
+
+\noindent
+$\card{X \cup Y} = \card X + \card Y - \card{X \cap Y}$
+
+
+\subsection{Dimostrazione}
+
+% TODO
+% Partial at:
+% https://www.youtube.com/watch?v=ZzEIkKbpN00 at around 1:15:00
+
+
+
 \chapter{Matrici}
 
 
 
 \section {Matrici}
 
-Matrice $m \times n$ (righe $\times$ colonne) a coefficienti in $\K$: \\
+Matrice (matrix) $m \times n$ (righe $\times$ colonne) a coefficienti in $\K$: \\
 $Mat_{m,n}(\K) = \K^{m,n} = \K_{m,n}$ \\
 
 \noindent
-Elementi $a_{i, j}$ \\
+Elementi (entries) $a_{i, j}$ \\
 
 \noindent
 $m \neq n \rightarrow$ matrice rettangolare \\
@@ -1298,6 +1496,94 @@ Il rango di $A$ è $p \iff \exists$ in $A$ un minore di ordine $p$ ($M_p$) non s
 
 \subsection{Definizione di Contiene Completamente}
 Che ha al suo interno.
+
+
+
+\section{Corrispondenza tra Trasformazioni Lineari e Matrici}
+
+Siano $V_n(\K)$ e $W_m(\K)$ due spazi vettoriali e: \\
+
+$B = (\overbar e_1, ..., \overbar e_n)$ base di $V_n(\K)$ \\
+\indent
+$B' = (\overbar e'_1, ..., \overbar e'_m)$ base di $W_m(\K)$ \\
+
+\noindent
+Osservazione: \\
+I valori di una trasformazione lineare $f : V(\K) \rightarrow W(\K)$ dipendono solamente dai valori di $f$ sui vettori di una base, perché: \\
+
+$\forall \overbar v \in V_n(\K) \ldotp \overbar v = \alpha_1 \overbar e_1 + ... + \alpha_n \overbar e_n$ \\
+
+$\forall \overbar v \in V_n(\K) \ldotp f(\overbar v) = f(\alpha_1 \overbar e_1 + ... + \alpha_n \overbar e_n) = \alpha_1 f(\overbar e_1) + ... + \alpha_n f(\overbar e_n)$ \\
+
+\noindent
+Quindi $f$ è definita dai valori: \\
+
+$f(\overbar e_1) = \overbar w_1$ \\
+\indent
+$\vdots$ \\
+\indent
+$f(\overbar e_n) = \overbar w_n$ \\
+
+\noindent
+con $\overbar w_1 ... \overbar w_n \in W$. \\
+
+\noindent
+$\overbar w_1 ... \overbar w_n$ sono tutti combinazione lineare di vettori della base $B'$ di $W$ \\
+
+\noindent
+In simboli: \\
+
+$\forall j \in \N, 1 \leq j \leq n \ldotp \overbar w_j = \sum\limits_{i = 1}^{m} a_{ij} \overbar e'_i$ \\
+
+\noindent
+con $a_{ij} \in \K$ \\
+
+\noindent
+$\begin{pmatrix}
+a_{11} & \dots & a_{1n} \\
+\vdots & \ddots & \vdots \\
+a_{m1} & \dots & a_{mn}
+\end{pmatrix}$ \\\\
+
+\noindent
+Quindi $f : V_n(\K) \rightarrow W_m(\K)$ è descritta da una matrice $m \times n$ degli scalari $a_{ij}$ \\
+% TODO Non so se è descritta interamente dalla matrice o se sono necessarie anche le basi, o almeno una delle due basi.
+
+\noindent
+Inoltre, rappresentando le ennuple dei componenti dei vettori di $V(\K)$ rispetto alla base $B$ come matrici (vettori colonna), ad esempio: \\
+
+$\overbar e_1 =
+\begin{pmatrix}
+b_1 \\
+\vdots \\
+b_n
+\end{pmatrix}$ \\\\
+
+\noindent
+e moltiplicando la matrice corrispondente ad una trasformazione lineare per la matrice corrispondente ad un vettore, si ottiene il valore della trasformazione lineare applicata al vettore come vettore colonna di componenti rispetto alla base $B'$ di $W(\K)$ , ad esempio: \\
+
+$\begin{pmatrix}
+a_{11} & \dots & a_{1n} \\
+\vdots & \ddots & \vdots \\
+a_{m1} & \dots & a_{mn}
+\end{pmatrix}
+\begin{pmatrix}
+b_1 \\
+\vdots \\
+b_n
+\end{pmatrix} = 
+\begin{pmatrix}
+c_1 \\
+\vdots \\
+c_m
+\end{pmatrix}
+$ \\\\\\
+
+\noindent
+Le matrici rappresentano funzioni tra spazi vettoriali, e sono a loro volta uno spazio vettoriale.\\
+
+\noindent
+Il prodotto di matrici corrisponde alla composizione di funzioni (lineari).
 
 \end{document}
 
