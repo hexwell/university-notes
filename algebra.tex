@@ -959,6 +959,21 @@ Tutti gli spazi vettoriali di uguale dimensione sul medesimo campo sono isomorfi
 
 
 
+\section{Definizione di Endomorfismo}
+
+Si dice \textbf{endomorfismo} di $V_n(\K)$ una trasformazione lineare $f : V_n(\K) \rightarrow V_n(\K)$ \\
+
+\noindent
+Sono rappresentati da matrici quadrate (e viceversa). \\
+
+\noindent
+In generale si può considerare $f \circ g$ e $g \circ f$ dato che hanno lo stesso dominio e codominio. \\
+
+\noindent
+Se $f$ è rappresentato dalla matrice $A$ e $g$ è rappresentato dalla matrice $B$, $f \circ g$ è rappresentato dalla matrice $AB$
+
+
+
 \section{Definizione di Nucleo di una Trasformazione Lineare}
 
 Si dice \textbf{nucleo} (kernel) di una trasformazione lineare la controimmagine del vettore nullo tramite $f$. \\
@@ -990,6 +1005,15 @@ Una trasformazione lineare manda sequenze libere in sequenze libere $\iff$ il su
 \subsection{Dimostrazione}
 
 % TODO https://www.youtube.com/watch?v=ZzEIkKbpN00 at around 30:00
+
+
+
+\section{Nullità di una Trasformazione Lineare}
+
+(nullity) \\
+
+\noindent
+$Null(f) \coloneqq dim(ker(f))$
 
 
 
@@ -1546,8 +1570,7 @@ a_{m1} & \dots & a_{mn}
 \end{pmatrix}$ \\\\
 
 \noindent
-Quindi $f : V_n(\K) \rightarrow W_m(\K)$ è descritta da una matrice $m \times n$ degli scalari $a_{ij}$ \\
-% TODO Non so se è descritta interamente dalla matrice o se sono necessarie anche le basi, o almeno una delle due basi.
+Quindi $f : V_n(\K) \rightarrow W_m(\K)$ è descritta interamente da una matrice $m \times n$ degli scalari $a_{ij}$ e da almeno la base del dominio (o del codominio se $f$ è invertibile).\\
 
 \noindent
 Inoltre, rappresentando le ennuple dei componenti dei vettori di $V(\K)$ rispetto alla base $B$ come matrici (vettori colonna), ad esempio: \\
@@ -1584,6 +1607,97 @@ Le matrici rappresentano funzioni tra spazi vettoriali, e sono a loro volta uno 
 
 \noindent
 Il prodotto di matrici corrisponde alla composizione di funzioni (lineari).
+
+
+
+\section{Rango di una Trasformazione Lineare}
+
+$Rk(f) \coloneqq dim(Im(f))$ \\
+
+\noindent
+Osservazione: \\
+
+\noindent
+Se $f : \K^n \rightarrow \K^m$ allora $Im(f)$ è generata dalle colonne della matrice che rappresenta $f$ \\
+
+\noindent
+$rk(f) =$ dimensione dello spazio vettoriale generato dalle colonne di $f$
+
+
+
+\section{Teorema di Nullità del Rango}
+
+(rank-nullity theorem) \\
+
+\noindent
+$f : \K^n \rightarrow \K^m$ lineare \\
+
+$Null(f) + Rk(f) = n$ \\
+
+\noindent
+(dimensione nucleo + dimensione immagine = dimensione dominio)
+
+
+\subsection{Dimostrazione}
+
+% TODO
+
+
+
+\section{Determinante}
+
+
+\subsection{Motivazione}
+
+L'insieme di tutte le matrici $\K^{m,n}$ è un gruppo? \\
+Equivale a chiedere se l'insieme di tutte le trasformazioni lineare $\K^m \rightarrow \K^n$ è un gruppo, e dato che ci sono funzioni non invertibili la risposta è no. \\
+
+% - Perchè ci interessa?
+
+\noindent
+Dunque quand'è che questo insieme è un gruppo? \\
+
+\noindent
+Tutte le funzioni devono essere invertibili. \\
+
+\noindent
+In generale affinche una trasformazione lineare f sia invertibile basta che l'immagine di una base del dominio sia una base del codominio. \\
+
+\noindent
+$dim(Im(f)) = n \iff ker(f) = \braces{\underline 0}$ \\
+
+\noindent
+Equivale a dire che le colonne di una qualsiasi matrice quadrata che rappresenta f devono essere linearmente indipendenti (perchè devono generare uno spazio di dimensione $= n$). \\
+
+\noindent
+Questo gruppo è il gruppo lineare generale, che può essere definito come: \\
+
+$GL_n(\K) = \braces{A \in \K^{n,m} : \exists A^{-1} \in K^{n,n}, A A^{-1} = I_n}$ \\
+
+\noindent
+Dunque come riconoscere se una matrice è invertibile? \\
+
+\noindent
+Equivale a determinare se le colonne di una matrice quadrata sono linearmente indipendenti, e questo porta alla definizione del determinante. \\
+
+
+\subsection{Definizione}
+
+Serve una funzione: \\
+
+$det : \K^{n,n} \rightarrow \K$ \\
+
+\noindent
+tale che $det(A) = 0 \iff$ le colonne di $A$ sono linearmente indipendenti \\
+
+\noindent
+e che sia facile da calcolare. \\
+
+$det(I_n) \coloneqq 1$ \\
+
+$det(c_1 ... c_n) \coloneqq 0$ se ci sono due colonne uguali. \\ % TODO
+
+Imponiamo infine il determinante lineare in ogni singola colonna. % TODO
 
 \end{document}
 
