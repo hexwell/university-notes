@@ -11,6 +11,18 @@
 \newcommand{\detm}[1] {\left | #1 \right |}
 \newcommand{\overbar}[1] {\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\codom}{codom}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Sg}{S}
+\DeclareMathOperator{\Null}{Null}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\mr}{r}
+\DeclareMathOperator{\Rk}{Rk}
+\DeclareMathOperator{\rk}{rk}
+
 \newcommand{\N}{\mathbb N}
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\Z}{\mathbb Z}
@@ -18,6 +30,8 @@
 \newcommand{\C}{\mathbb C}
 \newcommand{\K}{\mathbb K}
 \newcommand{\F}{\mathbb F}
+
+\newcommand{\LS}{\mathcal L}
 
 \let\emptyset\varnothing
 
@@ -178,25 +192,25 @@ dove $A$ è il dominio di $f$ e $B$ è il codominio di $f$.
 
 \subsection{Iniettività}
 
-Una funzione $f$ si dice \textbf{iniettiva} (injective) (duale della funzionalità) se non associa a due qualsiasi elementi distinti del dominio lo stesso elemento del codominio. \\
+Una funzione $f$ si dice \textbf{iniettiva} (injective) (unica a sinistra, duale della funzionalità) se associa a due qualsiasi elementi distinti del dominio elementi distinti del codominio. \\
 
 \noindent
 In simboli: \\
 
-$\forall x, x' \in dom(f) \ldotp f(x) = f(x') \implies x = x'$
+$\forall x, x' \in \dom(f) \ldotp f(x) = f(x') \implies x = x'$
 
 
 \subsection{Suriettività}
 
-Una funzione $f$ si dice \textbf{suriettiva} (surjective) (o totale a destra, duale della totalità a sinistra) se associa un elemento del dominio ad ogni elemento del codominio. \\
+Una funzione $f$ si dice \textbf{suriettiva} (surjective) (o totale a destra, duale della totalità a sinistra) se per ogni elemento del codominio associa almeno un elemento del dominio ad esso. \\
 
 \noindent
 In simboli: \\
 
-$\forall y \in codom(f) \ldotp \exists x \in dom(f) : y = f(x)$ \\
+$\forall y \in \codom(f) \ldotp \exists x \in \dom(f) : y = f(x)$ \\
 
 \noindent
-(equivalentemente: $im(f) = codom(f)$)
+(equivalentemente: $\im(f) = \codom(f)$)
 
 
 \subsection{Biiettività}
@@ -206,9 +220,9 @@ Una funzione $f$ si dice \textbf{biiettiva} (bijective) (o biiezione, o anche co
 \noindent
 In simboli: \\
 
-$\forall x, x' \in dom(f) \ldotp x \neq x' \implies f(x) \neq f(x')$ \\
+$\forall x, x' \in \dom(f) \ldotp x \neq x' \implies f(x) \neq f(x')$ \\
 \indent
-$\forall y \in codom(f) \ldotp \exists x \in dom(f) : y = f(x)$ \\
+$\forall y \in \codom(f) \ldotp \exists x \in \dom(f) : y = f(x)$ \\
 
 
 \noindent
@@ -230,16 +244,16 @@ L'insieme di tutti i valori di $f : A \rightarrow B$ valutata in ogni elemento d
 
 $f[S] = f(S) \coloneqq \braces{f(s) \in B : s \in S \subseteq A} \subseteq B$ \\
 
-Im$f = im(f) = f[A]$ \\
+$\Ima f = \im(f) = f[A]$ \\
 
 \noindent
 L'immagine del dominio di una funzione $f$ tramite $f$ si dice immagine di $f$.\\
 
 \noindent
-Il valore di $f : A \rightarrow B$ valutata in $x \in A$ si dice immagine di $x$ tramite $f$. \\
+$\im(f) \subseteq \codom(f)$ \\
 
 \noindent
-$im(f) \subseteq codom(f)$
+Il valore di $f : A \rightarrow B$ valutata in $x \in A$ si dice immagine di $x$ tramite $f$.
 
 
 
@@ -293,7 +307,7 @@ $f|_X = f_X$
 Detta anche corestrizione, restrizione del codominio o restrizione a destra. \\
 
 \noindent
-$f : A \rightarrow B,$ $Im(f) \subseteq Y$ \\
+$f : A \rightarrow B,$ $\Ima(f) \subseteq Y$ \\
 
 \noindent
 Si dice \textbf{troncatura} di $f$ ad $Y$ la funzione: \\
@@ -336,7 +350,7 @@ $f : A \rightarrow B$ ammette inversa sinistra $g : B \rightarrow A$ $|$ $(g \ci
 
 \section{Definizione di Funzione Inversa}
 
-$f : A \rightarrow B$ ammette inversa destra e sinistra $\implies f$ ammette inversa $f^{-1}$ che coincide con l'inversa dentra e sinistra. \\
+$f : A \rightarrow B$ ammette inversa destra e sinistra $\implies f$ ammette inversa $f^{-1}$ che coincide con l'inversa destra e sinistra. \\
 
 \noindent
 $f$ ammette inversa $\iff f$ è biettiva.
@@ -469,7 +483,7 @@ $a'''$ è \textbf{inverso} di $a$ se $a'''$ è inverso destro di $a$ $\land$ $a'
 
 \section{Definizione di Gruppo}
 
-Un monoide $(A, *)$ è detto \textbf{gruppo} (group) (struttura algebrica) se ogni elemento di $A$ ammette inverso (necessariamente unico, destro e sinistro, solitamente indicato con $a^{-1}$).
+Un monoide $(A, *)$ è detto \textbf{gruppo} (group) (struttura algebrica) se ogni elemento di $A$ ammette inverso (destro e sinistro, necessariamente unico, solitamente indicato con $a^{-1}$).
 
 
 \subsection{Sottogruppo}
@@ -482,10 +496,10 @@ In generale un sottoinsieme di un insieme con una struttura algebrica è sua sot
 
 \subsection{Esempi notevoli}
 
-$GL_n(\K) \coloneqq \braces{M \in \K_{m,n} : det(M) \neq 0}$, chiamato gruppo lineare generale (general linear group) (o gruppo di matrici), è un gruppo rispetto al prodotto di matrici (righe per colonne). \\
+$\text{GL}_n(\K) \coloneqq \braces{M \in \K_{m,n} : det(M) \neq 0}$, chiamato gruppo lineare generale (general linear group) (o gruppo di matrici), è un gruppo rispetto al prodotto di matrici (righe per colonne). L'insieme può essere definito equivalentemente come l'insieme delle matrici invertibili. Più in generale è il gruppo formato dall'insieme degli automorfismi (sia isomorfismi che endomorfismi, endomorfismi invertibili o isomorfismi da un oggetto a se stesso) di un oggetto matematico. \\
 
 \noindent
-Esiste anche un suo sottogruppo, $SL_n(\K)$, detto gruppo lineare speciale (special linear group), formato dalle matrici con determinante uguale a 1.
+Esiste anche un suo sottogruppo, $\text{SL}_n(\K)$, detto gruppo lineare speciale (special linear group), formato dalle matrici con determinante uguale a 1.
 
 
 
@@ -493,24 +507,24 @@ Esiste anche un suo sottogruppo, $SL_n(\K)$, detto gruppo lineare speciale (spec
 
 La sottrazione è definita come somma con l'opposto di un elemento in $(\Z, +)$. \\
 
-$a - b \coloneqq a + (-b)$
+$a - b \coloneqq a + (-b) = a + b^{-1}$
 
 
 
 \section{Definizione di Gruppo Simmetrico}
 
-$S(\Omega) = \braces{f : \Omega \rightarrow \Omega \text{ $|$ } \text{f è biiettiva}}$ è chiamato \textbf{gruppo simmetrico} (symmetric group) (struttura algebrica) dell'insieme $\Omega$. \\
+$\Sg(\Omega) = \braces{f : \Omega \rightarrow \Omega \text{ $|$ } \text{f è biiettiva}}$ è chiamato \textbf{gruppo simmetrico} (symmetric group) (struttura algebrica) dell'insieme $\Omega$. \\
 
 \noindent
 È un gruppo rispetto alla composizione di funzioni. \\
 Contiene tutte le possibili permutazioni degli elementi di $\Omega$. \\
 Tutti i gruppi simmetrici di insiemi aventi la stessa cardinalità sono isomorfi (isomorphic). \\
-L'elemento neutro è la funzione $id$ ($id(x) \coloneqq x$).
+L'elemento neutro è la funzione identità $id$ ($id(x) \coloneqq x$).
 
 
 \subsection{Gruppi Simmetrici Finiti (Finite Symmetric Group)}
 
-Se $\Omega$ è finito, il suo gruppo simmetrico si denota con $S_n$. \\
+Se $\Omega$ è finito, il suo gruppo simmetrico si denota con $\Sg_n$. \\
 In genere in questi casi si preferisce considerare il gruppo delle permutazioni degli interi $1...n$ dato che è isomorfo.
 
 
@@ -573,19 +587,19 @@ Un anello $(A, \tilde +, \tilde\cdot)$ è un \textbf{anello unitario} (ring) (o 
 
 \subsection{Definizione di Anello Commutativo}
 
-Se $\tilde\cdot$ è commutativa l'anello si dice commutativo (commutative) (struttura algebrica).
+Se $\tilde\cdot$ è commutativa l'anello si dice \textbf{commutativo} (commutative) (struttura algebrica).
 
 
 
 \section{Definizione di Corpo}
 
-Se $(A, \tilde +, \tilde \cdot)$ è un anello e $(A^*, \tilde\cdot)$ è un gruppo, dove $A^* \coloneqq A \setminus \braces{0}$ e $0$ è l'elemento neutro di $\tilde +$, allora $(A, \tilde +, \tilde\cdot)$ è anche un corpo (division ring) (struttura algebrica). \\
+Se $(A, \tilde +, \tilde \cdot)$ è un anello e $(A^*, \tilde\cdot)$ è un gruppo, dove $A^* \coloneqq A \setminus \braces{0}$ e $0$ è l'elemento neutro di $\tilde +$, allora $(A, \tilde +, \tilde\cdot)$ è anche un \textbf{corpo} (division ring) (struttura algebrica). \\
 
 
 
 \section{Definizione di Campo}
 
-Un campo (field) (o corpo commutativo) $(\K, +, \cdot)$ è un anello unitario commutativo, con $0$ elemento neutro di $+$ e $1$ elemento neutro di $\cdot$, in cui $0 \neq 1$ e $(\K^*, \cdot)$ è un gruppo abeliano, dove $\K^* \coloneqq \K \setminus \braces{0}$ (aggiunge il requisito di invertibilità di ogni elemento $\neq 0$ per la moltiplicazione). \\
+Un \textbf{campo} (field) (o corpo commutativo) $(\K, +, \cdot)$ è un anello unitario commutativo, con $0$ elemento neutro di $+$ e $1$ elemento neutro di $\cdot$, in cui $0 \neq 1$ e $(\K^*, \cdot)$ è un gruppo abeliano, dove $\K^* \coloneqq \K \setminus \braces{0}$ (aggiunge il requisito di invertibilità di ogni elemento $\neq 0$ per la moltiplicazione). \\
 
 \noindent
 Alternativamente: \\
@@ -601,7 +615,7 @@ $\cdot$ è distributiva rispetto a $+$.
 
 \subsection{Esempi notevoli}
 
-$(\F, \dot\lor, \land),$ $\F \coloneqq \braces{0, 1}, \dot\lor \coloneqq XOR,$ $\land \coloneqq AND$ \\
+$(\F, \dot\lor, \land),$ $\F \coloneqq \braces{0, 1}, \dot\lor \coloneqq \text{XOR},$ $\land \coloneqq \text{AND}$ \\
 $(\Q, +, \cdot)$ \\
 $(\R, +, \cdot)$ \\
 $(\C, +, \cdot)$
@@ -617,7 +631,7 @@ $(\C, +, \cdot)$
 
 \section{Definizione di Spazio Vettoriale}
 
-$(V, \oplus, *)$ è detto spazio vettoriale (vector space) (struttura algebrica) su di un campo $(\K, +, \cdot)$ se: \\
+$(V, \oplus, *)$ è detto \textbf{spazio vettoriale} (vector space) (struttura algebrica) su di un campo $(\K, +, \cdot)$ se: \\
 
 \noindent
 $(V, \oplus)$ è un gruppo abeliano ($\oplus$ è detta somma (di vettori) o legge di composizione interna) \\
@@ -653,7 +667,7 @@ $V(\K)$ \\
 L'elemento neutro della somma di vettori, il vettore nullo, è scritto $\underline 0$. \\
 
 \noindent
-Un campo $\K$ è spazio vettoriale su se stesso con: \\
+Un campo $(\K, +, \cdot)$ è spazio vettoriale su se stesso con: \\
 \indent
 $* \coloneqq \cdot$ \\
 \indent
@@ -683,7 +697,7 @@ Il prodotto per scalare è un vettore con la stessa direzione di quello original
 $V(\K)$ spazio vettoriale, $\overbar v_1 ... \overbar v_n \in V$ \\
 
 \noindent
-Si dice cominazione lineare dei vettori $\overbar v_1 ... \overbar v_n$ (necessariamente in numero finito) mediante gli scalari $\alpha_1 ... \alpha_n$ il vettore: \\
+Si dice \textbf{cominazione lineare} dei vettori $\overbar v_1 ... \overbar v_n$ (necessariamente in numero finito) mediante gli scalari $\alpha_1 ... \alpha_n$ il vettore: \\
 
 $\overbar v = \alpha_1 \overbar v_1 + \alpha_2 \overbar v_2 + ... + \alpha_n \overbar v_n = \sum\limits_i^{n \in \N} \alpha_i \overbar v_i$
 
@@ -691,13 +705,13 @@ $\overbar v = \alpha_1 \overbar v_1 + \alpha_2 \overbar v_2 + ... + \alpha_n \ov
 
 \section{Definizione di Sottospazio Vettoriale}
 
-$S \subseteq V$ è sottospazio vettoriale (linear subspace) (struttura algebrica) di $V(\K)$ se: \\
+$S \subseteq V$ è \textbf{sottospazio vettoriale} (linear subspace) (struttura algebrica) di $V(\K)$ se: \\
 
 \noindent
-$S$ è dotato dell'operazione binaria interna di somma di $(V, +)$ ristretta ad $S \times S$ e troncata ad $S$ ($Im(+_{S \times S}) \subseteq S$) \\
+$S$ è dotato dell'operazione binaria interna di somma di $(V, +)$ ristretta ad $S \times S$ e troncata ad $S$ ($\Ima(+_{S \times S}) \subseteq S$) \\
 
 \noindent
-$S$ è dotato dell'operazione binaria interna di prodotto per scalare di $V(\K)$ ristretta a $\K \times S$ e troncata ad $S$ ($Im(*_{\K \times S}) \subseteq S$) \\
+$S$ è dotato dell'operazione binaria interna di prodotto per scalare di $V(\K)$ ristretta a $\K \times S$ e troncata ad $S$ ($\Ima(*_{\K \times S}) \subseteq S$) \\
 
 \noindent
 $(S, +|_{S \times S}^S, *|_{\K \times S}^S)$ è uno spazio vettoriale su $\K$ \\\\
@@ -751,7 +765,7 @@ Se $V(\K)$ è uno spazio vettoriale, e $X \subseteq V(\K)$ un insieme/sequenza/s
 
 \noindent
 Alternativamente: \\
-$X$ è insieme di generatori per $V(\K) \iff \mathcal L(X) = V$. \\
+$X$ è insieme di generatori per $V(\K) \iff \LS(X) = V$. \\
 
 \noindent
 Uno spazio vettoriale è insieme di generatori per se stesso. \\
@@ -762,7 +776,7 @@ Aggiungere vettori ad un insieme di generatori fornisce ancora un insieme di gen
 
 \section{Definizione di Spazio Vettoriale Finitamente Generato}
 
-$V(\K)$ è detto finitamente generato se $\exists X \subseteq V(\K)$ con $\card X < \infty$ e $X$ insieme di generatori per $V(\K)$.
+$V(\K)$ è detto \textbf{finitamente generato} se $\exists X \subseteq V(\K)$ con $\card X < \infty$ e $X$ insieme di generatori per $V(\K)$.
 
 
 
@@ -771,27 +785,27 @@ $V(\K)$ è detto finitamente generato se $\exists X \subseteq V(\K)$ con $\card 
 Siano $V(\K)$ uno spazio vettoriale e $X \subseteq V(\K)$. \\
 
 \noindent
-$\mathcal L(X)$, detta \textbf{copertura lineare} (linear span) (o chiusura lineare) di X, è l'insieme di tutte le combinazioni lineari dei vettori in $X$. \\
+$\LS(X)$, detta \textbf{copertura lineare} (linear span) (o chiusura lineare) di X, è l'insieme di tutte le combinazioni lineari dei vettori in $X$. \\
 
 \noindent
 In simboli: \\
 
-$\mathcal L_{V(\K)}(X) = \mathcal L(X) = \left < X \right > \coloneqq \braces{\sum\limits_i^{n \in \N} \alpha_i \overbar x_i : \alpha_i \in \K, \overbar x_i \in X}$ \\
+$\LS_{V(\K)}(X) = \LS(X) = \left < X \right > \coloneqq \braces{\sum\limits_i^{n \in \N} \alpha_i \overbar x_i : \alpha_i \in \K, \overbar x_i \in X}$ \\
 
-$\mathcal L(\emptyset) \coloneqq \braces{\underline 0}$ \\
+$\LS(\emptyset) \coloneqq \braces{\underline 0}$ \\
 
 \noindent
-$\mathcal L(X)$ è sempre un sottospazio vettoriale di $V(\K)$. \\
+$\LS(X)$ è sempre un sottospazio vettoriale di $V(\K)$. \\
 Inoltre, è il più piccolo sottospazio vettoriale di $V(\K)$ che contiene $X$. \\
 
 % TODO Dimostrazione di entrambe
 % https://www.youtube.com/watch?v=zBukIJ9ZwYQ ~52:00
-% Per dimostrare la seconda, cioè che un oggetto ($\mathcal L(X)$) è il più piccolo che soddisfa una certa proprietà, mostriamo che: $Y \leq V(\K) (è sottospazio) e $X \subseteq Y$ \implies \mathcal L \subseteq Y$
+% Per dimostrare la seconda, cioè che un oggetto ($\LS(X)$) è il più piccolo che soddisfa una certa proprietà, mostriamo che: $Y \leq V(\K) (è sottospazio) e $X \subseteq Y$ \implies \LS \subseteq Y$
 
 \noindent
-$A \subseteq B \implies \mathcal L(A) \subseteq \mathcal L(B)$ \\
-$A = \mathcal L(A) \iff A$ è sottospazio vettoriale. \\
-$\mathcal L(\mathcal L(A)) = \mathcal L(A)$
+$A \subseteq B \implies \LS(A) \subseteq \LS(B)$ \\
+$A = \LS(A) \iff A$ è sottospazio vettoriale. \\
+$\LS(\LS(A)) = \LS(A)$
 
 
 
@@ -822,7 +836,7 @@ $S$ è legata $\iff$ almeno uno dei suoi vettori si può scrivere come combinazi
 
 
 % \subsection{Osservazione} % TODO
-% $S$ legata $\implies \mathcal L(S) = \mathcal L(S \setminus \braces {\overbar v_i$ dove $\overbar v_i$ è un vettore $\in S$ che è combinazione lineare di altri vettori in $S$.
+% $S$ legata $\implies \LS(S) = \LS(S \setminus \braces {\overbar v_i})$ dove $\overbar v_i$ è un vettore $\in S$ che è combinazione lineare di altri vettori in $S$.
 
 
 % \subsubsection{Dimostrazione}
@@ -984,14 +998,14 @@ Si dice \textbf{nucleo} (kernel) di una trasformazione lineare la controimmagine
 \noindent
 In simboli: \\
 
-$ker$ $f = \braces{\overbar v \in V : f(\overbar v) = \underline 0}$ \\\\
+$\ker f = \braces{\overbar v \in V : f(\overbar v) = \underline 0}$ \\\\
 
 \noindent
 Osservazioni: \\
 
-$ker$ $f \leq V(\K)$ \\
+$\ker f \leq V(\K)$ \\
 
-f è iniettiva $\iff ker$ $f = \braces{\underline 0}$
+f è iniettiva $\iff \ker f = \braces{\underline 0}$
 
 
 \subsection{Dimostrazioni}
@@ -1016,7 +1030,7 @@ Una trasformazione lineare manda sequenze libere in sequenze libere $\iff$ il su
 (nullity) \\
 
 \noindent
-$Null(f) \coloneqq dim(ker(f))$
+$\Null(f) \coloneqq \dim(\ker(f))$
 
 
 
@@ -1038,11 +1052,11 @@ Due sottospazi di $V(\K)$ non possono mai essere disgiunti! (cioè $U \cap W \ne
 
 \section{Dimensione dell'Intersezione di Spazi Vettoriali}
 
-$W \leq V \implies dim(W) \leq dim(V)$ \\
-$dim(W) = dim(V) \iff W = V$ \\
+$W \leq V \implies \dim(W) \leq \dim(V)$ \\
+$\dim(W) = \dim(V) \iff W = V$ \\
 
 \noindent
-$0 \leq dim(U \cap W) \leq min(dim(U), dim(W))$
+$0 \leq \dim(U \cap W) \leq \min(\dim(U), \dim(W))$
 
 \subsection{Dimostrazione Prima}
 
@@ -1059,7 +1073,7 @@ Si dimostrano le proprietà di chiusura.
 
 \section{Teorema}
 
-$\forall 0 \leq i \leq n \ldotp \exists W \leq V_n(\K) : dim(W) = i$
+$\forall 0 \leq i \leq n \ldotp \exists W \leq V_n(\K) : \dim(W) = i$
 
 
 \subsection {Dimostrazione}
@@ -1096,7 +1110,7 @@ $U + W = \braces{\overbar u + \overbar w : \overbar u \in U, \overbar w \in W}$
 
 \subsection{Teorema}
 
-$U + W  = \mathcal L (U \cap W)$ \\
+$U + W  = \LS (U \cap W)$ \\
 
 \noindent
 Cioè $U + W$ è il più piccolo sottospazio di $V(\K)$ che contiene $U$ e $W$.
@@ -1113,7 +1127,7 @@ Cioè $U + W$ è il più piccolo sottospazio di $V(\K)$ che contiene $U$ e $W$.
 $U, W \leq U + W \leq V_n(\K)$ \\
 
 \noindent
-$max(dim(U), dim(W)) \leq dim(U + W) \leq V_n(\K)$
+$\max(\dim(U), \dim(W)) \leq \dim(U + W) \leq V_n(\K)$
 
 
 
@@ -1142,7 +1156,7 @@ $B_U$ una base di $U$ e $B_W$ una base di $W$. \\
 $B_U \cap B_W$ è una base di $U \oplus W$ \\
 
 \noindent
-$dim(U \oplus W) = dim(U \oplus W)$
+$\dim(U \oplus W) = \dim(U \oplus W)$
 
 
 \subsubsection{Dimostrazione}
@@ -1158,7 +1172,7 @@ $dim(U \oplus W) = dim(U \oplus W)$
 
 \section{Formula di Grassman}
 
-$dim(U + W) = dim(U) + dim(W) - dim(U \cap W)$ \\\\
+$\dim(U + W) = \dim(U) + \dim(W) - \dim(U \cap W)$ \\\\
 
 \noindent
 Analogia con la formula per la cardinalità dell'unione di due insiemi, che usa anch'essa il principio di inclusione ed esclusione: \\
@@ -1185,7 +1199,7 @@ $\card{X \cup Y} = \card X + \card Y - \card{X \cap Y}$
 \section {Matrici}
 
 Matrice (matrix) $m \times n$ (righe $\times$ colonne) a coefficienti in $\K$: \\
-$Mat_{m,n}(\K) = \K^{m,n} = \K_{m,n}$ \\
+$\Mat_{m,n}(\K) = \K^{m,n} = \K_{m,n}$ \\
 
 \noindent
 Elementi (entries) $a_{i, j}$ \\
@@ -1195,7 +1209,7 @@ $m \neq n \rightarrow$ matrice rettangolare \\
 $m = n \rightarrow$ matrice quadrata \\
 
 \noindent
-$A \in Mat_{m,n}(\K)$ \\
+$A \in \Mat_{m,n}(\K)$ \\
 
 \noindent
 $\backslash$ = diagonale principale \\
@@ -1283,7 +1297,7 @@ $\begin{pmatrix}
 
 \section{Matrice Trasposta}
 
-$A \in Mat_{m,n}(\K)$ \\
+$A \in \Mat_{m,n}(\K)$ \\
 
 \noindent
 Matrice trasposta di A: \\
@@ -1306,7 +1320,7 @@ $A = A^T \implies A$ è simmetrica, $A$ è quadrata
 Somma elemento per elemento (per matrici di dimensioni uguali) \\
 
 \noindent
-$(Mat_{m,n}(\K), +)$ è un gruppo abeliano.
+$(\Mat_{m,n}(\K), +)$ è un gruppo abeliano.
 
 
 
@@ -1363,7 +1377,7 @@ Solo per matrici quadrate. \\
 $\detm A$ \\
 
 \noindent
-$det(A)$
+$\det(A)$
 
 
 
@@ -1382,7 +1396,7 @@ Se $A$ è triangolare superiore il determinante è il prodotto della diagonale
 
 \subsection{Regola di Laplace}
 
-$A \in Mat_n(\K),$ $n \geq 2$ \\
+$A \in \Mat_n(\K),$ $n \geq 2$ \\
 
 \noindent
 $\detm A = \sum\limits_{j=1}^{n} (-1)^{i+j} a_{i,j} \cdot \detm{A_{i,j}} $ \\
@@ -1447,7 +1461,7 @@ Sommando a una riga / colonna una combinazione lineare delle altre righe / colon
 
 
 \section{Definizione di Matrice Singolare}
-Una matrice quadrata si dice non singolare se il suo deteminante è $\neq 0$. Altrimenti si dice singolare.
+Una matrice quadrata si dice non singolare se il suo deteminante è $\neq 0$. Altrimenti si dice \textbf{singolare} (singular / degenerate).
 
 
 
@@ -1459,8 +1473,11 @@ Si dice inversa di $A$, se $\exists$, la matrice $A^{-1}$ tale che: \\
 $A \cdot A^{-1} = A^{-1} \cdot A = I_n$ \\
 
 \noindent
+(Ovvero $A^{-1}$ è inversa destra e sinistra di $A$) \\
+
+\noindent
 Osservazione: \\
-Sia $A \in Mat_n(\K),$ $\exists A^{-1} \iff \detm A \neq 0$ \\
+Sia $A \in \Mat_n(\K),$ $\exists A^{-1} \iff \detm A \neq 0$ \\
 
 \noindent
 Cioè $A$ ammette inversa se e solo se $A$ è non singolare.
@@ -1468,13 +1485,16 @@ Cioè $A$ ammette inversa se e solo se $A$ è non singolare.
 
 \subsection{Calcolo della Matrice Inversa (Metodo del Complemento Algebrico)}
 
-Data $A = (a_{i,j}) \in Mat_n(\K)$ si dice aggiunta di $A$ la matrice $A_a \in Mat_n(\K)$ ottenuta sostituendo in $A$ ogni elemento col suo complemento algebrico ($c$). \\
+Data $A = (a_{i,j}) \in \Mat_n(\K)$ si dice \textbf{matrice dei complementi algebrici} o matrice dei cofattori (cofactor matrix) di $A$ la matrice cof $A \in \Mat_n(\K)$ ottenuta sostituendo in $A$ ogni elemento col suo \textbf{complemento algebrico} o cofattore (cofactor) ($c$). \\
 
 \noindent
 $c_{i,j} = (-1)^{i+j} \detm{A_{i,j}}$ \\
 
 \noindent
-$\detm A \neq 0 \implies A^{-1} = \frac{1}{\detm A} \cdot A_a^T$
+La trasposta della matrice dei cofattori di A è detta \textbf{matrice aggiunta} $A_a$ (adjugate matrix / classical adjoint of a square matrix / adjunct matrix / ``adjoint'') \\
+
+\noindent
+$\detm A \neq 0 \implies A^{-1} = \frac{1}{\detm A} \cdot A_a$
 
 
 
@@ -1484,40 +1504,40 @@ $\detm A \neq 0 \implies A^{-1} = \frac{1}{\detm A} \cdot A_a^T$
 
 \subsection{Definizione di Minore di Ordine $p$}
 
-Data una matrice $A \in Mat_{m,n}(\K)$ si dice minore di ordine $p$ una matrice quadrata di ordine $p$ ottenuta da $A$ sopprimendo $n-p$ colonne e $m-p$ righe.
+Data una matrice $A \in \Mat_{m,n}(\K)$ si dice minore di ordine $p$ una matrice quadrata di ordine $p$ ottenuta da $A$ sopprimendo $n-p$ colonne e $m-p$ righe.
 
 
 \subsection{Definizione di Rango}
 
-Data una matrice $A \in Mat_{m,n}(\K)$ dire che il rango (rank) di $A$ è $p$: \\
+Data una matrice $A \in \Mat_{m,n}(\K)$ dire che il rango (rank) di $A$ è $p$: \\
 
 \noindent
-$rg(A) = p$ \\
-$r(A) = p$ \\
+$\rg(A) = p$ \\
+$\mr(A) = p$ \\
 $\rho(A) = p$ \\
 
 \noindent
-con $p \leq min(m, n)$ \\
+con $p \leq \min(m, n)$ \\
 
 \noindent
 significa dire che $A$ ha un minore non singolare di ordine $p$, e che ogni eventuale minore di ordine $p + 1$ è singolare.
 
 \noindent
-$r(A) = 0 \iff A = \underline{0}$ \\
+$\mr(A) = 0 \iff A = \underline{0}$ \\
 
 \noindent
-Se $A \in Mat_n(\K)$ allora $r(A) = n \iff \detm A \neq 0$ \\
+Se $A \in \Mat_n(\K)$ allora $r(A) = n \iff \detm A \neq 0$ \\
 
 \noindent
-$A$ ha rango massimo $= A \in Mat_n(\K),$ $r(A) = n$ \\
+$A$ ha rango massimo $= A \in \Mat_n(\K),$ $\mr(A) = n$ \\
 
 \noindent
-$1 \leq rg(A) \leq min(m,n),$ $A \in Mat_{m,n}(\K),$ $A \neq \underline{0}$
+$1 \leq \rg(A) \leq \min(m,n),$ $A \in \Mat_{m,n}(\K),$ $A \neq \underline{0}$
 
 
 \subsection{Teorema degli Orlati (Teorema di Kronecker)}
 
-$A \in Mat_{m,n}(\K)$.\\
+$A \in \Mat_{m,n}(\K)$.\\
 Il rango di $A$ è $p \iff \exists$ in $A$ un minore di ordine $p$ ($M_p$) non singolare $\land$ ogni minore di ordine $p + 1$ che contiene completamente $M_p$ è singolare.
 
 
@@ -1573,7 +1593,7 @@ a_{m1} & \dots & a_{mn}
 \end{pmatrix}$ \\\\
 
 \noindent
-Quindi $f : V_n(\K) \rightarrow W_m(\K)$ è descritta interamente da una matrice $m \times n$ degli scalari $a_{ij}$ e da almeno la base del dominio (o del codominio se $f$ è invertibile).\\
+Quindi $f : V_n(\K) \rightarrow W_m(\K)$ è descritta interamente da una matrice $m \times n$ degli scalari $a_{ij}$ e dalle basi del dominio e del codominio scelte.\\
 
 \noindent
 Inoltre, rappresentando le ennuple dei componenti dei vettori di $V(\K)$ rispetto alla base $B$ come matrici (vettori colonna), ad esempio: \\
@@ -1615,16 +1635,16 @@ Il prodotto di matrici corrisponde alla composizione di funzioni (lineari).
 
 \section{Rango di una Trasformazione Lineare}
 
-$Rk(f) \coloneqq dim(Im(f))$ \\
+$\Rk(f) \coloneqq \dim(\Ima(f))$ \\
 
 \noindent
 Osservazione: \\
 
 \noindent
-Se $f : \K^n \rightarrow \K^m$ allora $Im(f)$ è generata dalle colonne della matrice che rappresenta $f$ \\
+Se $f : \K^n \rightarrow \K^m$ allora $\Ima(f)$ è generata dalle colonne della matrice che rappresenta $f$ \\
 
 \noindent
-$rk(f) =$ dimensione dello spazio vettoriale generato dalle colonne di $f$
+$\rk(f) =$ dimensione dello spazio vettoriale generato dalle colonne di $f$
 
 
 
@@ -1635,7 +1655,7 @@ $rk(f) =$ dimensione dello spazio vettoriale generato dalle colonne di $f$
 \noindent
 $f : \K^n \rightarrow \K^m$ lineare \\
 
-$Null(f) + Rk(f) = n$ \\
+$\Null(f) + \Rk(f) = n$ \\
 
 \noindent
 (dimensione nucleo + dimensione immagine = dimensione dominio)
@@ -1652,53 +1672,33 @@ $Null(f) + Rk(f) = n$ \\
 
 \subsection{Motivazione}
 
-L'insieme di tutte le matrici $\K^{m,n}$ è un gruppo? \\
-Equivale a chiedere se l'insieme di tutte le trasformazioni lineare $\K^m \rightarrow \K^n$ è un gruppo, e dato che ci sono funzioni non invertibili la risposta è no. \\
-
-% - Perchè ci interessa?
+È utile poter determinare se una trasformazione lineare è un isomorfismo, cioè è biiettiva. \\
 
 \noindent
-Dunque quand'è che questo insieme è un gruppo? \\
+Affinché una trasformazione lineare sia un isomorfismo deve essere invertibile. \\
 
 \noindent
-Tutte le funzioni devono essere invertibili. \\
+Dunque deve esistere la matrice inversa di una qualsiasi matrice associata alla trasformazione lineare, cioè quest'ultima deve essere invertibile. \\
 
 \noindent
-In generale affinche una trasformazione lineare f sia invertibile basta che l'immagine di una base del dominio sia una base del codominio. \\
-
-\noindent
-$dim(Im(f)) = n \iff ker(f) = \braces{\underline 0}$ \\
-
-\noindent
-Equivale a dire che le colonne di una qualsiasi matrice quadrata che rappresenta f devono essere linearmente indipendenti (perchè devono generare uno spazio di dimensione $= n$). \\
-
-\noindent
-Questo gruppo è il gruppo lineare generale, che può essere definito come: \\
-
-$GL_n(\K) = \braces{A \in \K^{n,m} : \exists A^{-1} \in K^{n,n}, A A^{-1} = I_n}$ \\
-
-\noindent
-Dunque come riconoscere se una matrice è invertibile? \\
-
-\noindent
-Equivale a determinare se le colonne di una matrice quadrata sono linearmente indipendenti, e questo porta alla definizione del determinante. \\
+Determinare se una matrice quadarata è invertibile equivale a determinare se le sue colonne sono linearmente indipendenti, e questo porta alla definizione di determinante. \\
 
 
 \subsection{Definizione}
 
 Serve una funzione: \\
 
-$det : \K^{n,n} \rightarrow \K$ \\
+$\det : \K^{n,n} \rightarrow \K$ \\
 
 \noindent
-tale che $det(A) = 0 \iff$ le colonne di $A$ sono linearmente indipendenti \\
+tale che $\det(A) = 0 \iff$ le colonne di $A$ sono linearmente indipendenti \\
 
 \noindent
 e che sia facile da calcolare. \\
 
-$det(I_n) \coloneqq 1$ \\
+$\det(I_n) \coloneqq 1$ \\
 
-$det(c_1 ... c_n) \coloneqq 0$ se ci sono due colonne uguali. \\ % TODO
+$\det(c_1 ... c_n) \coloneqq 0$ se ci sono due colonne uguali. \\ % TODO
 
 Imponiamo infine il determinante lineare in ogni singola colonna. % TODO
 
@@ -1741,5 +1741,11 @@ Imponiamo infine il determinante lineare in ogni singola colonna. % TODO
 % - https://en.wikipedia.org/wiki/Isomorphism
 % - https://en.wikipedia.org/wiki/Homomorphism
 % - https://en.wikipedia.org/wiki/Endomorphism
+% - https://en.wikipedia.org/wiki/Endomorphism#Automorphisms
+% - https://en.wikipedia.org/wiki/Automorphism
 % - https://en.wikipedia.org/wiki/Linear_span
 % - https://en.wikipedia.org/wiki/Morphism
+% - https://en.wikipedia.org/wiki/Linear_map#Matrices
+% - https://en.wikipedia.org/wiki/Adjugate_matrix
+% - https://forum.wordreference.com/threads/adjugate-matrix-adjoint-matrix.1303532/
+% - https://it.wikipedia.org/wiki/Matrice_dei_cofattori

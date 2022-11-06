@@ -10,6 +10,12 @@
 \newcommand{\abs}[1] {\left | #1 \right |}
 \newcommand{\overbar}[1] {\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\codom}{codom}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\graf}{graf}
+
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -174,9 +180,9 @@ $\exists a \in \E : \forall x \in \E \ldotp a \leq x \implies a$ è un minimo di
 
 $\exists b \in \E : \forall x \in \E \ldotp x \leq b \implies b$ è un massimo di $\E$ \\
 
-$min(\E) = a$ \\
+$\min(\E) = a$ \\
 \indent
-$max(\E) = b$ \\
+$\max(\E) = b$ \\
 
 \noindent
 Esistono insiemi limitati che non ammettono né massimo né minimo. \\
@@ -265,25 +271,25 @@ $\exists c \in \R : \forall x \in \E, y \in M(\E) \ldotp x \leq c \leq y$ \\
 
 \noindent
 $\forall x \in \E \ldotp x \leq c \implies c \in M(\E)$ \\
-$\forall y \in M(\E) \ldotp c \leq y \implies x = min$ $M(\E)$
+$\forall y \in M(\E) \ldotp c \leq y \implies x = \min M(\E)$
 
 
 
 \section{Definizione di Estremo Superiore ed Inferiore}
 
 \noindent
-$\E$ è superiormente limitato $\implies sup(\E) = sup$ $\E = min(M(\E))$ \\
+$\E$ è superiormente limitato $\implies \sup(\E) = \sup \E = \min(M(\E))$ \\
 
 \noindent
-$\E$ è inferiormente limitato $\implies inf(\E) = inf$ $\E = max(m(\E))$
+$\E$ è inferiormente limitato $\implies \inf(\E) = \inf \E = \max(m(\E))$
 
 
 \subsection{Proprietà}
 
 \noindent
-$sup$ $\E \in \E \implies sup$ $\E = max$ $\E$ \\
-$inf$ $\E \in \E \implies inf$ $\E = min$ $\E$ \\
-$sup$ $\E$ e $inf$ $\E$ sono unici.
+$\sup \E \in \E \implies \sup \E = \max \E$ \\
+$\inf \E \in \E \implies \inf \E = \min \E$ \\
+$\sup \E$ e $\inf \E$ sono unici.
 
 
 
@@ -300,13 +306,13 @@ Tutti gli $\varepsilon$ nelle definizioni e dimostrazioni sono da considerarsi $
 \subsection{Caratterizzazione di sup}
 
 \noindent
-$\iota = sup$ $\E \iff \forall x \in \E : x \leq \iota$ $\land$ $\forall \varepsilon > 0$ $\exists x \in \E : x > \iota - \varepsilon$
+$\iota = \sup \E \iff \forall x \in \E : x \leq \iota$ $\land$ $\forall \varepsilon > 0$ $\exists x \in \E : x > \iota - \varepsilon$
 
 
 \subsection{Caratterizzazione di inf}
 
 \noindent
-$\iota = inf$ $\E \iff \forall x \in \E : \iota \leq x$ $\land$ $\forall \varepsilon > 0$ $\exists x \in \E : x < \iota + \varepsilon$
+$\iota = \inf \E \iff \forall x \in \E : \iota \leq x$ $\land$ $\forall \varepsilon > 0$ $\exists x \in \E : x < \iota + \varepsilon$
 
 
 
@@ -392,11 +398,11 @@ $[a, b] = \braces{ x \in \overbar\R : a \leq x \leq b}$ \\
 
 \noindent
 $\E \subseteq \R,$ $\E \neq \emptyset,$ $M(\E) = \emptyset$ \\
-$sup$ $\E = +\infty$ \\
+$\sup \E = +\infty$ \\
 
 \noindent
 $\E \subseteq \R,$ $\E \neq \emptyset,$ $m(\E) = \emptyset$ \\
-$inf$ $\E = -\infty$
+$\inf \E = -\infty$
 
 
 
@@ -411,8 +417,8 @@ $f$ è una legge che ad ogni elemento $x \in A$ associa univocamente un elemento
 
 \noindent
 Notazione: \\
-$A = dom(f)$ (dominio di $f$) \\
-$B = codom(f)$ (codominio di $f$) \\
+$A = \dom(f)$ (dominio di $f$) \\
+$B = \codom(f)$ (codominio di $f$) \\
 
 \noindent
 Si scrive: $f : A \rightarrow B$ \\
@@ -431,10 +437,10 @@ sono uguali $\iff A_1 = A_2$ $\land$ $\forall x \in A_1 = A_2 : f_1(x) = f_2(x)$
 
 \noindent
 $f : A \rightarrow B$ \\
-$im(f) = f[A] =$ Im$f= \braces{y \in B : \exists x \in A : y = f(x)}$ \\
+$\im(f) = f[A] = \Ima f= \braces{y \in B : \exists x \in A : y = f(x)}$ \\
 
 \noindent
-$im(f) \subseteq codom(f)$
+$\im(f) \subseteq \codom(f)$
 
 
 \subsection{Definizione di Iniettività}
@@ -448,18 +454,18 @@ $\forall x, x' \in A \ldotp f(x) = f(x') \implies x = x'$
 \subsection{Definizione di Suriettività}
 
 \noindent
-$im(f) = codom(f)$
+$\im(f) = \codom(f)$
 
 
 \subsubsection{Interpretazione Geometrica}
 
 \noindent
-$\forall y_0 \in codom(f)$ la retta $y = y_0$ interseca il grafico di $f$ in almeno un punto. \\
+$\forall y_0 \in \codom(f)$ la retta $y = y_0$ interseca il grafico di $f$ in almeno un punto. \\
 
 \noindent
 Equivalentemente: \\
 \indent
-$\forall y \in codom(f)$ \\
+$\forall y \in \codom(f)$ \\
 \indent
 $f^{-1}({y}) \neq \emptyset$ \\
 
@@ -472,6 +478,7 @@ Si può restringere anche il dominio per rendere la funzione iniettiva (Restrizi
 
 \subsection{Definizione di Biiettività}
 
+\noindent
 Una funzione si dice \textbf{biiettiva} (o biiezione, o anche corrispondenza 1 a 1 o biunivoca) se è sia iniettiva che suriettiva.
 
 
@@ -482,32 +489,32 @@ Una funzione si dice \textbf{biiettiva} (o biiezione, o anche corrispondenza 1 a
 $\forall y \in B$ $\exists! x \in A : y = f(x) \implies f : A \rightarrow B$ è \textbf{invertibile}. \\
 
 \noindent
-$f : A \rightarrow B$ è invertibile $\implies f^{-1} : im(f) \rightarrow dom(f)$ è la funzione inversa di f. \\
+$f : A \rightarrow B$ è invertibile $\implies f^{-1} : \im(f) \rightarrow \dom(f)$ è la funzione inversa di f. \\
 
 \noindent
-$\forall y \in (B = im(f)) : y = f(x) \iff x = f^{-1}(y)$ \\
+$\forall y \in (B = \im(f)) : y = f(x) \iff x = f^{-1}(y)$ \\
 
 \noindent
 Osservazione: \\
 
 \noindent
-$\forall y \in im(f) : y = f(f^{-1}(y))$ \\
+$\forall y \in \im(f) : y = f(f^{-1}(y))$ \\
 
 \noindent
 $f$ è invertibile $\iff f$ è biiettiva \\
 
 \noindent
 Il grafico della funzione inversa: \\
-$graf(f^{-1})$ \\
+$\graf(f^{-1})$ \\
 $= \braces{(y, x) \in B \times A : x = f^{-1}(y)}$ \\
 $= \braces{(y, x) \in B \times A : y = f(x)}$ \\
-$= \braces{(y, x) \in B \times A : (x, y) \in graf(f)}$ \\
+$= \braces{(y, x) \in B \times A : (x, y) \in \graf(f)}$ \\
 
 \noindent
-$(y, x) \in graf(f^{-1}) \iff (x, y) \in graf(f)$ \\
+$(y, x) \in \graf(f^{-1}) \iff (x, y) \in \graf(f)$ \\
 
 \noindent
-$graf(f^{-1})$ è simmetrico di $graf(f)$ rispetto alla retta $y = x$
+$\graf(f^{-1})$ è simmetrico di $\graf(f)$ rispetto alla retta $y = x$
 
 
 
@@ -533,9 +540,9 @@ Una funzione non iniettiva si può rendere iniettiva considerandone opportune re
 \noindent
 Se $f$ è invertibile, allora: \\
 
-$\forall x \in dom(f)\ldotp (f^{-1} \circ f)(x) = x$ \\
+$\forall x \in \dom(f)\ldotp (f^{-1} \circ f)(x) = x$ \\
 \indent
-$\forall x \in im(f)\ldotp (f \circ f^{-1})(x) = x$ \\
+$\forall x \in \im(f)\ldotp (f \circ f^{-1})(x) = x$ \\
 \indent
 $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$
 
@@ -677,8 +684,8 @@ Tutti i $\delta$ nelle definizioni e dimostrazioni sono da considerarsi $\in \R$
 \noindent
 Osservazioni: \\
 La definizione non richiede che $x_0 \in A$ \\
-Anche se $x_0 \in dom(f) = A$ il valore della funzione in questo punto non ha nessuna influenza sul valore del limite. \\
-$x_0$ deve essere un p.a. di $A$ perché x deve potersi avvicinare a $x_0$ indefinitamente rimanendo in $A = dom(f)$.
+Anche se $x_0 \in \dom(f) = A$ il valore della funzione in questo punto non ha nessuna influenza sul valore del limite. \\
+$x_0$ deve essere un p.a. di $A$ perché x deve potersi avvicinare a $x_0$ indefinitamente rimanendo in $A = \dom(f)$.
 
 
 
@@ -829,17 +836,17 @@ $\lim\limits_{x \to x_0} f(x) = L \implies \exists \delta_1 > 0 : \forall x \in 
 $\lim\limits_{x \to x_0} f(x) = L' \implies \exists \delta_2 > 0 : \forall x \in {I_\delta}_2(x_0) \cap (A \setminus \braces{x_0}) \ldotp \abs{f(x) - L'} < \varepsilon$ \\\\
 
 \noindent
-$I_{min(a, b)}(x_0) \subseteq I_{max(a, b)}(x_0)$ \\
+$I_{\min(a, b)}(x_0) \subseteq I_{\max(a, b)}(x_0)$ \\
 
 \noindent
 Equivalentemente: \\
 
 \noindent
-$I_a(x_0) \cap I_b(x_0) = I_{min(a, b)}(x_0)$ \\\\
+$I_a(x_0) \cap I_b(x_0) = I_{\min(a, b)}(x_0)$ \\\\
 
 
 \noindent
-Ponendo $\delta = min(\delta_1, \delta_2)$, nel risultante intorno: \\
+Ponendo $\delta = \min(\delta_1, \delta_2)$, nel risultante intorno: \\
 
 $I_\delta(x_0) \cap (A \setminus \braces{x_0})$ \\
 
@@ -1052,7 +1059,7 @@ $\lim\limits_{x \to x_0} h(x) = L \implies \exists \delta_1 > 0 : \forall x \in 
 $\lim\limits_{x \to x_0} g(x) = L \implies \exists \delta_2 > 0 : \forall x \in I_{\delta_2}(x_0) \cap (A \setminus \braces{x_0}) \ldotp \abs{g(x) - L} < \varepsilon$ \\
 
 \noindent
-Ponendo $\delta = min(\delta_1, \delta_2)$ si ha che: \\
+Ponendo $\delta = \min(\delta_1, \delta_2)$ si ha che: \\
 
 $\forall x \in I_{\delta}(x_0) \cap (A \setminus \braces{x_0})$ \\
 
@@ -1061,7 +1068,7 @@ valgono: \\
 
 $f(x) - L \leq g(x) - L < \varepsilon$
 
-$f(x) - L \geq h(x) - L \geq -\abs{h(x) - L} > -\varepsilon$
+$f(x) - L \geq h(x) - L \geq -\abs{h(x) - L} > -\varepsilon$ \\
 
 \noindent
 Che implicano: \\
@@ -1292,15 +1299,15 @@ $f : A \rightarrow \R,$ $x_0 \in \R$ p.a. di $A \cap (x_0, +\infty)$ e di $A \ca
 \noindent
 $f$ è crescente in $A \implies f$ ammette in $x_0$ entrambi i limiti unilaterali e vale: \\
 
-$\lim\limits_{x \to x_0^+} f(x) = inf$ $\braces{f(x) : x > x_0, x \in A}$ \\
+$\lim\limits_{x \to x_0^+} f(x) = \inf \braces{f(x) : x > x_0, x \in A}$ \\
 
-$\lim\limits_{x \to x_0^-} f(x) = sup$ $\braces{f(x) : x < x_0, x \in A}$
+$\lim\limits_{x \to x_0^-} f(x) = \sup \braces{f(x) : x < x_0, x \in A}$
 
 
 \subsubsection{Dimostrazione}
 
 \noindent
-$l = inf$ $\braces{f(x) : x > x_0, x \in A}$ \\
+$l = \inf \braces{f(x) : x > x_0, x \in A}$ \\
 
 \noindent
 Quindi: \\
@@ -1327,7 +1334,7 @@ $\abs{f(x) - l} < \varepsilon$ \\
 $\lim\limits_{x \to x_0^+} f(x) = l$ \\
 
 \noindent
-$L = sup$ $\braces{f(x) : x < x_0; x \in A}$ \\
+$L = \sup \braces{f(x) : x < x_0; x \in A}$ \\
 
 \noindent
 Quindi: \\
@@ -1369,9 +1376,9 @@ $f : A \rightarrow \R,$ $x_0 \in \R$ p.a. di $A \cap (x_0, +\infty)$ e di $A \ca
 \noindent
 $f$ è decrescente in $A \implies f$ ammette in $x_0$ entrambi i limiti unilaterali e vale: \\
 
-$\lim\limits_{x \to x_0^+} f(x) = sup$ $\braces{f(x) : x > x_0, x \in A}$ \\
+$\lim\limits_{x \to x_0^+} f(x) = \sup \braces{f(x) : x > x_0, x \in A}$ \\
 
-$\lim\limits_{x \to x_0^-} f(x) = inf$ $\braces{f(x) : x < x_0, x \in A}$ \\
+$\lim\limits_{x \to x_0^-} f(x) = \inf \braces{f(x) : x < x_0, x \in A}$ \\
 
 \noindent
 ``La monotonia è madre dei limiti unilaterali''
@@ -1381,13 +1388,13 @@ $\lim\limits_{x \to x_0^-} f(x) = inf$ $\braces{f(x) : x < x_0, x \in A}$ \\
 \section{Limiti Notevoli}
 
 \noindent
-$\forall a \in \R \ldotp \lim\limits_{x \to 0} \frac{sin(ax)}{x} = a$ \\
+$\forall a \in \R \ldotp \lim\limits_{x \to 0} \frac{\sin(ax)}{x} = a$ \\
 
 \noindent
 $\forall a \in \R \ldotp \lim\limits_{x \to 0} \frac{e^{ax} - 1}{x} = a$ \\
 
 \noindent
-$\forall a \in \R \ldotp \lim\limits_{x \to 0} \frac{log(1+ax)}{x} = a$ \\
+$\forall a \in \R \ldotp \lim\limits_{x \to 0} \frac{\log(1+ax)}{x} = a$ \\
 
 \noindent
 $\forall a \in \R \ldotp \lim\limits_{x \to 0} \frac{(1+x)^a-1}{x} = a$ \\
