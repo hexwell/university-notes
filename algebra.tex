@@ -939,7 +939,7 @@ Questo numero è detto \textbf{dimensione} (dimension) di $V(\K)$.
 
 \section{Definizione di Trasformazione Lineare}
 
-Una funzione $f : V(\K) \rightarrow W(\K)$ è detta \textbf{trasformazione}/\textbf{applicazione}/mappa lineare (o omomorfismo di spazi vettoriali) (linear transformation/map o vector space homomorphism) se associa combinazioni lineari in uno spazio vettoriale $V(\K)$ a combinazioni lineari in un altro spazio vettoriale $W(\K)$. \\
+Una funzione $f : V(\K) \rightarrow W(\K)$ è detta \textbf{trasformazione}/\textbf{applicazione}/mappa lineare (o omomorfismo di spazi vettoriali) (linear transformation/map o vector space homomorphism) se associa combinazioni lineari in uno spazio vettoriale $V(\K)$ a combinazioni lineari in un altro spazio vettoriale $W(\K)$. In altre parole conserva le operazioni di somma di vettori e prodotto per scalare. \\
 
 \noindent
 In simboli: \\
@@ -1480,7 +1480,10 @@ Osservazione: \\
 Sia $A \in \Mat_n(\K),$ $\exists A^{-1} \iff \detm A \neq 0$ \\
 
 \noindent
-Cioè $A$ ammette inversa se e solo se $A$ è non singolare.
+Cioè $A$ ammette inversa se e solo se $A$ è non singolare. \\
+
+\noindent
+In altre parole $A$ ammette inversa $\iff det(A)$ ammette inverso moltiplicativo, dato che $\det(A) \cdot \det(A^{-1}) = 1$
 
 
 \subsection{Calcolo della Matrice Inversa (Metodo del Complemento Algebrico)}
@@ -1520,7 +1523,7 @@ $\rho(A) = p$ \\
 con $p \leq \min(m, n)$ \\
 
 \noindent
-significa dire che $A$ ha un minore non singolare di ordine $p$, e che ogni eventuale minore di ordine $p + 1$ è singolare.
+significa dire che $A$ ha un minore non singolare di ordine $p$, e che ogni eventuale minore di ordine $p + 1$ è singolare. \\
 
 \noindent
 $\mr(A) = 0 \iff A = \underline{0}$ \\
@@ -1683,6 +1686,9 @@ Dunque deve esistere la matrice inversa di una qualsiasi matrice associata alla 
 \noindent
 Determinare se una matrice quadarata è invertibile equivale a determinare se le sue colonne sono linearmente indipendenti, e questo porta alla definizione di determinante. \\
 
+\noindent
+Il determinante della matrice associata caratterizza anche il fattore per cui le aree / i volumi sono scalati dalla trasformazione lineare. Da questo punto di vista quando il determinante è nullo lo spazio viene ridotto ad una dimensione inferiore, e quindi le aree diventano 0. Essendoci perdita di informazione la trasformazione lineare non può essere un isomorfismo.
+
 
 \subsection{Definizione}
 
@@ -1745,6 +1751,7 @@ Imponiamo infine il determinante lineare in ogni singola colonna. % TODO
 % - https://en.wikipedia.org/wiki/Automorphism
 % - https://en.wikipedia.org/wiki/Linear_span
 % - https://en.wikipedia.org/wiki/Morphism
+% - https://en.wikipedia.org/wiki/Matrix_multiplication#Abstract_algebra
 % - https://en.wikipedia.org/wiki/Linear_map#Matrices
 % - https://en.wikipedia.org/wiki/Adjugate_matrix
 % - https://forum.wordreference.com/threads/adjugate-matrix-adjoint-matrix.1303532/
