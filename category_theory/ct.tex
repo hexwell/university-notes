@@ -1,0 +1,662 @@
+\documentclass[a4paper, twoside, english, 11pt]{book}
+
+\usepackage{amsmath}   % for implies
+\usepackage{mathtools} % for coloneqq
+
+\newcommand{\braces}[1] {\left \{ #1 \right \}}
+
+\newcommand{\C}{\mathcal C}
+\newcommand{\D}{\mathcal D}
+\newcommand{\I}{\mathcal I}
+\newcommand{\catname}[1]{{\normalfont\textbf{#1}}}
+\newcommand{\Set}{\catname{Set}}
+\newcommand{\Cat}{\catname{Cat}}
+
+% TODO Hom & Ob
+
+\begin{document}
+
+\pagestyle{headings}
+
+\frontmatter
+
+\begin{titlepage}
+	\begin{center}
+		{\huge \bfseries Category Theory Course Notes \\}
+		\vspace{1.5cm}
+		{\Large \bfseries Ettore Forigo}
+	\end{center}
+\end{titlepage}
+
+\mainmatter
+
+\chapter{}
+
+
+
+\section{Definition of Category}
+
+A \textbf{category} (1-category) $\C$ consists of: \\
+
+1 - A class $Ob(\C)$ of objects of $\C$ \\
+
+2 - $\forall X, Y \in Ob(\C) \ldotp$ \\
+\indent\indent
+a class $Hom_\C(X, Y)$ of \textbf{morphisms} from $X$ to $Y$ \\
+
+3 - $\forall X \in Ob(\C) \ldotp$ \\
+\indent\indent
+an \textbf{identity morphism} $id_X \in Hom_\C(X, X)$ \\
+
+4 - $\forall X, Y, Z \in Ob(\C) \ldotp$ \\
+\indent\indent
+a \textbf{composition rule}: \\\\
+\indent\indent\indent
+$Hom_\C(Y, Z) \times Hom_\C(X, Y) \rightarrow Hom_\C(X, Z)$ \\
+\indent\indent\indent
+$(g, f) \mapsto g \circ f$ \\\\
+
+\noindent
+Such that it satisfies the following axioms: \\
+
+1 - \textbf{Associativity of composition}: \\\\
+\indent\indent
+$\forall X, Y, Z, W \in Ob(\C) \ldotp$ \\
+\indent\indent
+$\forall f \in Hom_\C(X, Y), g \in Hom_\C(Y, Z), h \in Hom_\C(Z, W) \ldotp$ \\
+\indent\indent
+$h \circ (g \circ f) = (h \circ g) \circ f$ \\
+
+2 - \textbf{Neutrality}: \\\\
+\indent\indent
+$\forall X, Y \in Ob(\C) \ldotp$ \\
+\indent\indent
+$\forall f \in Hom_\C(X, Y) \ldotp$ \\
+\indent\indent
+$id_Y \circ f = f \land f \circ id_X = f$ \\
+
+
+
+\section{Thin Categories}
+
+A category is \textbf{thin} if parallel morphisms are always the same, meaning that there is only one morphism between two objects. \\
+
+In a thin category all morphisms are monic and epic.
+
+
+
+\section{Definition of Initial Object}
+
+An object $I$ of a category $\C$ is \textbf{initial} (dual of terminal, special case of a colimit (of a functor from $\C$ to the empty category)) \\
+\indent
+$\Updownarrow$ \\ % \iff
+$\forall X \in Ob(\C) \ldotp$ \\
+$\exists! f \in Hom_\C(I, X)$
+
+
+
+\section{Definition of Terminal Object}
+
+An object $T$ of a category $\C$ is \textbf{terminal} (dual of initial, special case of limit (of a functor from the empty category to $\C$)) \\
+\indent
+$\Updownarrow$ \\ % \iff
+$\forall X \in Ob(\C) \ldotp$ \\
+$\exists! f \in Hom_\C(X, T)$
+
+
+
+\section{Definition of Monomorphism}
+
+A morphism $f : X \rightarrow Y$ in a category $\C$ ($f \in Hom_\C(X, Y)$) is a \textbf{monomorphism} (or monic in $\C$) (dual of epimorphism) \\
+\indent
+$\Updownarrow$ \\ % \iff
+$\forall Z \in Ob(\C) \ldotp \forall p, q \in Hom_\C(Z, X) \ldotp$ \\
+$f \circ p = f \circ q \implies p = q$ \\
+
+\noindent
+Example:
+
+In $\Set$ monomorphisms are precisely the injective maps. \\
+
+\noindent
+Monomorphisms ``can be cancelled'' from the left.
+
+
+
+\section{Definition of Split Monomorphism}
+
+A \textbf{split monomorphism} (dual of split epi) is a morphism $f : X \rightarrow Y$ such that there exists a morphism $g : Y \rightarrow X$ such that: \\
+
+$g \circ f = id_X$ \\
+
+\noindent
+Proposition: every split mono is a mono. \\
+Proposition: in $\Set$, every mono $f : X \rightarrow Y$ where $X$ is inhabited is a split mono, assuming LEM holds.
+
+
+
+\section{Definition of Epimorphism}
+
+A morphism $f : X \rightarrow Y$ in a category $\C$ ($f \in Hom_\C(X, Y)$) is an \textbf{epimorphism} (or epic in $\C$) (dual of monomorphism) \\
+\indent
+$\Updownarrow$ \\ % \iff
+$\forall Z \in Ob(\C) \ldotp \forall p, q \in Hom_\C(Y, Z) \ldotp$ \\
+$p \circ f = q \circ f \implies p = q$ \\
+
+\noindent
+Example:
+
+In $\Set$ epimorphisms are precisely the surjective maps. \\
+
+\noindent
+Epimorphisms ``can be cancelled'' from the right.
+
+
+
+\section{Definition of Split Epimorphism}
+
+A \textbf{split epimorphism} (dual of split mono) is a morphism $f : X \rightarrow Y$ such that there exists a morphism $g : Y \rightarrow X$ such that: \\
+
+$f \circ g = id_Y$ \\
+
+\noindent
+Proposition: every split epi is an epi. \\
+Proposition: in $\Set$, every epi is a split epi $\iff$ assuming LEM holds.
+
+
+
+\section{Definition of Isomorphism}
+
+A morphism $f : X \rightarrow Y$ in a category $\C$ ($f \in Hom_\C(X, Y)$) is an \textbf{isomorphism} \\
+\indent
+$\Updownarrow$ \\ % \iff
+$\exists g \in Hom_\C(Y, X) \ldotp$ \\
+$f \circ g = id_Y \land g \circ f = id_X$ \\
+
+\noindent
+$id_X \forall X \in Ob(\C)$ is always an isomorphisms for every category $\C$.
+
+\noindent
+Objects $X$ and $Y$ in a category $\C$ are \textbf{isomorphic} \\
+\indent
+$\Updownarrow$ \\ % iff
+there exists an isomorphism between $X$ and $Y$ ($X \cong Y$) \\
+
+\noindent
+In $\Set$, if there exists an isomorphism between $X$ and $Y$, $X$ and $Y$ are called eqinumerous.
+
+
+
+\section{Definition of Opposite Category}
+
+``The mother of all dualities'' \\
+
+\noindent
+Let $\C$ be a category. Then its opposite category $\C^{op}$ is the following category: \\
+
+- $Ob(\C^{op}) \coloneqq Ob(\C)$ \\
+
+- $Hom_{\C^{op}}(X, Y) \coloneqq Hom_\C(Y, X)$ \\
+
+- identities and composition inherited from $\C$ \\
+\indent\indent
+$id_X \in Hom_\C(X, X) = id_X^{op} \in Hom_{\C^{op}}(X, X)$ \\
+\indent\indent
+$f \circ g \coloneqq g^{op} \circ f^{op}$ \\\\
+
+\noindent
+Observations / Remarks: \\
+
+- An object $I$ of $\C$ is initial in $\C$
+
+\indent\indent
+$\Updownarrow$ % \iff
+
+\indent
+I is terminal when regarded as an object of $\C^{op}$ \\
+
+- A morphism in $\C$ is a monomorphism
+
+\indent\indent
+$\Updownarrow$ % \iff
+
+\indent
+it is an epimorphism in $\C^{op}$ \\
+
+
+
+\section{Dualities?}
+
+
+
+\section{Definition of Product}
+
+A \textbf{product} (special case of limit) of two objects $X$ and $Y$ in a category $\C$ consists of: \\
+
+- an object $P$ of $\C$ \\
+
+- a morphism $\pi_X : P \rightarrow X$ in $\C$ \\
+
+- a morphism $\pi_Y : P \rightarrow Y$ in $\C$ \\
+
+\noindent
+such that for every object $Q$ of $\C$ together with morphisms $\varphi_X : Q \rightarrow X, \varphi_Y : Q \rightarrow Y$ there is exactly one morphism $Q \rightarrow P$ such that the following diagram commutes: \\
+
+$\varphi_X = \pi_X \circ !$ \\
+\indent
+$\varphi_Y = \pi_Y \circ !$ \\
+
+\noindent
+Remarks:
+
+- Products are always associative and commutative up to isomorphism.
+
+- There is also the notion of the (co) product of zero, one, three, four, ... objects.
+
+- The zero case of a product is just a terminal object, an object with exactly one morphism from each object.
+
+
+
+\section{Definition of Coproducts}
+
+A \textbf{coproduct} (special case of colimits) of two objects $X$ and $Y$ in a category $\C$ consists of: \\
+
+- an object $C$ of $\C$ \\
+
+- a morphism $\iota_X : X \rightarrow C$ in $\C$ \\
+
+- a morphism $\iota_Y : Y \rightarrow C$ in $\C$ \\
+
+\noindent
+such that for every object $D$ of $\C$ together with morphisms $\chi_X : X \rightarrow D, \chi_Y : Y \rightarrow D$ there is exactly one morphism $C \rightarrow D$ which renders the following diagram commutative: \\
+
+$\chi_X = ! \circ \iota_X$ \\
+\indent
+$\chi_Y = ! \circ  \iota_Y$ \\
+
+\noindent
+Remarks: \\
+
+- Products in $\C^{op}$ are precisely coproducts in $\C$ \\
+
+- The zero case of a coproduct is the same as an initial object.
+
+
+
+\section{Definition of Functor}
+
+A (covariant) \textbf{functor} $F : \C \rightarrow \D$ from a category $\C$ to a category $\D$ consists of: \\
+
+- an object $F(X) \in Ob(\D)$ for each object $X \in Ob(\C)$ \\
+
+- a morphism $F(f) : F(X) \rightarrow F(Y)$ in $\D$ for each morphism $f : X \rightarrow Y$ in $\C$ \\
+
+\noindent
+such that: \\
+
+- $\forall X \in Ob(\C) \ldotp F(id_X) = id_{F(X)}$ \\
+
+- $\forall X, Y, Z \in Ob(\C) \ldotp \forall f : X \rightarrow Y \in \C, g : Y \rightarrow Z \text{ in } \C \ldotp F(g \circ f) = F(g) \circ F(f)$ \\
+
+\noindent
+Motto: \\
+Functors $\I \rightarrow \C$ are $\I$-shaped \textbf{diagrams} in $\C$
+
+
+
+\section{Definition of Contravariant Functor}
+
+A \textbf{contravariant functor} $\C \rightarrow \D$ is a covariant functor $\C^{op} \rightarrow \D$
+
+
+
+\section{Forgetful Functors?}
+
+
+
+\section{Powerset Functor[s?]?}
+
+
+
+\section{Definition of Discrete Category}
+
+The \textbf{discrete category} associated with a set $X$, written $\D(X)$, is a category containing all the objects of $X$ as objects, and no morphisms between different objects, just the identity morphisms.
+
+
+
+\section{Definition of Induced Functors}
+
+Claim: \\
+Any map between sets can be turned into a functor. \\
+
+\noindent
+Let $f : X \rightarrow Y$ be a map between sets. \\
+
+\noindent
+Consider the discrete categories $\D(X), \D(Y)$. \\
+
+\noindent
+Then $f$ induces the following functor $\D(X) \rightarrow D(Y)$: \\
+\indent
+$x \mapsto f(x)$ \\
+\indent
+$id_x \mapsto id_{f(x)}$
+
+
+
+\section{Definition of the Walking Arrow?}
+
+
+
+\section{Definition of the Walking Commutative Triagle?}
+
+% TODO mention degenerate triangle case?
+
+
+
+\section{Definition of Essentially Surjective Functor}
+
+A functor $F : \C \rightarrow \D$ is \textbf{essentially surjective} iff: \\
+
+$\forall Y \in Ob(\D) \ldotp \exists X \in Ob(\C) | F(X) \cong Y$
+
+
+
+\section{Definition of Faithful Functor}
+
+A functor $F : \C \rightarrow \D$ is \textbf{faithful} iff: \\
+
+$\forall X, Y \in Ob(\C) \ldotp$ \\
+\indent
+$\forall f, g : X \rightarrow Y$ in $\C$ \\
+\indent
+$F(f) = F(g) \implies f = g$ \\
+
+\noindent
+Reformulation: iff \\
+
+$\forall X, Y \in Ob(\C) \ldotp$ \\
+\indent
+$Hom_\C(X, Y) \rightarrow Hom_\D(F(X), F(Y))$ \\
+\indent
+$f \mapsto F(f)$ \\
+
+\noindent
+is injective.
+
+
+
+
+\section{Definition of Full Functor}
+
+A functor $F : \C \rightarrow \D$ is \textbf{full} iff: \\
+
+$\forall X, Y \in Ob(\C) \ldotp$ \\
+\indent
+$\forall g : F(X) \rightarrow F(Y)$ in $\D$ \\
+\indent
+$\exists f : X \rightarrow Y$ in $\C | F(f) = g$ \\
+
+\noindent
+Reformulation: iff \\
+
+$\forall X, Y \in Ob(\C) \ldotp$ \\
+\indent
+$Hom_\C(X, Y) \rightarrow Hom_\D(F(X), F(Y))$ \\
+\indent
+$f \mapsto F(f)$ \\
+
+\noindent
+is surjective.
+
+
+
+\section{Definition of Fully Faithful Functor}
+
+A functor is \textbf{fully faithful} iff it is full and faithful. \\
+
+\noindent
+Reformulation: iff \\
+
+$\forall X, Y \in Ob(\C) \ldotp$ \\
+\indent
+$Hom_\C(X, Y) \rightarrow Hom_\D(F(X), F(Y))$ \\
+\indent
+$f \mapsto F(f)$ \\
+
+\noindent
+is bijective.
+
+
+
+\section{Definition of Elementary Equivalence}
+
+An \textbf{elementary equivalence} is a fully faithful, essentially surjective functor.
+
+
+
+\section{Definition of Equivalence of Categories}
+
+Categories are called \textbf{equivalent} iff there is an elementary equivalence between them. \\
+
+\noindent
+Remark:
+Equivalent categories have exactly the same categorical properties.
+
+
+
+\section{Definition of Natural Transformation}
+
+A \textbf{natural transformation} $\eta : F \Rightarrow G$ between two functors $F, G : C \rightarrow D$ consists of: \\
+
+- for each object $X \in Ob(\C)$ a morphism $\eta_X : F(X) \rightarrow G(X)$ in $\D$ \\
+
+\noindent
+such that for all morphisms $f : X \rightarrow Y$ in $\C$, the \textbf{naturality square} commutes: \\
+
+$G(f) \circ \eta_X = \eta_Y \circ F(f)$ \\
+
+\noindent
+Motto: \\
+Natural transformations are \textbf{uniform} families of morphisms.
+
+
+
+\section{Definition of Functor Category}
+
+Let $\C, \D$ be categories. \\
+The \textbf{functor category} $[\C, \D]$ has: \\
+
+- as objects: all functors $\C \rightarrow \D$ \\
+
+- as morphisms: $Hom_{[\C, \D]}(F, G) \coloneqq \braces{h : F \Rightarrow G | h \text{ is a natural transformation}}$ \\
+
+- as identity: for the object F, the identity $id_F : F \Rightarrow F \\
+\indent\indent
+(id_F)_X : F(X) \rightarrow F(X)$ \\
+\indent\indent
+given by $id_{F(X)}$ \\
+
+- as composition rule: \\
+\indent\indent
+$(\omega \circ \eta)_X \coloneqq \omega_X \circ \eta_X$ \\
+
+\indent\indent
+$\omega_X : G(X) \rightarrow H(X)$ \\
+\indent\indent
+$\eta_X : F(X) \rightarrow G(X)$ \\
+
+and $\omega \circ \eta$ should be natural.
+
+
+
+\section{Definition of Small Category}
+
+A category $\C$ is small when $Ob(\C)$ is just a set and not a proper class.
+
+
+
+\section{Definition of Category of Categories}
+
+The \textbf{1-category of 1-categories}, $\Cat$ has: \\
+
+- as objects: all categories \\
+
+- as morphisms: $Hom_\Cat(\C, \D) \coloneqq \braces{F : \C \rightarrow \D | F \text{ is a functor}}$ \\
+
+- as identities $Id_F$ (the identity functor?) \\
+
+- as composition rule: \\
+\indent\indent
+$F : \C \rightarrow \D$ \\
+\indent\indent
+$G : \D \rightarrow \catname E$ \\
+
+\indent\indent
+$G \circ F : \C \rightarrow \catname E$ \\
+\indent\indent
+$X \mapsto G(F(X))$ \\
+\indent\indent
+$f \mapsto G(F(f))$ \\\\
+
+\noindent
+There are two issues with this definition: \\
+
+- Size issue (in ZFC). (it's too big, the objects don't fit in a proper class?) \\
+\indent\indent
+Remedies: \\
+
+\indent\indent
+- just consider the category of small categories \\
+
+\indent\indent
+- switch foundations \\
+
+- It ignores natural transformations \\
+\indent\indent
+Remedy: \\
+\indent\indent
+Consider the 2-category of 1-categories \\
+
+\indent\indent
+The 2-category of 1-categories has: \\
+
+\indent\indent\indent
+- as objects: all 1-categories \\
+
+\indent\indent\indent
+- as morphisms: functors \\
+
+\indent\indent\indent
+- as -2-morphisms / 2-cells: natural transformations \\
+
+
+
+\section{Definition of Cone}
+
+A \textbf{cone} of a diagram (functor) $F : \I \rightarrow \C$ in a category $\C$ consists of: \\
+
+- an object A of $\C$ (the "tip" of the cone) \\
+
+- for each object $X \in Ob(\C)$, a morphism $\pi_X : A \rightarrow F(X)$ \\
+
+\noindent
+such that for all morphisms $f: X \rightarrow Y$ in $\I$, the triangle: \\
+
+$\pi_Y = \pi_X \circ F(f)$ //
+
+\noindent
+commutes.
+
+
+
+\section{Definition of Cocone}
+
+A \textbf{cocone} of a diagram (functor) $F : \I \rightarrow \C$ in a category $\C$ consists of: \\
+
+- an object A of $\C$ (the "tip" of the cocone) \\
+
+- for each object $X \in Ob(\C)$, a morphism $\pi_X : F(X) \rightarrow A$ \\
+
+\noindent
+such that for all morphisms $f: X \rightarrow Y$ in $\I$, the triangle: \\
+
+$\pi_X = \pi_Y \circ F(f)$ //
+
+\noindent
+commutes.
+
+
+
+\section{Definition of Morphism Between Cones}
+
+A \textbf{morphism} between a cone $(A, (\pi_X)_X)$ and a further cone $(B, (\phi_X)_X)$ of a diagram $F : \I \rightarrow \C$ consists of a morphism $f : A \rightarrow B$ in $\C$ such that: \\
+
+$\pi_X = \pi_Y \circ f$
+
+
+
+\section{Definition of Limit}
+
+A \textbf{limit} of a diagram $F : \I \rightarrow \C$ is a \textbf{terminal cone} of $F$, that is, a terminal object in the category of of cones of cones of $F$.
+
+
+
+\section{Definition of Colimit}
+
+A \textbf{colimit} of a diagram $F : \I \rightarrow \C$ is an \textbf{initial cocone} of $F$.
+
+
+
+\section{Definition of Equalizer of Two Set-Theoretic Maps}
+
+Let $f, g : X \rightarrow Y$. Then the \textbf{equalizer} of $f$ and $g$ is the following function: \\
+
+$Eq(f, g) = {x \in X | f(x) = g(x)}$
+
+
+
+\section{Definition of Pullback}
+
+
+
+\section{Definition of Pushout}
+
+
+
+\section{Definition of Small Diagram}
+
+A \textbf{small diagram} in $\C$ is a diagram $\I \rightarrow \C$ where $\I$ is a small category.
+
+
+
+\section{Definition of Complete Cateogory}
+
+A category $\C$ is \textbf{complete} iff every small diagram in $\C$ has a limit (it has all small limits).
+
+
+
+\section{Definition of Cocomplete Category}
+
+A category $\C$ is \textbf{cocomplete} iff every small diagram in $\C$ has a colimit (it has all small colimits). \\
+
+$\C$ complete $\iff \C^{op}$ cocomplete.
+
+
+
+\section{Formula for Limits in Set}
+\section{Formula for Colimits in Set}
+\section{Definition of Yoneda Lemma}
+\section{Definition of Presheaf}
+\section{Definition of Representable Presheaf}
+\section{Yoneda Embedding}
+\section{Yoneda Style Proofs}
+\section{Definition of Adjoint Functors}
+\section{Currying Adjunction}
+\section{Adjunction of Logical Connectives}
+\section{Monoids}
+\section{Monoids Categorically}
+\section{Monoidal Categories}
+\section{Monads}
+
+\end{document}

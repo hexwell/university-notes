@@ -1,0 +1,155 @@
+\documentclass[a4paper, twoside, english, 11pt]{book}
+
+\usepackage{amsmath}   % for implies
+
+\newcommand{\braces}[1] {\left \{ #1 \right \}}
+
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\codom}{codom}
+\DeclareMathOperator{\Ima}{Im}
+
+\newcommand{\C}{\mathcal C}
+\newcommand{\catname}[1]{{\normalfont\textbf{#1}}}
+\newcommand{\Set}{\catname{Set}}
+
+\begin{document}
+
+\pagestyle{headings}
+
+\frontmatter
+
+\begin{titlepage}
+	\begin{center}
+		{\huge \bfseries Category Theory Course Exercises \\}
+		\vspace{1.5cm}
+		{\Large \bfseries Ettore Forigo}
+	\end{center}
+\end{titlepage}
+
+\mainmatter
+
+\chapter{}
+
+
+
+\section{Proof}
+
+Proof: $f$ is an epimorphism in $\Set \iff f$ is surjective. \\\\
+
+\noindent
+Definition of surjectivity: \\
+\indent
+$\forall y \in \codom(f) \ldotp \exists x \in \dom(f) | y = f(x)$ \\
+
+\noindent
+Definition of epimorphism: \\
+\indent
+$f : X \rightarrow Y, p,q : Y \rightarrow Z$ \\
+\indent
+$p \circ f = q \circ f \implies p = q$ \\
+
+\noindent
+To show: \\
+
+$f$ is surjective $\implies f$ is an epimorphism \\\\
+
+\noindent
+Let $f$ be surjective. \\
+
+\noindent
+Claim: \\
+
+$f$ is an epimorphism. \\\\
+
+\noindent
+To show: \\
+
+\noindent
+$\forall x \in \dom(f) \ldotp p(f(x)) = q(f(x)) \implies \forall y \in \dom(p) = \dom(q) \ldotp p(y) = q(y)$ \\
+
+\noindent
+Using: \\
+
+\noindent
+$\Ima(f) = \dom(p) = \dom(q)$ \\
+\indent\indent\indent
+$\Downarrow$ \\ % \implies
+$\forall x \in \dom(f) \ldotp p(f(x)) = q(f(x)) \implies \forall y \in \dom(p) = \dom(q) \ldotp p(y) = q(y)$ \\
+
+\noindent
+To show: \\
+
+$\Ima(f) = \braces{f(x) | x \in \dom(f)} = \braces{y | \exists x \in \dom(f) | y = f(x)}$ \\
+\indent\indent\indent
+$\stackrel{?}{=}$ \\
+\indent
+$\codom(f) = dom(p) = dom(q)$ \\
+
+\noindent
+True by assumption (surjectivity of $f$). \\
+
+\noindent
+$\forall y \in \codom(f) \ldotp \exists x \in \dom(f) | y = f(x) \implies \forall y \in \codom(f) \ldotp y \in \Ima(f)$
+
+
+
+\section{Proof}
+
+Proof: Isomorphisms in $\C$ are isomorphisms in $\C^{op}$ \\
+
+\noindent
+Definition of isomorphism: \\
+\indent
+$f : X \rightarrow Y$ is an isomorphism $\iff \exists g : Y \rightarrow X \ldotp f \circ g = id_Y \land g \circ f = id_X$ \\
+
+\noindent
+Let $f$ be an isomorphism in $\C$. \\
+
+$\exists g : Y \rightarrow X \in Hom_\C(Y, X) \ldotp f \circ g = id_Y \land g \circ f = id_X$ \\
+
+$f \in Hom_\C(X, Y)$ \\
+\indent
+$g \in Hom_\C(Y, X)$ \\\\
+
+$f^{op} \in Hom_{\C^{op}}(Y, X)$ \\
+\indent
+$g^{op} \in Hom_{\C^{op}}(X, Y)$ \\\\
+
+\noindent
+Claim: \\
+
+$f^{op}$ is an isomorphism in $\C^{op}$ \\\\
+
+\noindent
+To show: \\
+
+$\exists h \in Hom_{\C^{op}}(X, Y) \ldotp f^{op} \circ h = id_X^{op} \land h \circ f^{op} = id_Y^{op}$ \\\\
+
+\noindent
+Let $h \in Hom_{\C^{op}}(X, Y)$ be $g^{op}$, the opposite of $g \in Hom_\C(Y, X)$ \\\\
+
+\noindent
+To show: \\
+
+$f^{op} \circ g^{op} = id_X^{op} \land g^{op} \circ f^{op} = id_Y^{op}$ \\
+
+\noindent
+Using: \\
+
+$id_X \in Hom_\C(X, X) = id_X^{op} \in Hom_{\C^{op}}(X, X)$ \\
+
+$g \circ f = id_X = id_X^{op}$ \\
+\indent
+$f \circ g = id_Y = id_Y^{op}$ \\\\
+
+\noindent
+To show: \\
+
+$f^{op} \circ g^{op} = g \circ f$ \\
+\indent
+$g^{op} \circ f^{op} = f \circ g$ \\
+
+\noindent
+True by definition of composition in opposite category.
+
+\end{document}

@@ -1,0 +1,161 @@
+Teacher:
+Ingo Blechschmidt
+ingo-blechschmidt.eu
+
+Course Website:
+ct.quasicoherent.io
+
+Questionary:
+- What do you want to get out of this course?
+I discovered CT thanks to Haskell, I've acquired some backgroud since then but this is my first course in CT, so I want to lay strong foundations, understand adjunctions and the adjoint functors of common monads, understand the Yoneda lemma and maybe in the future Lawvere Fixed Point theorem.
+
+- What are your other mathematical / compsci interests?
+Haskell & functional programming, abstract algebra, combinatorics and group theory even though I don't know much about those.
+Added later: Lambda calculus, mathematical logic, foundations of math, philosophy of math.
+
+- Do you prefer specific methods of teaching?
+Not particularly.
+
+
+Course Topics:
+
+- Associativity, Composition
+- Objects, Morphisms, Categories
+- Initial and Terminal Objects
+- Functors
+- Natural Transformations
+- Adjunctions
+- Yoneda Lemma
+- Applications to Group Theory, Combinatorics, Topology, Topos Theory, epidemic models, ...
+
+
+Lecture 1 Topics (1h 10/11):
+
+- Motivation for Category Theory
+(conceptual clarity, recognize analogies between analogies, render the trivial trivially trivial, foundational language for algebraic topology, topos theory, combinatorics, quantum field theory, compositional systems, programming, languages, algebraic geometry, logic, database theory, ...)
+- Associative Operations
+(minimum binary function, cartesian product of sets, topological product, Haskell Pair type are four instances of a general categorical fact, there is associativity up to isomorphism)
+- Definition of Category (objects, morphisms, axioms)
+- Examples of Categories
+(Set, Vect(R), Numerical, Pokemon)
+- Thin Categories
+- Initial and Terminal Objects
+
+
+Lecture 2 Topics (1h 11/11):
+
+- Initial and Terminal Objects
+- Monomorphisms, Epimorphisms and Isomorphisms
+- The Mother of all Dualities (Opposite Category)
+- ~Products and Coproducts~
+
+(Bonizzato, Masi's "sfide di programmazione"'s problem)
+
+
+Lecture 3 Topics (4h 14/11):
+
+(Fix definition of opposite cateogory)
+- Duality
+- Products (and coproducts)
+(π_X = fst, π_Y = snd)
+(Kan extensions (Haskell ~Control.Monad~ Data.Functor.Kan (by Kmett)))
+- Functors (covariant & contravariant)
+(Some forgetful functors "preserve and create products")
+(Some forgetful functors are "monadic functors")
+(The powerset functor is also a monad)
+(Horizontal(/vertical) categorification)
+(John Baez (inventor of the blog) "This Week's Finds in Mathematical Physics")
+- Exercises
+(Action groupoid of a group)
+- Philosophy of Math (platonism, formalism, fictionalism, problem of accessibility)
+- Custom-taylored mathematical universes
+(Constructive Mathematics (no double negation elimination))
+
+
+Lecture 4 Topics (2h 16/11):
+
+- Functor examples
+- Diagrams
+- Properties of Functors
+- Elementary Equivalences & Equivalence of Categories
+- Natural Transformations
+(Theorems for Free (in Haskell, every generic function between functors is a natural transformation) (also there is a website that does it))
+
+
+Lecture 5 Topics (1h 17/11):
+
+- Natural transformations
+(Continuum Hypothesis (there is no set with cardinality between naturals and reals))
+(There are true statements that cannot be proven)
+
+(Is Haskell's (.).(.) a product? Maybe, but it's a natural transformation)
+
+(Products exercise with Benedetti (3.1a))
+
+
+Lecture 6 Topics (1h 18/11):
+
+- Loose ends
+(Functor category)
+("A monad is just a monoid in the category of endofunctors, what's the problem?")
+- Limits
+(True statements that cannot be proven, Busy Beaver, Gödel Incompleteness, Lawvere Fixed Point Theorem)
+(Size issues of Cat)
+(Löb's theorem)
+
+
+Agda Session (~1h 18/11)
+(Agdapad, Dependent Types, Witnesses, Refl, Cong, HoTT book (at page 23 there is a conversion table between types and logical expressions))
+
+
+Lecture 7 Topics (4h 21/11):
+
+(Products exercise)
+(Lawvere Fixed Point Theorem)
+(CW-Complexes (generalization of Möbius strip & Klein bottle))
+- Limits
+- Pushouts & Pullbacks
+(In Haskell, a function mapping ⊥↦⊥ is called "strict")
+- Yoneda Lemma
+- Yoneda Embeddings
+- Presheafs
+
+
+Session on Sets and Classes (~2h 22/11):
+
+- Russel's Paradox (naïve set theory) & resolution (ZFC)
+- Small sets
+- Classes in ZFC (Proper, improper)
+- HA, PA, IZF, ZF, ZFC, ZFC+U, NBG, ZFC/S, NF
+
+
+Lecture 8 Topics (2h 23/11):
+
+- Yoneda Lemma
+- Representable Presheafs (functors)
+- Yoneda Embdeddings
+- Adjoints Functors
+(Cartesian and Cartesian Closed are probably synonyms)
+
+Lecture 9 Topics (1h 24/11):
+
+- Adjunctions (Currying Adjunction, Adjunction of Logical Quantifiers)
+- Monoids and Monoidal Categories
+- Monads
+
+(Y-Combinator Derivation from Recursive Let Binding Definition)
+(The definition of Cat as given works and contains itself, but cannot be expressed in ZFC)
+(Categorical Logic, Boolean and Heyting Algebras, Classifying Toposes)
+
+
+Agda Session (~1h 24/11):
+
+Correct by Construction
+
+
+Lecture 10 Topics (1h 25/11):
+
+Haskell Session (~2h 25/11):
+
+Free Functors
+Free Monads
