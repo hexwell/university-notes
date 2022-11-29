@@ -134,7 +134,7 @@ Lecture 8 Topics (2h 23/11):
 - Ideal Objects
 - Yoneda Lemma
 - Yoneda Embdeddings
-- Representable Presheafs (functors)
+- Representable Presheafs (Functors)
 - Adjoints Functors
 (Cartesian and Cartesian Closed are probably synonyms)
 
