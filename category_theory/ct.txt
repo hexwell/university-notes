@@ -131,11 +131,13 @@ Session on Sets and Classes (~2h 22/11):
 
 Lecture 8 Topics (2h 23/11):
 
+- Ideal Objects
 - Yoneda Lemma
-- Representable Presheafs (functors)
 - Yoneda Embdeddings
+- Representable Presheafs (functors)
 - Adjoints Functors
 (Cartesian and Cartesian Closed are probably synonyms)
+
 
 Lecture 9 Topics (1h 24/11):
 
@@ -154,6 +156,12 @@ Correct by Construction
 
 
 Lecture 10 Topics (1h 25/11):
+
+- Monads
+- Monoidal Categories
+- Kleisli Categories
+- Topological Quantum Field Theory
+
 
 Haskell Session (~2h 25/11):
 
