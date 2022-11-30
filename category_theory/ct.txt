@@ -57,7 +57,7 @@ Lecture 3 Topics (4h 14/11):
 (Fix definition of opposite cateogory)
 - Duality
 - Products (and coproducts)
-(π_X = fst, π_Y = snd)
+(In Haskell: π_X = fst, π_Y = snd)
 (Kan extensions (Haskell ~Control.Monad~ Data.Functor.Kan (by Kmett)))
 - Functors (covariant & contravariant)
 (Some forgetful functors "preserve and create products")
@@ -75,7 +75,10 @@ Lecture 3 Topics (4h 14/11):
 Lecture 4 Topics (2h 16/11):
 
 - Functor examples
+(CT was invented to better understand structures in Algebraic Topology (Homology Functor))
 - Diagrams
+(The walking arrow, The walking commutative triangle)
+(Degenerate triangles)
 - Properties of Functors
 - Elementary Equivalences & Equivalence of Categories
 - Natural Transformations
@@ -85,6 +88,7 @@ Lecture 4 Topics (2h 16/11):
 Lecture 5 Topics (1h 17/11):
 
 - Natural transformations
+(length is a natural transformation List(X) ⇒ K_ℕ (constant functor))
 (Continuum Hypothesis (there is no set with cardinality between naturals and reals))
 (There are true statements that cannot be proven)
 
@@ -98,6 +102,7 @@ Lecture 6 Topics (1h 18/11):
 - Loose ends
 (Functor category)
 ("A monad is just a monoid in the category of endofunctors, what's the problem?")
+(Category of categories can be formalized in NBG Set Theory (which adds the notion of classes to ZFC))
 - Limits
 (True statements that cannot be proven, Busy Beaver, Gödel Incompleteness, Lawvere Fixed Point Theorem)
 (Size issues of Cat)
@@ -105,17 +110,21 @@ Lecture 6 Topics (1h 18/11):
 
 
 Agda Session (~1h 18/11)
-(Agdapad, Dependent Types, Witnesses, Refl, Cong, HoTT book (at page 23 there is a conversion table between types and logical expressions))
+(Agdapad, Dependent Types, Witnesses, (Refl, Cong, Symm, Trans), HoTT book (at page 23 there is a conversion table between types and logical expressions))
 
 
 Lecture 7 Topics (4h 21/11):
 
 (Products exercise)
 (Lawvere Fixed Point Theorem)
+- Cones & Cocones
+(All diagrams in CT commute (they're called commutative diagrams))
 (CW-Complexes (generalization of Möbius strip & Klein bottle))
+(Pullbacks related to monads? Maybe it was just the fiber product in Set)
 - Limits
 - Pushouts & Pullbacks
 (In Haskell, a function mapping ⊥↦⊥ is called "strict")
+(There are formulas for computing limits and colimits of diagrams in Set)
 - Yoneda Lemma
 - Yoneda Embeddings
 - Presheafs
@@ -145,13 +154,17 @@ Lecture 9 Topics (1h 24/11):
 - Monoids and Monoidal Categories
 - Monads
 
+(Monads were "triples" or "standard constructions" before CT)
 (Y-Combinator Derivation from Recursive Let Binding Definition)
 (The definition of Cat as given works and contains itself, but cannot be expressed in ZFC)
-(Categorical Logic, Boolean and Heyting Algebras, Classifying Toposes)
+(Categorical Logic)
+(Boolean and Heyting Algebras)
+(Classifying Toposes)
 
 
 Agda Session (~1h 24/11):
 
+https://math.andrej.com/2007/09/28/seemingly-impossible-functional-programs/
 Correct by Construction
 
 
@@ -161,9 +174,15 @@ Lecture 10 Topics (1h 25/11):
 - Monoidal Categories
 - Kleisli Categories
 - Topological Quantum Field Theory
+(
+	"As a basic example, category theory reveals a common origin to the commutativity of binary operations such as addition and multiplication of numbers; the cartesian product of sets, groups and spaces; and the pair type in programming"
+
+	The common origin of the commutativity of operators mentioned in the course description is the commutativity of the categorical product!
+)
 
 
 Haskell Session (~2h 25/11):
 
 Free Functors
 Free Monads
+"Monads a la carte"

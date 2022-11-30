@@ -2,17 +2,24 @@
 
 \usepackage{amsmath}   % for implies
 \usepackage{mathtools} % for coloneqq
+\usepackage{amssymb}   % for varnothing
 
 \newcommand{\braces}[1] {\left \{ #1 \right \}}
+
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ob}{Ob}
 
 \newcommand{\C}{\mathcal C}
 \newcommand{\D}{\mathcal D}
 \newcommand{\I}{\mathcal I}
+\newcommand{\E}{\mathcal E}
 \newcommand{\catname}[1]{{\normalfont\textbf{#1}}}
 \newcommand{\Set}{\catname{Set}}
 \newcommand{\Cat}{\catname{Cat}}
+\newcommand{\nCob}{\catname{nCob}}
+\newcommand{\Hilb}{\catname{Hilb}}
 
-% TODO Hom & Ob
+\let\emptyset\varnothing
 
 \begin{document}
 
@@ -38,21 +45,21 @@
 
 A \textbf{category} (1-category) $\C$ consists of: \\
 
-1 - A class $Ob(\C)$ of objects of $\C$ \\
+1 - A class $\Ob(\C)$ of objects of $\C$ \\
 
-2 - $\forall X, Y \in Ob(\C) \ldotp$ \\
+2 - $\forall X, Y \in \Ob(\C) \ldotp$ \\
 \indent\indent
-a class $Hom_\C(X, Y)$ of \textbf{morphisms} from $X$ to $Y$ \\
+a class $\Hom_\C(X, Y)$ of \textbf{morphisms} from $X$ to $Y$ \\
 
-3 - $\forall X \in Ob(\C) \ldotp$ \\
+3 - $\forall X \in \Ob(\C) \ldotp$ \\
 \indent\indent
-an \textbf{identity morphism} $id_X \in Hom_\C(X, X)$ \\
+an \textbf{identity morphism} $id_X \in \Hom_\C(X, X)$ \\
 
-4 - $\forall X, Y, Z \in Ob(\C) \ldotp$ \\
+4 - $\forall X, Y, Z \in \Ob(\C) \ldotp$ \\
 \indent\indent
 a \textbf{composition rule}: \\\\
 \indent\indent\indent
-$Hom_\C(Y, Z) \times Hom_\C(X, Y) \rightarrow Hom_\C(X, Z)$ \\
+$\Hom_\C(Y, Z) \times \Hom_\C(X, Y) \rightarrow \Hom_\C(X, Z)$ \\
 \indent\indent\indent
 $(g, f) \mapsto g \circ f$ \\\\
 
@@ -61,17 +68,17 @@ Such that it satisfies the following axioms: \\
 
 1 - \textbf{Associativity of composition}: \\\\
 \indent\indent
-$\forall X, Y, Z, W \in Ob(\C) \ldotp$ \\
+$\forall X, Y, Z, W \in \Ob(\C) \ldotp$ \\
 \indent\indent
-$\forall f \in Hom_\C(X, Y), g \in Hom_\C(Y, Z), h \in Hom_\C(Z, W) \ldotp$ \\
+$\forall f \in \Hom_\C(X, Y), g \in \Hom_\C(Y, Z), h \in \Hom_\C(Z, W) \ldotp$ \\
 \indent\indent
 $h \circ (g \circ f) = (h \circ g) \circ f$ \\
 
 2 - \textbf{Neutrality}: \\\\
 \indent\indent
-$\forall X, Y \in Ob(\C) \ldotp$ \\
+$\forall X, Y \in \Ob(\C) \ldotp$ \\
 \indent\indent
-$\forall f \in Hom_\C(X, Y) \ldotp$ \\
+$\forall f \in \Hom_\C(X, Y) \ldotp$ \\
 \indent\indent
 $id_Y \circ f = f \land f \circ id_X = f$ \\
 
@@ -81,6 +88,7 @@ $id_Y \circ f = f \land f \circ id_X = f$ \\
 
 A category is \textbf{thin} if parallel morphisms are always the same, meaning that there is only one morphism between two objects. \\
 
+\noindent
 In a thin category all morphisms are monic and epic.
 
 
@@ -90,8 +98,8 @@ In a thin category all morphisms are monic and epic.
 An object $I$ of a category $\C$ is \textbf{initial} (dual of terminal, special case of a colimit (of a functor from $\C$ to the empty category)) \\
 \indent
 $\Updownarrow$ \\ % \iff
-$\forall X \in Ob(\C) \ldotp$ \\
-$\exists! f \in Hom_\C(I, X)$
+$\forall X \in \Ob(\C) \ldotp$ \\
+$\exists! f \in \Hom_\C(I, X)$
 
 
 
@@ -100,22 +108,21 @@ $\exists! f \in Hom_\C(I, X)$
 An object $T$ of a category $\C$ is \textbf{terminal} (dual of initial, special case of limit (of a functor from the empty category to $\C$)) \\
 \indent
 $\Updownarrow$ \\ % \iff
-$\forall X \in Ob(\C) \ldotp$ \\
-$\exists! f \in Hom_\C(X, T)$
+$\forall X \in \Ob(\C) \ldotp$ \\
+$\exists! f \in \Hom_\C(X, T)$
 
 
 
 \section{Definition of Monomorphism}
 
-A morphism $f : X \rightarrow Y$ in a category $\C$ ($f \in Hom_\C(X, Y)$) is a \textbf{monomorphism} (or monic in $\C$) (dual of epimorphism) \\
+A morphism $f : X \rightarrow Y$ in a category $\C$ ($f \in \Hom_\C(X, Y)$) is a \textbf{monomorphism} (or monic in $\C$) (dual of epimorphism) \\
 \indent
 $\Updownarrow$ \\ % \iff
-$\forall Z \in Ob(\C) \ldotp \forall p, q \in Hom_\C(Z, X) \ldotp$ \\
+$\forall Z \in \Ob(\C) \ldotp \forall p, q \in \Hom_\C(Z, X) \ldotp$ \\
 $f \circ p = f \circ q \implies p = q$ \\
 
 \noindent
-Example:
-
+Example: \\
 In $\Set$ monomorphisms are precisely the injective maps. \\
 
 \noindent
@@ -137,15 +144,14 @@ Proposition: in $\Set$, every mono $f : X \rightarrow Y$ where $X$ is inhabited 
 
 \section{Definition of Epimorphism}
 
-A morphism $f : X \rightarrow Y$ in a category $\C$ ($f \in Hom_\C(X, Y)$) is an \textbf{epimorphism} (or epic in $\C$) (dual of monomorphism) \\
+A morphism $f : X \rightarrow Y$ in a category $\C$ ($f \in \Hom_\C(X, Y)$) is an \textbf{epimorphism} (or epic in $\C$) (dual of monomorphism) \\
 \indent
 $\Updownarrow$ \\ % \iff
-$\forall Z \in Ob(\C) \ldotp \forall p, q \in Hom_\C(Y, Z) \ldotp$ \\
+$\forall Z \in \Ob(\C) \ldotp \forall p, q \in \Hom_\C(Y, Z) \ldotp$ \\
 $p \circ f = q \circ f \implies p = q$ \\
 
 \noindent
-Example:
-
+Example: \\
 In $\Set$ epimorphisms are precisely the surjective maps. \\
 
 \noindent
@@ -167,14 +173,14 @@ Proposition: in $\Set$, every epi is a split epi $\iff$ assuming LEM holds.
 
 \section{Definition of Isomorphism}
 
-A morphism $f : X \rightarrow Y$ in a category $\C$ ($f \in Hom_\C(X, Y)$) is an \textbf{isomorphism} \\
+A morphism $f : X \rightarrow Y$ in a category $\C$ ($f \in \Hom_\C(X, Y)$) is an \textbf{isomorphism} \\
 \indent
 $\Updownarrow$ \\ % \iff
-$\exists g \in Hom_\C(Y, X) \ldotp$ \\
+$\exists g \in \Hom_\C(Y, X) \ldotp$ \\
 $f \circ g = id_Y \land g \circ f = id_X$ \\
 
 \noindent
-$id_X \forall X \in Ob(\C)$ is always an isomorphisms for every category $\C$.
+$id_X \forall X \in \Ob(\C)$ is always an isomorphisms for every category $\C$.
 
 \noindent
 Objects $X$ and $Y$ in a category $\C$ are \textbf{isomorphic} \\
@@ -194,13 +200,13 @@ In $\Set$, if there exists an isomorphism between $X$ and $Y$, $X$ and $Y$ are c
 \noindent
 Let $\C$ be a category. Then its opposite category $\C^{op}$ is the following category: \\
 
-- $Ob(\C^{op}) \coloneqq Ob(\C)$ \\
+- $\Ob(\C^{op}) \coloneqq \Ob(\C)$ \\
 
-- $Hom_{\C^{op}}(X, Y) \coloneqq Hom_\C(Y, X)$ \\
+- $\Hom_{\C^{op}}(X, Y) \coloneqq \Hom_\C(Y, X)$ \\
 
 - identities and composition inherited from $\C$ \\
 \indent\indent
-$id_X \in Hom_\C(X, X) = id_X^{op} \in Hom_{\C^{op}}(X, X)$ \\
+$id_X \in \Hom_\C(X, X) = id_X^{op} \in \Hom_{\C^{op}}(X, X)$ \\
 \indent\indent
 $f \circ g \coloneqq g^{op} \circ f^{op}$ \\\\
 
@@ -225,13 +231,34 @@ it is an epimorphism in $\C^{op}$ \\
 
 
 
-\section{Dualities?}
+\section{Dualities}
+
+\noindent
+injective maps in $\Set$ (monomorphism in $\Set$) $\leftrightarrow$ surjective maps in $\Set$ (epimorphism in $\Set$) \\
+
+\noindent
+$\leq \indent \leftrightarrow \indent \geq$ \\
+
+\noindent
+$\cap \indent \leftrightarrow \indent \cup$ \\
+
+\noindent
+$\braces{x} \indent \leftrightarrow \indent \emptyset$ \\
+
+\noindent
+$\subset \indent \leftrightarrow \indent$ quotient set \\
+
+\noindent
+$\times$ (cartesian product) $\indent \leftrightarrow \indent$ disjoint union (tagged) \\
+
+\noindent
+$f \circ g \indent \leftrightarrow \indent g \circ f$
 
 
 
 \section{Definition of Product}
 
-A \textbf{product} (special case of limit) of two objects $X$ and $Y$ in a category $\C$ consists of: \\
+A \textbf{product} (dual of coproduct, special case of limit) of two objects $X$ and $Y$ in a category $\C$ consists of: \\
 
 - an object $P$ of $\C$ \\
 
@@ -249,6 +276,8 @@ $\varphi_Y = \pi_Y \circ !$ \\
 \noindent
 Remarks:
 
+- $\pi_X$ and $\pi_Y$ are called projection morphisms (also in limits).
+
 - Products are always associative and commutative up to isomorphism.
 
 - There is also the notion of the (co) product of zero, one, three, four, ... objects.
@@ -259,7 +288,7 @@ Remarks:
 
 \section{Definition of Coproducts}
 
-A \textbf{coproduct} (special case of colimits) of two objects $X$ and $Y$ in a category $\C$ consists of: \\
+A \textbf{coproduct} (dual of product, special case of colimit) of two objects $X$ and $Y$ in a category $\C$ consists of: \\
 
 - an object $C$ of $\C$ \\
 
@@ -275,9 +304,9 @@ $\chi_X = ! \circ \iota_X$ \\
 $\chi_Y = ! \circ  \iota_Y$ \\
 
 \noindent
-Remarks: \\
+Remarks:
 
-- Products in $\C^{op}$ are precisely coproducts in $\C$ \\
+- Products in $\C^{op}$ are precisely coproducts in $\C$
 
 - The zero case of a coproduct is the same as an initial object.
 
@@ -287,20 +316,24 @@ Remarks: \\
 
 A (covariant) \textbf{functor} $F : \C \rightarrow \D$ from a category $\C$ to a category $\D$ consists of: \\
 
-- an object $F(X) \in Ob(\D)$ for each object $X \in Ob(\C)$ \\
+- an object $F(X) \in \Ob(\D)$ for each object $X \in \Ob(\C)$ \\
 
 - a morphism $F(f) : F(X) \rightarrow F(Y)$ in $\D$ for each morphism $f : X \rightarrow Y$ in $\C$ \\
 
 \noindent
 such that: \\
 
-- $\forall X \in Ob(\C) \ldotp F(id_X) = id_{F(X)}$ \\
+- $\forall X \in \Ob(\C) \ldotp F(id_X) = id_{F(X)}$ \\
 
-- $\forall X, Y, Z \in Ob(\C) \ldotp \forall f : X \rightarrow Y \in \C, g : Y \rightarrow Z \text{ in } \C \ldotp F(g \circ f) = F(g) \circ F(f)$ \\
+- $\forall X, Y, Z \in \Ob(\C) \ldotp \forall f : X \rightarrow Y \in \C, g : Y \rightarrow Z \text{ in } \C \ldotp F(g \circ f) = F(g) \circ F(f)$ \\
 
 \noindent
 Motto: \\
-Functors $\I \rightarrow \C$ are $\I$-shaped \textbf{diagrams} in $\C$
+Functors $\I \rightarrow \C$ are $\I$-shaped \textbf{diagrams} in $\C$ \\
+
+\noindent
+Functors preserve commutative diagrams \\
+Functors preserve isomorphisms
 
 
 
@@ -310,11 +343,43 @@ A \textbf{contravariant functor} $\C \rightarrow \D$ is a covariant functor $\C^
 
 
 
-\section{Forgetful Functors?}
+\section{Definition of Identity Functor}
+
+The \textbf{identity functor} $Id_\C$ on a category $\C$ is the following functor: \\
+
+$Id_\C : \C \rightarrow \C$\\
+\indent
+$X \mapsto X$ \\
+\indent
+$f \mapsto f$
 
 
 
-\section{Powerset Functor[s?]?}
+\section{Definition of Constant Functor}
+
+Let $X_0$ be an object of a category $\C$. \\
+The \textbf{constant functor} $Id_\C$ on $X_0$ is the following functor: \\
+
+$Id_\C : \C \rightarrow \C$\\
+\indent
+$X \mapsto X$ \\
+\indent
+$f \mapsto f$
+
+
+
+\section{Forgetful Functors}
+
+A \textbf{forgetful functor} 'forgets' or drops some or all of the input's structure or properties 'before' mapping to the output. \\
+
+\noindent
+Examples: \\
+
+- From vector space category to group category \\
+
+- From vector space category to set category \\
+
+- From abelian group category to group category
 
 
 
@@ -344,21 +409,11 @@ $id_x \mapsto id_{f(x)}$
 
 
 
-\section{Definition of the Walking Arrow?}
-
-
-
-\section{Definition of the Walking Commutative Triagle?}
-
-% TODO mention degenerate triangle case?
-
-
-
 \section{Definition of Essentially Surjective Functor}
 
 A functor $F : \C \rightarrow \D$ is \textbf{essentially surjective} iff: \\
 
-$\forall Y \in Ob(\D) \ldotp \exists X \in Ob(\C) | F(X) \cong Y$
+$\forall Y \in \Ob(\D) \ldotp \exists X \in \Ob(\C) | F(X) \cong Y$
 
 
 
@@ -366,7 +421,7 @@ $\forall Y \in Ob(\D) \ldotp \exists X \in Ob(\C) | F(X) \cong Y$
 
 A functor $F : \C \rightarrow \D$ is \textbf{faithful} iff: \\
 
-$\forall X, Y \in Ob(\C) \ldotp$ \\
+$\forall X, Y \in \Ob(\C) \ldotp$ \\
 \indent
 $\forall f, g : X \rightarrow Y$ in $\C$ \\
 \indent
@@ -375,9 +430,9 @@ $F(f) = F(g) \implies f = g$ \\
 \noindent
 Reformulation: iff \\
 
-$\forall X, Y \in Ob(\C) \ldotp$ \\
+$\forall X, Y \in \Ob(\C) \ldotp$ \\
 \indent
-$Hom_\C(X, Y) \rightarrow Hom_\D(F(X), F(Y))$ \\
+$\Hom_\C(X, Y) \rightarrow \Hom_\D(F(X), F(Y))$ \\
 \indent
 $f \mapsto F(f)$ \\
 
@@ -391,7 +446,7 @@ is injective.
 
 A functor $F : \C \rightarrow \D$ is \textbf{full} iff: \\
 
-$\forall X, Y \in Ob(\C) \ldotp$ \\
+$\forall X, Y \in \Ob(\C) \ldotp$ \\
 \indent
 $\forall g : F(X) \rightarrow F(Y)$ in $\D$ \\
 \indent
@@ -400,9 +455,9 @@ $\exists f : X \rightarrow Y$ in $\C | F(f) = g$ \\
 \noindent
 Reformulation: iff \\
 
-$\forall X, Y \in Ob(\C) \ldotp$ \\
+$\forall X, Y \in \Ob(\C) \ldotp$ \\
 \indent
-$Hom_\C(X, Y) \rightarrow Hom_\D(F(X), F(Y))$ \\
+$\Hom_\C(X, Y) \rightarrow \Hom_\D(F(X), F(Y))$ \\
 \indent
 $f \mapsto F(f)$ \\
 
@@ -418,9 +473,9 @@ A functor is \textbf{fully faithful} iff it is full and faithful. \\
 \noindent
 Reformulation: iff \\
 
-$\forall X, Y \in Ob(\C) \ldotp$ \\
+$\forall X, Y \in \Ob(\C) \ldotp$ \\
 \indent
-$Hom_\C(X, Y) \rightarrow Hom_\D(F(X), F(Y))$ \\
+$\Hom_\C(X, Y) \rightarrow \Hom_\D(F(X), F(Y))$ \\
 \indent
 $f \mapsto F(f)$ \\
 
@@ -440,7 +495,7 @@ An \textbf{elementary equivalence} is a fully faithful, essentially surjective f
 Categories are called \textbf{equivalent} iff there is an elementary equivalence between them. \\
 
 \noindent
-Remark:
+Remark: \\
 Equivalent categories have exactly the same categorical properties.
 
 
@@ -449,7 +504,7 @@ Equivalent categories have exactly the same categorical properties.
 
 A \textbf{natural transformation} $\eta : F \Rightarrow G$ between two functors $F, G : C \rightarrow D$ consists of: \\
 
-- for each object $X \in Ob(\C)$ a morphism $\eta_X : F(X) \rightarrow G(X)$ in $\D$ \\
+- for each object $X \in \Ob(\C)$ a morphism $\eta_X : F(X) \rightarrow G(X)$ in $\D$ \\
 
 \noindent
 such that for all morphisms $f : X \rightarrow Y$ in $\C$, the \textbf{naturality square} commutes: \\
@@ -469,9 +524,9 @@ The \textbf{functor category} $[\C, \D]$ has: \\
 
 - as objects: all functors $\C \rightarrow \D$ \\
 
-- as morphisms: $Hom_{[\C, \D]}(F, G) \coloneqq \braces{h : F \Rightarrow G | h \text{ is a natural transformation}}$ \\
+- as morphisms: $\Hom_{[\C, \D]}(F, G) \coloneqq \braces{h : F \Rightarrow G | h \text{ is a natural transformation}}$ \\
 
-- as identity: for the object F, the identity $id_F : F \Rightarrow F \\
+- as identity: for the object $F$, the identity $id_F : F \Rightarrow F \\
 \indent\indent
 (id_F)_X : F(X) \rightarrow F(X)$ \\
 \indent\indent
@@ -482,9 +537,11 @@ given by $id_{F(X)}$ \\
 $(\omega \circ \eta)_X \coloneqq \omega_X \circ \eta_X$ \\
 
 \indent\indent
+$\eta_X : F(X) \rightarrow G(X)$ \\
+\indent\indent
 $\omega_X : G(X) \rightarrow H(X)$ \\
 \indent\indent
-$\eta_X : F(X) \rightarrow G(X)$ \\
+$(\omega \circ \eta)_X : F(X) \rightarrow H(X)$ \\
 
 and $\omega \circ \eta$ should be natural.
 
@@ -492,7 +549,7 @@ and $\omega \circ \eta$ should be natural.
 
 \section{Definition of Small Category}
 
-A category $\C$ is small when $Ob(\C)$ is just a set and not a proper class.
+A category $\C$ is small when $\Ob(\C)$ is just a set and not a proper class.
 
 
 
@@ -502,18 +559,18 @@ The \textbf{1-category of 1-categories}, $\Cat$ has: \\
 
 - as objects: all categories \\
 
-- as morphisms: $Hom_\Cat(\C, \D) \coloneqq \braces{F : \C \rightarrow \D | F \text{ is a functor}}$ \\
+- as morphisms: $\Hom_\Cat(\C, \D) \coloneqq \braces{F : \C \rightarrow \D | F \text{ is a functor}}$ \\
 
-- as identities $Id_F$ (the identity functor?) \\
+- as identities $Id_\C$ (the identity functor) \\
 
 - as composition rule: \\
 \indent\indent
 $F : \C \rightarrow \D$ \\
 \indent\indent
-$G : \D \rightarrow \catname E$ \\
+$G : \D \rightarrow \E$ \\
 
 \indent\indent
-$G \circ F : \C \rightarrow \catname E$ \\
+$G \circ F : \C \rightarrow \E$ \\
 \indent\indent
 $X \mapsto G(F(X))$ \\
 \indent\indent
@@ -554,11 +611,11 @@ The 2-category of 1-categories has: \\
 
 \section{Definition of Cone}
 
-A \textbf{cone} of a diagram (functor) $F : \I \rightarrow \C$ in a category $\C$ consists of: \\
+A \textbf{cone} (dual of cocone) of a diagram (functor) $F : \I \rightarrow \C$ in a category $\C$ consists of: \\
 
 - an object A of $\C$ (the "tip" of the cone) \\
 
-- for each object $X \in Ob(\C)$, a morphism $\pi_X : A \rightarrow F(X)$ \\
+- for each object $X \in \Ob(\C)$, a morphism $\pi_X : A \rightarrow F(X)$ \\
 
 \noindent
 such that for all morphisms $f: X \rightarrow Y$ in $\I$, the triangle: \\
@@ -572,11 +629,11 @@ commutes.
 
 \section{Definition of Cocone}
 
-A \textbf{cocone} of a diagram (functor) $F : \I \rightarrow \C$ in a category $\C$ consists of: \\
+A \textbf{cocone} (dual of cone) of a diagram (functor) $F : \I \rightarrow \C$ in a category $\C$ consists of: \\
 
 - an object A of $\C$ (the "tip" of the cocone) \\
 
-- for each object $X \in Ob(\C)$, a morphism $\pi_X : F(X) \rightarrow A$ \\
+- for each object $X \in \Ob(\C)$, a morphism $\pi_X : F(X) \rightarrow A$ \\
 
 \noindent
 such that for all morphisms $f: X \rightarrow Y$ in $\I$, the triangle: \\
@@ -592,19 +649,30 @@ commutes.
 
 A \textbf{morphism} between a cone $(A, (\pi_X)_X)$ and a further cone $(B, (\phi_X)_X)$ of a diagram $F : \I \rightarrow \C$ consists of a morphism $f : A \rightarrow B$ in $\C$ such that: \\
 
-$\pi_X = \pi_Y \circ f$
+$\pi_X = \pi_Y \circ f$ \\
+
+\noindent
+commutes.
 
 
 
 \section{Definition of Limit}
 
-A \textbf{limit} of a diagram $F : \I \rightarrow \C$ is a \textbf{terminal cone} of $F$, that is, a terminal object in the category of of cones of cones of $F$.
+A \textbf{limit} (dual of colimit) of a diagram $F : \I \rightarrow \C$ is a \textbf{terminal cone} of $F$, that is, a terminal object in the category of of cones of cones of $F$. \\
+
+\noindent
+Remark: \\
+A terminal object of $\C$ is the limit of the unique functor from the empty category to $\C$.
 
 
 
 \section{Definition of Colimit}
 
-A \textbf{colimit} of a diagram $F : \I \rightarrow \C$ is an \textbf{initial cocone} of $F$.
+A \textbf{colimit} (dual of limit) of a diagram $F : \I \rightarrow \C$ is an \textbf{initial cocone} of $F$. \\
+
+\noindent
+Remark: \\
+An initial object of $\C$ is the colimit of the unique functor from the empty category to $\C$.
 
 
 
@@ -618,9 +686,19 @@ $Eq(f, g) = {x \in X | f(x) = g(x)}$
 
 \section{Definition of Pullback}
 
+A \textbf{pullback} $P$ (also called fiber product of the domains over the codomain) (dual of pushout) is the limit of a diagram consisting of two morphisms $f : X \rightarrow Z$ and $g : Y \rightarrow Z$ with a common codomain. \\
+
+\noindent
+It comes equipped with two natural morphisms $P \rightarrow X$ and $P \rightarrow Y$.
+
 
 
 \section{Definition of Pushout}
+
+A \textbf{pushout} $P$ (also called fibered coproduct) (dual of pullback) is the colimit of a diagram consisting of two morphisms $f : Z \rightarrow X$ and $g : Z \rightarrow Y$ with a common domain. \\
+
+\noindent
+It comes equipped with two morphisms $X \rightarrow P$ and $Y \rightarrow P$.
 
 
 
@@ -632,20 +710,19 @@ A \textbf{small diagram} in $\C$ is a diagram $\I \rightarrow \C$ where $\I$ is 
 
 \section{Definition of Complete Cateogory}
 
-A category $\C$ is \textbf{complete} iff every small diagram in $\C$ has a limit (it has all small limits).
+A category $\C$ is \textbf{complete} (dual of cocomplete) iff every small diagram in $\C$ has a limit (it has all small limits). \\
+
+\noindent
+Assuming LEM, the only categories which have \textbf{all} limits or \textbf{all} colimits are (some) thin categories.
 
 
 
 \section{Definition of Cocomplete Category}
 
-A category $\C$ is \textbf{cocomplete} iff every small diagram in $\C$ has a colimit (it has all small colimits). \\
+A category $\C$ is \textbf{cocomplete} (dual of complete) iff every small diagram in $\C$ has a colimit (it has all small colimits). \\
 
+\noindent
 $\C$ complete $\iff \C^{op}$ cocomplete.
-
-
-
-\section{Formula for Limits in Set}
-\section{Formula for Colimits in Set}
 
 
 
@@ -665,13 +742,7 @@ $\hat X$ (\textbf{X hat}) is a presheaf: \\
 
 $\C^{op} \rightarrow \Set$ \\
 \indent
-$T \mapsto Hom_\C(T, X)$
-
-
-
-\section{Definition of Yoneda Lemma}
-\section{Yoneda Embedding}
-\section{Yoneda Style Proofs}
+$T \mapsto \Hom_\C(T, X)$
 
 
 
@@ -679,7 +750,7 @@ $T \mapsto Hom_\C(T, X)$
 
 A presheaf $F : \C^{op} \rightarrow \Set$ is representable iff: \\
 
-$\exists X \in Ob(\C) : F \cong \hat X$
+$\exists X \in \Ob(\C) : F \cong \hat X$
 
 
 
@@ -692,23 +763,99 @@ Then, $F \dashv G$ ``$F$ is \textbf{left adjoint} to $G$'' \\
 (or $G \vdash F$ (``$G$ is \textbf{right adjoint} to $F$'')) \\
 
 \noindent
-iff for every object $X \in Ob(\C), Y \in Ob(\D)$ there is an isomorphism: \\
+iff for every object $X \in \Ob(\C), Y \in \Ob(\D)$ there is an isomorphism: \\
 
-$Hom_\D(F(X), Y) \cong Hom_\C(X, G(Y))$ \\
+$\Hom_\D(F(X), Y) \cong \Hom_\C(X, G(Y))$ \\
 
 \noindent
-naturally in $X$ and $Y$.
+naturally in $X$ and $Y$. \\
+
+\noindent
+Every adjunction $L \dashv R$ gives rise to a monad: \\
+
+\noindent
+The monad functor will be: $M \coloneqq R \circ L$ \\
+
+\noindent
+The natural transformation: \\
+\indent
+$\eta : Id \Rightarrow M$ \\\\
+will be given by: \\
+\indent
+$\eta_X : X \rightarrow R(L(X))$ \\\\
+which is in 1:1 correspondence with: \\
+\indent
+$id_{RL(X)} : RL(X) \rightarrow RL(X)$ \\\\
+since: \\
+\indent
+$\Hom(LA, B) \cong \Hom(A, RB)$ \\\\
+which means that: \\
+\indent
+$LA \rightarrow B$ \\\\
+is in 1:1 correspondence with: \\
+\indent
+$A \rightarrow RB$ \\\\
+
+\noindent
+The natural transformation: \\
+\indent
+$\mu : M \circ M \Rightarrow M$ \\\\
+will be given by: \\
+\indent
+$\mu_X : RLRL(X) \rightarrow RL(X)$ \\\\
+induced from: \\
+\indent
+$LRL(X) \rightarrow L(X)$ \\\\
+which is in 1:1 correspondence with: \\
+\indent
+$id_{RL(X)} : RL(X) \rightarrow RL(X)$ \\\\
+
+\noindent
+Remark: \\
+The monad axioms should also be checked.
 
 
 
 \section{Currying Adjunction}
+
+The ``product-Hom adjunction'' or \textbf{currying adjunction} is the following: \\
+
+$\_ \times S \dashv \Hom_\Set(S, \_)$ \\
+
+\noindent
+$\Hom_\Set(X \times S, Y) \cong \Hom_\Set(X, Hom_\Set(S, Y))$
+
+
+
 \section{Adjunction of Logical Connectives}
+
+``$\exists$'' $\dashv$ ``extending the context'' $\dashv$ ``$\forall$'' \\
+
+\noindent
+The left adjunctions means that it is possible to freely convert between proofs of the following kind: \\
+
+``Assume $\exists x \in X : A(x)$ ... Hence $B$.'' ($\exists x \in X : A(x) \vdash B$) \\
+
+\noindent
+and \\
+
+``Let $x \in X$ be arbitrary. Assume $A(x)$ ... Hence $B$.'' ($A(x) \vdash_{x \in X} B$) \\
+
+\noindent
+The right adjunction means that it is possible to freely convert between proofs of the following kind: \\
+
+``Let $x \in X$ be arbitrary. Assume $A$ ... Hence $B(x)$.'' ($A \vdash_{x \in X} B(x)$) \\
+
+\noindent
+and \\
+
+``Assume $A$. ... Hence $\forall x \in X : B(x)$.'' ($A \vdash (\forall x \in X \ldotp B(x))$)
 
 
 
 \section{Monoids}
 
-A \textbf{monoid} consists of:
+A \textbf{monoid} consists of: \\
 
 - a set $M$ \\
 
@@ -735,19 +882,19 @@ Equivalently, a \textbf{monoid} consists of: \\
 
 - a map $M \times M \rightarrow M$ \\
 
-such that % TODO diagrams commute
+such that certain diagrams commute.
 
 
 
 \section{Definition of Monoidal Category}
 
-A \textbf{monoidal category} consists of: \\
+A \textbf{monoidal category} (sometimes called tensor category) consists of: \\
 
 - a category $\C$ \\
 
 - a functor $* : \C \times \C \rightarrow \C$ \\
 
-- an object $1 \in Ob(\C)$ \\ % TODO mathbb 1
+- an object $1 \in \Ob(\C)$ \\ % TODO mathbb 1
 
 - natural isomorphisms: \\
 
@@ -765,10 +912,7 @@ such that certain coherence conditions are satisfied. \\
 
 \noindent
 Remark: \\
-In any monoidal category one can speak of \textbf{monoid objects}. \\
-
-\noindent
-Monoidal categories are sometimes called tensor categories.
+In any monoidal category one can speak of \textbf{monoid objects}.
 
 
 
@@ -782,7 +926,11 @@ A \textbf{monad} over a category $\C$ consists of: \\
 
 - a natural transformation $\mu : M \circ M \Rightarrow M$ \\
 
-such that % TODO diagrams commute
+such that certain diagrams commute. \\
+
+\noindent
+Every monad is given rise to by an adjunction (always of a free and forgetful functor pair). \\
+There are two ways of factorizing a monad into adjoint functors, one is the Kleisli category.
 
 
 
@@ -792,13 +940,13 @@ The \textbf{Kleisli category} $\C_M$ of a monad $M$ in a category $\C$ is the fo
 
 - objects: objects of $\C$ \\
 
-- morphisms: $Hom_{\C_M}(X, Y) \coloneqq Hom_\C(X, M(Y))$
+- morphisms: $\Hom_{\C_M}(X, Y) \coloneqq \Hom_\C(X, M(Y))$
 
 
 
 \section{Definition of Cobordism Category}
 
-The category $nCob$ (``the \textbf{cobordism category}'') has: \\
+The category $\nCob$ (``the \textbf{cobordism category}'') has: \\
 
 - as objects $(n - 1)$-dimensional oriented manifolds \\
 
@@ -808,14 +956,21 @@ The category $nCob$ (``the \textbf{cobordism category}'') has: \\
 
 \section{Definition of Category of Hilbert Spaces}
 
-$Hilb$ is the \textbf{category of Hilbert spaces} (vector spaces with additional structure).
+$\Hilb$ is the \textbf{category of Hilbert spaces} (vector spaces with additional structure). \\
+
+\noindent
+Hilbert spaces are important in quantum physics, because they can be used to model ``slices'' of spacetime.
 
 
 
 \section{Definition of Topological Quantum Field Theory}
 
-A \textbf{topological quantum field theory} (in spacetime dimension $n$) is a monoidal functor between the monoidal categories $nCob$ and $Hilb$: \\
+A \textbf{topological quantum field theory} (in spacetime dimension $n$) is a monoidal functor between the monoidal categories $\nCob$ and $\Hilb$: \\
 
-$Z : nCob \rightarrow Hilb$
+$Z : \nCob \rightarrow \Hilb$ \\
+
+\noindent
+
+$Z$ maps each $(n - 1)$-dimensional slice of $n$-dimensional spacetime to the Hilbert space modelling that slice, and $Z$ maps a morphism $X \rightarrow Y$ in $\nCob$ to the ``propagator'' $Z(X) \rightarrow Z(Y)$.
 
 \end{document}
