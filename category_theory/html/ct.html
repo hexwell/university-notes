@@ -1572,54 +1572,292 @@ class="cmsy-10x-x-109">∈ </span><span
 class="cmmi-10x-x-109">Ob</span>(<span 
 class="cmsy-10x-x-109">𝒞</span>) : <span 
 class="cmmi-10x-x-109">F</span><img 
-src="ct18x.png" alt="∼="  class="cong"  /><img 
-src="ct19x.png" alt="Xˆ"  class="circ"  />
+src="ct18x.png" alt="∼
+="  class="cong"  /><img 
+src="ct19x.png" alt=" ˆ
+X"  class="circ"  />
 </p><!--l. 686--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">1.51   </span> <a 
  id="x1-520001.51"></a>Deﬁnition of Adjoint Functors</h3>
-<!--l. 687--><p class="noindent" >
+<!--l. 688--><p class="noindent" >Let <span 
+class="cmmi-10x-x-109">F </span>: <span 
+class="cmmi-10x-x-109">C </span><span 
+class="cmsy-10x-x-109">→ </span><span 
+class="cmmi-10x-x-109">D</span>, <span 
+class="cmmi-10x-x-109">G </span>: <span 
+class="cmmi-10x-x-109">D </span><span 
+class="cmsy-10x-x-109">→ </span><span 
+class="cmmi-10x-x-109">C </span><br 
+class="newline" />
+</p><!--l. 690--><p class="noindent" >Then, <span 
+class="cmmi-10x-x-109">F </span><span 
+class="cmsy-10x-x-109">⊣ </span><span 
+class="cmmi-10x-x-109">G </span>“<span 
+class="cmmi-10x-x-109">F </span>is <span 
+class="cmbx-10x-x-109">left adjoint </span>to <span 
+class="cmmi-10x-x-109">G</span>” <br 
+class="newline" />(or <span 
+class="cmmi-10x-x-109">G </span><span 
+class="cmsy-10x-x-109">⊢ </span><span 
+class="cmmi-10x-x-109">F </span>(“<span 
+class="cmmi-10x-x-109">G </span>is <span 
+class="cmbx-10x-x-109">right adjoint </span>to <span 
+class="cmmi-10x-x-109">F</span>”)) <br 
+class="newline" />
+</p><!--l. 694--><p class="noindent" >iﬀ for every object <span 
+class="cmmi-10x-x-109">X </span><span 
+class="cmsy-10x-x-109">∈ </span><span 
+class="cmmi-10x-x-109">Ob</span>(<span 
+class="cmsy-10x-x-109">𝒞</span>)<span 
+class="cmmi-10x-x-109">,Y </span><span 
+class="cmsy-10x-x-109">∈ </span><span 
+class="cmmi-10x-x-109">Ob</span>(<span 
+class="cmsy-10x-x-109">𝒟</span>) there is an isomorphism: <br 
+class="newline" />
+</p><!--l. 697--><p class="indent" >   <span 
+class="cmmi-10x-x-109">Hom</span><sub><span 
+class="cmsy-8">𝒟</span></sub>(<span 
+class="cmmi-10x-x-109">F</span>(<span 
+class="cmmi-10x-x-109">X</span>)<span 
+class="cmmi-10x-x-109">,Y </span>)<img 
+src="ct20x.png" alt="∼="  class="cong"  /><span 
+class="cmmi-10x-x-109">Hom</span><sub><span 
+class="cmsy-8">𝒞</span></sub>(<span 
+class="cmmi-10x-x-109">X,G</span>(<span 
+class="cmmi-10x-x-109">Y </span>)) <br 
+class="newline" />
+
+</p><!--l. 699--><p class="noindent" >naturally in <span 
+class="cmmi-10x-x-109">X </span>and <span 
+class="cmmi-10x-x-109">Y </span>.
+</p><!--l. 704--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">1.52   </span> <a 
  id="x1-530001.52"></a>Currying Adjunction</h3>
-
-<!--l. 688--><p class="noindent" >
+<!--l. 705--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">1.53   </span> <a 
  id="x1-540001.53"></a>Adjunction of Logical Connectives</h3>
-<!--l. 689--><p class="noindent" >
+<!--l. 709--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">1.54   </span> <a 
  id="x1-550001.54"></a>Monoids</h3>
-<!--l. 690--><p class="noindent" >
+<!--l. 711--><p class="noindent" >A <span 
+class="cmbx-10x-x-109">monoid </span>consists of:
+</p><!--l. 713--><p class="indent" >   - a set <span 
+class="cmmi-10x-x-109">M </span><br 
+class="newline" />
+</p><!--l. 715--><p class="indent" >   - an element <span 
+class="cmmi-10x-x-109">e </span><span 
+class="cmsy-10x-x-109">∈ </span><span 
+class="cmmi-10x-x-109">M </span><br 
+class="newline" />
+</p><!--l. 717--><p class="indent" >   - an operation <span 
+class="cmsy-10x-x-109">∘ </span>: <span 
+class="cmmi-10x-x-109">M </span><span 
+class="cmsy-10x-x-109">× </span><span 
+class="cmmi-10x-x-109">M </span><span 
+class="cmsy-10x-x-109">→ </span><span 
+class="cmmi-10x-x-109">M </span><br 
+class="newline" />
+</p><!--l. 719--><p class="noindent" >such that: <br 
+class="newline" />
+</p><!--l. 722--><p class="indent" >   - <span 
+class="cmsy-10x-x-109">∀</span><span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">∈ </span><span 
+class="cmmi-10x-x-109">M.x </span><span 
+class="cmsy-10x-x-109">∘ </span><span 
+class="cmmi-10x-x-109">e </span>= <span 
+class="cmmi-10x-x-109">x </span>= <span 
+class="cmmi-10x-x-109">e </span><span 
+class="cmsy-10x-x-109">∘ </span><span 
+class="cmmi-10x-x-109">x </span><br 
+class="newline" />
+</p><!--l. 724--><p class="indent" >   - <span 
+class="cmsy-10x-x-109">∀</span><span 
+class="cmmi-10x-x-109">x,y,z </span><span 
+class="cmsy-10x-x-109">∈ </span><span 
+class="cmmi-10x-x-109">M.</span>(<span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">∘ </span><span 
+class="cmmi-10x-x-109">y</span>) <span 
+class="cmsy-10x-x-109">∘ </span><span 
+class="cmmi-10x-x-109">z </span>= <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">∘ </span>(<span 
+class="cmmi-10x-x-109">y </span><span 
+class="cmsy-10x-x-109">∘ </span><span 
+class="cmmi-10x-x-109">z</span>)
+</p><!--l. 728--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">1.55   </span> <a 
  id="x1-560001.55"></a>Monoids Categorically</h3>
-<!--l. 691--><p class="noindent" >
+<!--l. 730--><p class="noindent" >Equivalently, a <span 
+class="cmbx-10x-x-109">monoid </span>consists of: <br 
+class="newline" />
+</p><!--l. 732--><p class="indent" >   - an object <span 
+class="cmmi-10x-x-109">M </span><br 
+class="newline" />
+</p><!--l. 734--><p class="indent" >   - a morphism 1 from a terminal object to every other object. <br 
+class="newline" />
+</p><!--l. 736--><p class="indent" >   - a map <span 
+class="cmmi-10x-x-109">M </span><span 
+class="cmsy-10x-x-109">× </span><span 
+class="cmmi-10x-x-109">M </span><span 
+class="cmsy-10x-x-109">→ </span><span 
+class="cmmi-10x-x-109">M </span><br 
+class="newline" />
+
+</p><!--l. 738--><p class="indent" >   such that
+</p><!--l. 742--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">1.56   </span> <a 
  id="x1-570001.56"></a>Deﬁnition of Monoidal Category</h3>
-<!--l. 692--><p class="noindent" >
+<!--l. 744--><p class="noindent" >A <span 
+class="cmbx-10x-x-109">monoidal category </span>consists of: <br 
+class="newline" />
+</p><!--l. 746--><p class="indent" >   - a category <span 
+class="cmsy-10x-x-109">𝒞 </span><br 
+class="newline" />
+</p><!--l. 748--><p class="indent" >   - a functor <span 
+class="cmsy-10x-x-109">∗ </span>: <span 
+class="cmsy-10x-x-109">𝒞×𝒞→𝒞 </span><br 
+class="newline" />
+</p><!--l. 750--><p class="indent" >   - an object 1 <span 
+class="cmsy-10x-x-109">∈ </span><span 
+class="cmmi-10x-x-109">Ob</span>(<span 
+class="cmsy-10x-x-109">𝒞</span>) <br 
+class="newline" />
+</p><!--l. 752--><p class="indent" >   - natural isomorphisms: <br 
+class="newline" />
+</p><!--l. 754--><p class="indent" >      - 1 <span 
+class="cmsy-10x-x-109">∗ </span><span 
+class="cmmi-10x-x-109">X</span><img 
+src="ct21x.png" alt="∼="  class="cong"  /><span 
+class="cmmi-10x-x-109">X </span><br 
+class="newline" />
+</p><!--l. 757--><p class="indent" >      - <span 
+class="cmmi-10x-x-109">X </span><span 
+class="cmsy-10x-x-109">∗ </span>1<img 
+src="ct22x.png" alt="∼="  class="cong"  /><span 
+class="cmmi-10x-x-109">X </span><br 
+class="newline" />
+</p><!--l. 760--><p class="indent" >      - <span 
+class="cmmi-10x-x-109">X </span><span 
+class="cmsy-10x-x-109">∗ </span>(<span 
+class="cmmi-10x-x-109">Y </span><span 
+class="cmsy-10x-x-109">∗ </span><span 
+class="cmmi-10x-x-109">Z</span>)<img 
+src="ct23x.png" alt="∼
+="  class="cong"  />(<span 
+class="cmmi-10x-x-109">X </span><span 
+class="cmsy-10x-x-109">∗ </span><span 
+class="cmmi-10x-x-109">Y </span>) <span 
+class="cmsy-10x-x-109">∗ </span><span 
+class="cmmi-10x-x-109">Z </span><br 
+class="newline" />
+</p><!--l. 763--><p class="noindent" >such that certain coherence conditions are satisﬁed. <br 
+class="newline" />
+</p><!--l. 766--><p class="noindent" >Remark: <br 
+class="newline" />In any monoidal category one can speak of <span 
+class="cmbx-10x-x-109">monoid objects</span>. <br 
+class="newline" />
+</p><!--l. 770--><p class="noindent" >Monoidal categories are sometimes called tensor categories.
+</p><!--l. 775--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">1.57   </span> <a 
- id="x1-580001.57"></a>Monoidal Categories</h3>
-<!--l. 693--><p class="noindent" >
+ id="x1-580001.57"></a>Deﬁnition of Monad</h3>
+<!--l. 777--><p class="noindent" >A <span 
+class="cmbx-10x-x-109">monad </span>over a category <span 
+class="cmsy-10x-x-109">𝒞 </span>consists of: <br 
+class="newline" />
+</p><!--l. 779--><p class="indent" >   - a functor <span 
+class="cmmi-10x-x-109">M </span>: <span 
+class="cmsy-10x-x-109">𝒞→𝒞 </span><br 
+class="newline" />
+</p><!--l. 781--><p class="indent" >   - a natural transformation <span 
+class="cmmi-10x-x-109">η </span>: <span 
+class="cmmi-10x-x-109">Id</span><sub><span 
+class="cmsy-8">𝒞</span></sub><span 
+class="cmsy-10x-x-109">⇒ </span><span 
+class="cmmi-10x-x-109">M </span><br 
+class="newline" />
+</p><!--l. 783--><p class="indent" >   - a natural transformation <span 
+class="cmmi-10x-x-109">μ </span>: <span 
+class="cmmi-10x-x-109">M </span><span 
+class="cmsy-10x-x-109">∘ </span><span 
+class="cmmi-10x-x-109">M </span><span 
+class="cmsy-10x-x-109">⇒ </span><span 
+class="cmmi-10x-x-109">M </span><br 
+class="newline" />
+</p><!--l. 785--><p class="indent" >   such that
+
+</p><!--l. 789--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">1.58   </span> <a 
- id="x1-590001.58"></a>Deﬁnition of Monad</h3>
-<!--l. 694--><p class="noindent" >
+ id="x1-590001.58"></a>Deﬁnition of Kleisli Category</h3>
+<!--l. 791--><p class="noindent" >The <span 
+class="cmbx-10x-x-109">Kleisli category </span><span 
+class="cmsy-10x-x-109">𝒞</span><sub><span 
+class="cmmi-8">M</span></sub> of a monad <span 
+class="cmmi-10x-x-109">M </span>in a category <span 
+class="cmsy-10x-x-109">𝒞 </span>is the following
+category: <br 
+class="newline" />
+</p><!--l. 793--><p class="indent" >   - objects: objects of <span 
+class="cmsy-10x-x-109">𝒞 </span><br 
+class="newline" />
+</p><!--l. 795--><p class="indent" >   - morphisms: <span 
+class="cmmi-10x-x-109">Hom</span><sub><span 
+class="cmsy-8">𝒞</span><sub><span 
+class="cmmi-6">M</span></sub></sub>(<span 
+class="cmmi-10x-x-109">X,Y </span>) : = <span 
+class="cmmi-10x-x-109">Hom</span><sub><span 
+class="cmsy-8">𝒞</span></sub>(<span 
+class="cmmi-10x-x-109">X,M</span>(<span 
+class="cmmi-10x-x-109">Y </span>))
+</p><!--l. 799--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">1.59   </span> <a 
- id="x1-600001.59"></a>Deﬁnition of Kleisli Category</h3>
-<!--l. 695--><p class="noindent" >
+ id="x1-600001.59"></a>Deﬁnition of Cobordism Category</h3>
+<!--l. 801--><p class="noindent" >The category <span 
+class="cmmi-10x-x-109">nCob </span>(“the <span 
+class="cmbx-10x-x-109">cobordism category</span>”) has: <br 
+class="newline" />
+</p><!--l. 803--><p class="indent" >   - as objects (<span 
+class="cmmi-10x-x-109">n </span><span 
+class="cmsy-10x-x-109">− </span>1)-dimensional oriented manifolds <br 
+class="newline" />
+</p><!--l. 805--><p class="indent" >   - as morphisms: <span 
+class="cmmi-10x-x-109">n</span>-dimesional cobordisms between those
+</p><!--l. 809--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">1.60   </span> <a 
- id="x1-610001.60"></a>Deﬁnition of Topological Quantum Field Theory</h3>
-
-<!--l. 696--><p class="noindent" >
+ id="x1-610001.60"></a>Deﬁnition of Category of Hilbert Spaces</h3>
+<!--l. 811--><p class="noindent" ><span 
+class="cmmi-10x-x-109">Hilb </span>is the <span 
+class="cmbx-10x-x-109">category of Hilbert spaces </span>(vector spaces with additional
+structure).
+</p><!--l. 815--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">1.61   </span> <a 
- id="x1-620001.61"></a>Deﬁnition of Cobordism Category</h3>
+ id="x1-620001.61"></a>Deﬁnition of Topological Quantum Field Theory</h3>
+<!--l. 817--><p class="noindent" >A <span 
+class="cmbx-10x-x-109">topological quantum ﬁeld theory </span>(in spacetime dimension <span 
+class="cmmi-10x-x-109">n</span>) is
+a monoidal functor between the monoidal categories <span 
+class="cmmi-10x-x-109">nCob </span>and <span 
+class="cmmi-10x-x-109">Hilb</span>:
+<br 
+class="newline" />
+</p><!--l. 819--><p class="indent" >   <span 
+class="cmmi-10x-x-109">Z </span>: <span 
+class="cmmi-10x-x-109">nCob </span><span 
+class="cmsy-10x-x-109">→ </span><span 
+class="cmmi-10x-x-109">Hilb</span>
+</p>
     
 </body></html> 
 

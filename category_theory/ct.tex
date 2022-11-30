@@ -684,15 +684,138 @@ $\exists X \in Ob(\C) : F \cong \hat X$
 
 
 \section{Definition of Adjoint Functors}
+
+Let $F : C \rightarrow D$, $G : D \rightarrow C$ \\
+
+\noindent
+Then, $F \dashv G$ ``$F$ is \textbf{left adjoint} to $G$'' \\
+(or $G \vdash F$ (``$G$ is \textbf{right adjoint} to $F$'')) \\
+
+\noindent
+iff for every object $X \in Ob(\C), Y \in Ob(\D)$ there is an isomorphism: \\
+
+$Hom_\D(F(X), Y) \cong Hom_\C(X, G(Y))$ \\
+
+\noindent
+naturally in $X$ and $Y$.
+
+
+
 \section{Currying Adjunction}
 \section{Adjunction of Logical Connectives}
+
+
+
 \section{Monoids}
+
+A \textbf{monoid} consists of:
+
+- a set $M$ \\
+
+- an element $e \in M$ \\
+
+- an operation $\circ : M \times M \rightarrow M$ \\
+
+\noindent
+such that: \\
+
+- $\forall x \in M \ldotp x \circ e = x = e \circ x$ \\
+
+- $\forall x, y, z \in M \ldotp (x \circ y) \circ z = x \circ (y \circ z)$
+
+
+
 \section{Monoids Categorically}
+
+Equivalently, a \textbf{monoid} consists of: \\
+
+- an object $M$ \\
+
+- a morphism $1$ from a terminal object to every other object. \\ % TODO mathbb 1
+
+- a map $M \times M \rightarrow M$ \\
+
+such that % TODO diagrams commute
+
+
+
 \section{Definition of Monoidal Category}
-\section{Monoidal Categories}
+
+A \textbf{monoidal category} consists of: \\
+
+- a category $\C$ \\
+
+- a functor $* : \C \times \C \rightarrow \C$ \\
+
+- an object $1 \in Ob(\C)$ \\ % TODO mathbb 1
+
+- natural isomorphisms: \\
+
+\indent\indent
+- $1 * X \cong X$ \\
+
+\indent\indent
+- $X * 1 \cong X$ \\
+
+\indent\indent
+- $X * (Y * Z) \cong (X * Y) * Z$ \\
+
+\noindent
+such that certain coherence conditions are satisfied. \\
+
+\noindent
+Remark: \\
+In any monoidal category one can speak of \textbf{monoid objects}. \\
+
+\noindent
+Monoidal categories are sometimes called tensor categories.
+
+
+
 \section{Definition of Monad}
+
+A \textbf{monad} over a category $\C$ consists of: \\
+
+- a functor $M : \C \rightarrow \C$ \\
+
+- a natural transformation $\eta : Id_\C \Rightarrow M$ \\
+
+- a natural transformation $\mu : M \circ M \Rightarrow M$ \\
+
+such that % TODO diagrams commute
+
+
+
 \section{Definition of Kleisli Category}
-\section{Definition of Topological Quantum Field Theory}
+
+The \textbf{Kleisli category} $\C_M$ of a monad $M$ in a category $\C$ is the following category: \\
+
+- objects: objects of $\C$ \\
+
+- morphisms: $Hom_{\C_M}(X, Y) \coloneqq Hom_\C(X, M(Y))$
+
+
+
 \section{Definition of Cobordism Category}
+
+The category $nCob$ (``the \textbf{cobordism category}'') has: \\
+
+- as objects $(n - 1)$-dimensional oriented manifolds \\
+
+- as morphisms: $n$-dimesional cobordisms between those
+
+
+
+\section{Definition of Category of Hilbert Spaces}
+
+$Hilb$ is the \textbf{category of Hilbert spaces} (vector spaces with additional structure).
+
+
+
+\section{Definition of Topological Quantum Field Theory}
+
+A \textbf{topological quantum field theory} (in spacetime dimension $n$) is a monoidal functor between the monoidal categories $nCob$ and $Hilb$: \\
+
+$Z : nCob \rightarrow Hilb$
 
 \end{document}
