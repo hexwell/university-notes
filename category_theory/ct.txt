@@ -32,7 +32,7 @@ Course Topics:
 Lecture 1 Topics (1h 10/11):
 
 - Motivation for Category Theory
-(conceptual clarity, recognize analogies between analogies, render the trivial trivially trivial, foundational language for algebraic topology, topos theory, combinatorics, quantum field theory, compositional systems, programming, languages, algebraic geometry, logic, database theory, ...)
+(conceptual clarity, recognize analogies between analogies, render the trivial trivially trivial, foundational language for algebraic topology, topos theory, combinatorics, quantum field theory, compositional systems, programming languages, algebraic geometry, logic, database theory, ...)
 - Associative Operations
 (minimum binary function, cartesian product of sets, topological product, Haskell Pair type are four instances of a general categorical fact, there is associativity up to isomorphism)
 - Definition of Category (objects, morphisms, axioms)
