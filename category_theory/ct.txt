@@ -155,7 +155,7 @@ Lecture 9 Topics (1h 24/11):
 - Monads
 
 (Monads were "triples" or "standard constructions" before CT)
-(Y-Combinator Derivation from recursive let binding definition)
+(Y-Combinator derivation from recursive let binding definition)
 (The definition of Cat as given works and contains itself, but cannot be expressed in ZFC)
 (Categorical Logic)
 (Boolean and Heyting Algebras)
