@@ -110,7 +110,7 @@ Lecture 6 Topics (1h 18/11):
 
 
 Agda Session (~1h 18/11)
-(Agdapad, Dependent Types, Witnesses, (Refl, Cong, Symm, Trans), HoTT book (at page 23 there is a conversion table between types and logical expressions))
+(Agdapad, Dependent Types, Witnesses, (Refl, Cong, Symm, Trans) = (Reflexivity, Congruence, Symmetry, Transitivity), HoTT book (at page 23 there is a conversion table between types and logical expressions))
 
 
 Lecture 7 Topics (4h 21/11):
