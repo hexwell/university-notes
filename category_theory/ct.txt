@@ -164,7 +164,7 @@ Lecture 9 Topics (1h 24/11):
 
 Agda Session (~1h 24/11):
 
-https://math.andrej.com/2007/09/28/seemingly-impossible-functional-programs/
+https://math.andrej.com/2007/09/28/seemingly-impossible-functional-programs/ (it's possible to solve problems involving uncountable infinites)
 Correct by Construction
 
 
