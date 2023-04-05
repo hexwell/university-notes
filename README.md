@@ -39,7 +39,8 @@ it/analisi | [Ettore Forigo](https://github.com/hexwell)
 it/algebra | [Ettore Forigo](https://github.com/hexwell)
 it/sistemi_dinamici | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 it/sistemi_stocastici | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
-
+it/probabilità | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
+it/metodi_biologia | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 
 
 # References / Riferimenti:
