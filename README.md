@@ -21,7 +21,7 @@
 
 Notes / Appunti | Authors / Autori
 -|-
-en/category_teory | Ettore Forigo, [Ingo Blechschmidt](https://github.com/iblech) Haskell & Agda files)
+en/category_teory | Ettore Forigo, [Ingo Blechschmidt](https://github.com/iblech) (Haskell & Agda files)
 en/ModelingEpidemics2022_VR488172.pdf | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 en/Data_Fitting_and_Reconstruction.pdf | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 en/Data-Driven_Methods_for_Optimal_Control.pdf | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
