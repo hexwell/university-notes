@@ -5,7 +5,8 @@
 
 ## English / Inglese
 
-### [PDF Category Theory](https://raw.githubusercontent.com/hexwell/university-notes/main/en/category_theory/ct.pdf)
+### [PDF Category Theory (Ettore Forigo)](https://raw.githubusercontent.com/hexwell/university-notes/main/en/category_theory/forigo/ct.pdf)
+### [Category Theory (Michele Benedetti)](https://github.com/hexwell/university-notes/tree/main/en/category_theory/benedetti)
 ### [PDF Modelling Epidemics](https://raw.githubusercontent.com/hexwell/university-notes/main/en/ModelingEpidemics2022_VR488172.pdf)
 ### [PDF Data Fitting and Reconstruction](https://raw.githubusercontent.com/hexwell/university-notes/main/en/Data_Fitting_and_Reconstruction.pdf)
 ### [PDF Data-Driven Methods for Optimal Control](https://raw.githubusercontent.com/hexwell/university-notes/main/en/Data-Driven_Methods_for_Optimal_Control.pdf)
@@ -21,7 +22,8 @@
 
 Notes / Appunti | Authors / Autori
 -|-
-en/category_teory | Ettore Forigo, [Ingo Blechschmidt](https://github.com/iblech) Haskell & Agda files)
+en/category_theory/forigo | Ettore Forigo, [Ingo Blechschmidt](https://github.com/iblech) Haskell & Agda files)
+en/category_theory/benedetti | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 en/ModelingEpidemics2022_VR488172.pdf | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 en/Data_Fitting_and_Reconstruction.pdf | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 en/Data-Driven_Methods_for_Optimal_Control.pdf | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
