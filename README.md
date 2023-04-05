@@ -20,6 +20,8 @@
 - ### [PDF UniBS Algebra e Geometria](https://raw.githubusercontent.com/hexwell/university-notes/main/it/algebra/algebra.pdf)
 - ### [Sistemi Dinamici](https://github.com/hexwell/university-notes/tree/main/it/sistemi_dinamici)
 - ### [Sistemi Stocastici](https://github.com/hexwell/university-notes/tree/main/it/sistemi_stocastici)
+- ### [Probabilità](https://github.com/hexwell/university-notes/tree/main/it/probabilità)
+- ### [Metodi Matematici e Statistici in Biologia](https://github.com/hexwell/university-notes/tree/main/it/metodi_biologia)
 
 
 ## Credits / Crediti
