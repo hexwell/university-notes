@@ -17,7 +17,9 @@
 ## Italian / Italiano
 
 - ### [PDF UniBS Analisi I](https://raw.githubusercontent.com/hexwell/university-notes/main/it/analisi1/analisi.pdf)
+- ### [UniVR Analisi 3](https://github.com/hexwell/university-notes/tree/main/it/analisi3)
 - ### [PDF UniBS Algebra e Geometria](https://raw.githubusercontent.com/hexwell/university-notes/main/it/algebra/forigo/algebra.pdf)
+- ### [UniVR Algebra](https://github.com/hexwell/university-notes/tree/main/it/algebra/benedetti)
 - ### [Sistemi Dinamici](https://github.com/hexwell/university-notes/tree/main/it/sistemi_dinamici)
 - ### [Sistemi Stocastici](https://github.com/hexwell/university-notes/tree/main/it/sistemi_stocastici)
 - ### [Probabilità](https://github.com/hexwell/university-notes/tree/main/it/probabilità)
@@ -36,7 +38,9 @@ en/Data-Driven_Methods_for_Optimal_Control.pdf | [Michele Benedetti](https://git
 en/functional_analysis | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 en/galerkin_methods_for_navier-stokes_equations | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 it/analisi1 | [Ettore Forigo](https://github.com/hexwell)
+it/analisi3 | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 it/algebra/forigo | [Ettore Forigo](https://github.com/hexwell)
+it/algebra/benedetti | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 it/sistemi_dinamici | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 it/sistemi_stocastici | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 it/probabilità | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
