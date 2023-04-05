@@ -18,6 +18,8 @@
 
 - ### [PDF UniBS Analisi I](https://raw.githubusercontent.com/hexwell/university-notes/main/it/analisi/analisi.pdf)
 - ### [PDF UniBS Algebra e Geometria](https://raw.githubusercontent.com/hexwell/university-notes/main/it/algebra/algebra.pdf)
+- ### [Sistemi Dinamici](https://github.com/hexwell/university-notes/tree/main/it/sistemi_dinamici)
+- ### [Sistemi Stocastici](https://github.com/hexwell/university-notes/tree/main/it/sistemi_stocastici)
 
 
 ## Credits / Crediti
@@ -33,6 +35,9 @@ en/functional_analysis | [Michele Benedetti](https://github.com/MicheleBenedetti
 en/galerkin_methods_for_navier-stokes_equations | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 it/analisi | [Ettore Forigo](https://github.com/hexwell)
 it/algebra | [Ettore Forigo](https://github.com/hexwell)
+it/sistemi_dinamici | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
+it/sistemi_stocastici | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
+
 
 
 # References / Riferimenti:
