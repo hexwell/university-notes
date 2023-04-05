@@ -11,8 +11,8 @@
 
 ## Italian / Italiano
 
-### [PDF Analisi I](https://raw.githubusercontent.com/hexwell/university-notes/main/it/analisi/analisi.pdf)
-### [PDF Algebra e Geometria](https://raw.githubusercontent.com/hexwell/university-notes/main/it/algebra/algebra.pdf)
+### [PDF UniBS Analisi I](https://raw.githubusercontent.com/hexwell/university-notes/main/it/analisi/analisi.pdf)
+### [PDF UniBS Algebra e Geometria](https://raw.githubusercontent.com/hexwell/university-notes/main/it/algebra/algebra.pdf)
 
 
 ## Credits
