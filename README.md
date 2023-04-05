@@ -1,4 +1,4 @@
-# University Notes
+# University Notes / Appunti Università
 
 ## [Online Version / Versione Online](https://hexwell.github.io/university-notes)
 
@@ -17,9 +17,9 @@
 ### [PDF UniBS Algebra e Geometria](https://raw.githubusercontent.com/hexwell/university-notes/main/it/algebra/algebra.pdf)
 
 
-## Credits
+## Credits / Crediti
 
-Notes | Authors
+Notes / Appunti | Authors / Autori
 -|-
 en/category_teory | Ettore Forigo, [Ingo Blechschmidt](https://github.com/iblech) Haskell & Agda files)
 en/ModelingEpidemics2022_VR488172.pdf | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
@@ -29,6 +29,6 @@ it/analisi | Ettore Forigo
 it/algebra | Ettore Forigo
 
 
-# References:
+# References / Riferimenti:
 
 [ceres-c/unibs-analisi2](https://github.com/ceres-c/unibs-analisi2)
