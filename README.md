@@ -19,8 +19,8 @@
 
 Notes | Authors
 -|-
-en/category_teory | Ettore Forigo, Ingo Blechschmidt (Haskell & Agda files)
-en/ModelingEpidemics2022_VR488172.pdf | Michele Benedetti
+en/category_teory | Ettore Forigo, [Ingo Blechschmidt](https://github.com/iblech) Haskell & Agda files)
+en/ModelingEpidemics2022_VR488172.pdf | [Michele Benedetti](https://github.com/MicheleBenedetti3320)
 it/analisi | Ettore Forigo
 it/algebra | Ettore Forigo
 
