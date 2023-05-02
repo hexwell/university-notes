@@ -1,13 +1,15 @@
 \documentclass[a4paper, twoside, english, 11pt]{book}
 
-\usepackage{amsmath}   % for implies
+\usepackage{amsmath}   % for DeclareMathOperator, implies
 \usepackage{mathtools} % for coloneqq
 \usepackage{amssymb}   % for varnothing
+\usepackage{tikz-cd}   % for tikzcd, arrow (commutative diagrams)
 
 \newcommand{\braces}[1] {\left \{ #1 \right \}}
 
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Id}{Id}
 
 \newcommand{\C}{\mathcal C}
 \newcommand{\D}{\mathcal D}
@@ -269,6 +271,13 @@ A \textbf{product} (dual of coproduct, special case of limit) of two objects $X$
 \noindent
 such that for every object $Q$ of $\C$ together with morphisms $\varphi_X : Q \rightarrow X, \varphi_Y : Q \rightarrow Y$ there is exactly one morphism $Q \rightarrow P$ such that the following diagram commutes: \\
 
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQAFEAX1PU1z5CKMgCZqdJq3YBFHnxAZseAkXKliEhizaIQADXn9lQoqI1apukAE0eEmFADm8IqABmAJwgBbJOpAcCCQAZhoAIxgwKFCA7Wk9AB1EtCwAfTteD28-RACgpHMQSOikAFoQuKt2ZNS0wxpGekjGDgEVYRBPLCcACxwjEC9fJDJA4MQw4qiYxAqqnRrEhk80XvS7RuaYVvbTPW6+gayhnNGaAsQiktnKmnjrZJW19MMT4dyxy4DGLDBrKD0OC9Rwge7VPQAQjBICaLTaJlUBx6-Xs3CAA
+$\begin{tikzcd}
+  & P \arrow[rd, "\pi_Y", bend left] \arrow[ld, "\pi_X"', bend right]                                  &   \\
+X &                                                                                                    & Y \\
+  & Q \arrow[ru, "\varphi_Y"', bend right] \arrow[lu, "\varphi_X", bend left] \arrow[uu, "!"', dashed] &
+\end{tikzcd}$ \\
+
 $\varphi_X = \pi_X \circ !$ \\
 \indent
 $\varphi_Y = \pi_Y \circ !$ \\
@@ -298,6 +307,13 @@ A \textbf{coproduct} (dual of product, special case of colimit) of two objects $
 
 \noindent
 such that for every object $D$ of $\C$ together with morphisms $\chi_X : X \rightarrow D, \chi_Y : Y \rightarrow D$ there is exactly one morphism $C \rightarrow D$ which renders the following diagram commutative: \\
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBhEAX1PU1z5CKMgCZqdJq3YARHnxAZseAkXKliEhizaIQADXn9lQoqI1apukAE0eEmFADm8IqABmAJwgBbJAGYaHAgkdRAAIxgwKCQAWn8w7Wk9AB0U-Bx6AH07GkZ6SMYABQEVYRBPLCcACxwjEC9fJHMQYNCaSOiAxKt2NIzswzyCmGLS0z1GGHc63g9vP0RA1pDEMgiomKWenT6UgGNqrByQYcKSk1VJ6dmFRsWWtrWOzbiEmiTrNMPjoZB887jK4VKq1er3dorJDrRhYMDWKD0ODVRynSS7PQAQjRANGF0EwKmM3s3CAA
+$\begin{tikzcd}
+                                                                     & C \arrow[dd, "!", dashed] &                                                                      \\
+X \arrow[ru, "\iota_X", bend left] \arrow[rd, "\chi_X"', bend right] &                           & Y \arrow[lu, "\iota_Y"', bend right] \arrow[ld, "\chi_Y", bend left] \\
+                                                                     & D                         &
+\end{tikzcd}$ \\
 
 $\chi_X = ! \circ \iota_X$ \\
 \indent
@@ -502,12 +518,29 @@ Equivalent categories have exactly the same categorical properties.
 
 \section{Definition of Natural Transformation}
 
-A \textbf{natural transformation} $\eta : F \Rightarrow G$ between two functors $F, G : C \rightarrow D$ consists of: \\
+A \textbf{natural transformation} $\eta : F \Rightarrow G$ between two functors $F, G : C \rightarrow D$ \\
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQAREAX1PU1z5CKAAwVqdJq3YBhHnxAZseAkXKkREhizaIQ8-sqFrSxLVN37uEmFADm8IqABmAJwgBbJOpA4ISMRAAIxgwKCQANgB2Gm1pPQAxAxA3T28aPwCaELCkAFpomkYsMEs4CGLwmgALGHpwxDBmRkYM+ixGdkhSkFiLdgBxXpBGehDGAAUBFWEQVyw7apxk1K9EMl9-RABmIpLLKAhmIMY2GrqGppa2jq6CM8kddgAdZ5gcemHR8amjVT15otltZuEA
+$\begin{tikzcd}
+                                                                & {} \arrow[dd, "\eta"', Rightarrow] &   \\
+C \arrow[rr, "F", bend left=80] \arrow[rr, "G"', bend right=80] &                                    & D \\
+                                                                & {}                                 &
+\end{tikzcd}$ \\
+
+\noindent
+consists of: \\
 
 - for each object $X \in \Ob(\C)$ a morphism $\eta_X : F(X) \rightarrow G(X)$ in $\D$ \\
 
 \noindent
 such that for all morphisms $f : X \rightarrow Y$ in $\C$, the \textbf{naturality square} commutes: \\
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRADEAKADQEoQAvqXSZc+QigDM5KrUYs2AcR78hI7HgJFpAJln1mrRCGUBNVcJAYN4omT3UDC413ODZMKAHN4RUADMAJwgAWyQyEBwIJABGR3kjEAAdJJgcOgB9bkFLINDw6iikaRAGOgAjGAYABVFNCRBArC8ACxwQeMM2Ln8LAOCwxDjI6MQdTucTTi8+kDzBkqKx6jLKmrrbYybW9onElLTM03cBIA
+$\begin{tikzcd}
+F(X) \arrow[rrr, "\eta_X"] \arrow[dd, "F(f)"'] &  &  & G(X) \arrow[dd, "G(g)"] \\
+                                               &  &  &                         \\
+F(Y) \arrow[rrr, "\eta_Y"']                    &  &  & G(Y)
+\end{tikzcd}$
 
 $G(f) \circ \eta_X = \eta_Y \circ F(f)$ \\
 
@@ -535,6 +568,13 @@ given by $id_{F(X)}$ \\
 - as composition rule: \\
 \indent\indent
 $(\omega \circ \eta)_X \coloneqq \omega_X \circ \eta_X$ \\
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQAREAX1PU1z5CKAAwVqdJq3YBhHnxAZseAkXKkREhizaIQ8-sqFrxNbdL0HFAlcOTriWqbv3cJMKAHN4RUADMAJwgAWyR1EBwIJDEQACMYMCgkADYAdjNndgAxK0CQsJpI6Jp4xKQAWjSaRiwwFzgIGqSaAAsYeiTEMGZGRkL6LEZ2SDqQDJ12AAkxkEZ6eMYABRtjPQCsTxacXKDQxHCixBjzFwBxGbmF5aNVNY2tnfzEMgioxABmcYsQAB0fmBw9Eee0+ryQABYvi4-iEYJ4gW5uEA
+$\begin{tikzcd}
+                                                                                 & {} \arrow[d, "\eta"]   &   \\
+C \arrow[rr, "F", bend left=75] \arrow[rr, "H"', bend right=75] \arrow[rr, "G"'] & {} \arrow[d, "\omega"] & D \\
+                                                                                 & {}                     &
+\end{tikzcd}$ \\
 
 \indent\indent
 $\eta_X : F(X) \rightarrow G(X)$ \\
@@ -620,6 +660,12 @@ A \textbf{cone} (dual of cocone) of a diagram (functor) $F : \I \rightarrow \C$ 
 \noindent
 such that for all morphisms $f: X \rightarrow Y$ in $\I$, the triangle: \\
 
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKcqWLU6TVuwBiACgAaASh58QGbHgJEATGIkMWbRCHkBNFdwkwoAc3hFQAMwBOEALZIyIHBCR6QRnoAIxhGAAUBLWEQFyxbAAscEBpDaRN5J0s1Vw8kUR8-RG9QsCgkAFoAZgK04xAAHQa0LAB9BRTAkLDIzSF2OMTk3mc3T0QC338aUvLEGtSpeqaW1rMeSm4gA
+$\begin{tikzcd}
+                         & A \arrow[ld, "\pi_X"', bend right] \arrow[rd, "\pi_Y", bend left] &      \\
+F(X) \arrow[rr, "F(f)"'] &                                                                   & F(Y)
+\end{tikzcd}$ \\
+
 $\pi_Y = \pi_X \circ F(f)$ \\
 
 \noindent
@@ -638,6 +684,12 @@ A \textbf{cocone} (dual of cone) of a diagram (functor) $F : \I \rightarrow \C$ 
 \noindent
 such that for all morphisms $f: X \rightarrow Y$ in $\I$, the triangle: \\
 
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKcqWLU6TVuwBiACgAaASh58QGbHgJEATGIkMWbRCHkBNFdwkwoAc3hFQAMwBOEALZIyIHBCR6QRnoAIxhGAAUBLWEQFyxbAAscEBpDaRN5J0s1Vw8vGl8kURBQsCgkAGZitOMQAB06tCwAfQUUwJCwyM0hdkYYJ2TeZzdPRADCxGLS8sQAWirUqVqGpuazHkpuIA
+$\begin{tikzcd}
+                                                        & A &                                      \\
+F(X) \arrow[rr, "F(f)"'] \arrow[ru, "\pi_X", bend left] &   & F(Y) \arrow[lu, "\pi_Y", bend right]
+\end{tikzcd}$ \\
+
 $\pi_X = \pi_Y \circ F(f)$ \\
 
 \noindent
@@ -648,6 +700,12 @@ commutes.
 \section{Definition of Morphism Between Cones}
 
 A \textbf{morphism} between a cone $(A, (\pi_X)_X)$ and a further cone $(B, (\phi_X)_X)$ of a diagram $F : \I \rightarrow \C$ consists of a morphism $f : A \rightarrow B$ in $\C$ such that: \\
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAmclVqMWbAELdeIDNjwEiARlKrx9Zq0QgAYgAoAGgEpu4mFADm8IqABmAJwgBbJGRA4ISVT0cu7oie3kiiEjpsADpRaFgA+sYg1Ax0AEYwDAAK-MpCIE5Y1gAWOMkgGWBQSAC0AMzE-iDObr7UoYjhldWIDSnpmTlKgmwMMA5l1NpSejFx8QCaFlxAA
+$\begin{tikzcd}
+A \arrow[rr] \arrow[rd, "\pi_X"', bend right] &      & B \arrow[ld, "\pi_Y", bend left] \\
+                                              & F(X) &
+\end{tikzcd}$ \\
 
 $\pi_X = \pi_Y \circ f$ \\
 
@@ -680,7 +738,7 @@ An initial object of $\C$ is the colimit of the unique functor from the empty ca
 
 Let $f, g : X \rightarrow Y$. Then the \textbf{equalizer} of $f$ and $g$ is the following function: \\
 
-$Eq(f, g) = {x \in X | f(x) = g(x)}$
+$Eq(f, g) = \{ x \in X | f(x) = g(x) \}$
 
 
 
@@ -882,7 +940,21 @@ Equivalently, a \textbf{monoid} consists of: \\
 
 - a map $M \times M \rightarrow M$ \\
 
-such that certain diagrams commute.
+such that certain diagrams commute. \\
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFkACAHW7wFt4nAIw9uAYwIBzTl16SwM0bwFD2IAL6l0mXPkIoAzOSq1GLNnL5ZBcWZu0gM2PASLGATKfrNWiDg46LvpEZF7UPhb+Vqp26hqmMFBS8ESgAGYAThD8SGQgOBBIxma+bFhQAPoxNkKs1Ax0AEYwDAAKuq4GIJlYUgAWOIEgWTl51IVIwhHmfiAwYrGcFdXDo7mI+ZOIHjNl-ivxjuvFE0U7e1EgRQ3NrR3Bbv69A0NaGdkb0wXnu6VXRQSGiAA
+$\begin{tikzcd}
+M \times 1 \cong M \cong 1 \times M \arrow[dd, "id_M \times e"'] \arrow[rrr, "e \times id_M"] \arrow[rrrdd, "id_M"] &  &  & M \times M \arrow[dd, "o"] \\
+                                                                                                                    &  &  &                            \\
+M \times M \arrow[rrr, "o"']                                                                                        &  &  & M
+\end{tikzcd}$ \\
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoBZAAgB1e8AW3jdOASj4CswuKMkBjAgHM5-ISJ5rpGhctVSZ3LpPWzxIAL6l0mXPkIoAzOSq1GLNpoMbL1kBmw8AiJnACZXemZWRBBOXxtA+yIycOpIjxivU1FLVxgoJXgiUAAzACcIQSQyEBwIJGc3KLYIE21ZLCgAfTjqBjoAIxgGAAVbIIcQMqwlAAsceJByyobqOqRQtPdokHq+weGxxOCY6bmFq1KKqsQARjX6xE2mjN3F5Zua9but5pjOnpaQz1CwUCxAA
+$\begin{tikzcd}
+(M \times M) \times M \cong M \times M \times M \cong M \times (M \times M) \arrow[dd, "o \times id_M"'] \arrow[rrr, "id_M\times o"] &  &  & M \times M \arrow[dd, "o"] \\
+                                                                                                                                     &  &  &                            \\
+M \times M \arrow[rrr, "o"']                                                                                                         &  &  & M
+\end{tikzcd}$ \\
 
 
 
@@ -927,6 +999,20 @@ A \textbf{monad} over a category $\C$ consists of: \\
 - a natural transformation $\mu : M \circ M \Rightarrow M$ \\
 
 such that certain diagrams commute. \\
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFkACAHW4GMsAJz49uASSgB9AMKcAvJy4LeEmaIHDFIAL6l0mXPkIoAzOSq1GLNl154AtvC2792PASJmATBfrNWiBw6eiAYbkZEZD7UftaBttwOTuw6FjBQAObwRKAAZoIQ9khkIDgQSGaW-mxYUlwAVKIwOHQg1Ax0AEYwDAAKBu7GIIJYGQAWOMF5BUWIlWVIXu1dPf3hHoEj45MxVgEgvPZMUyD5hUgAjNQLiEtVcQfcRydnsyU3V-f7vM10nI21SQpFynGbFa7lW67aqBQHAijaIA
+$\begin{tikzcd}
+M \circ \Id_C = M = \Id_C \circ M \arrow[dd, "id_M * \eta"'] \arrow[rrr, "\eta * id_M"] \arrow[rrrdd, "id_M"] &  &  & M \times M \arrow[dd, "\mu"] \\
+                                                                                                              &  &  &                              \\
+M \times M \arrow[rrr, "\mu"']                                                                                &  &  & M
+\end{tikzcd}$ \\
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFkACAHW4GMsAJz6cuvAcNEgAvqXSZc+QigDM5KrUYs2Y7ngC28KbPnY8BImoBMG+s1aIOMuSAxmlRMjep3tj3QZG7DIaMFAA5vBEoABmghD6SGQgOBBIapr2bLz6TJwAVJxYUAD6wdQMdABGMAwACgrmyiCCWOEAFjjOsfGJiBmpSFYV1bUN7haOrR1dPloOIDlM3SBxCUgAjNSDiMOZfovcuStrfck7W-sLxWUFPEfL0hTSQA
+$\begin{tikzcd}
+M \circ M \circ M \arrow[dd, "\mu * id_M"'] \arrow[rrr, "id_M * \mu"] &  &  & M \times M \arrow[dd, "\mu"] \\
+                                                                      &  &  &                              \\
+M \times M \arrow[rrr, "\mu"']                                        &  &  & M
+\end{tikzcd}$
 
 \noindent
 Every monad is given rise to by an adjunction (always of a free and forgetful functor pair). \\
