@@ -18,6 +18,8 @@
 \DeclareMathOperator{\Sg}{S}
 \DeclareMathOperator{\Null}{Null}
 \DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\cof}{cof}
+\DeclareMathOperator{\adj}{adj}
 \DeclareMathOperator{\rg}{rg}
 \DeclareMathOperator{\mr}{r}
 \DeclareMathOperator{\Rk}{Rk}
@@ -51,22 +53,86 @@
 
 \mainmatter
 
-
 \chapter{Insiemi}
 
+\section{Operatori e Quantificatori Logici}
+
+$P \land Q$: $P$ e $Q$ \\
+$P \lor Q$: $P$ o $Q$ \\
+$\forall v \in D \ldotp P(v)$: Per ogni $v$ in $D$ vale $P(v)$ \\
+$\exists v \in D : P(v)$: Esiste almeno un $v$ in $D$ tale che $P(v)$ \\
+$\exists! v \in D : P(v)$: Esiste un unico $v$ in $D$ tale che $P(v)$
 
 
-\section{Cardinalità di Insiemi Finiti}
 
-$\card A = n \in \N$ dove $n$ è il n° di elementi in $A$.
+\section{Definizione di Insieme}
+
+Un \textbf{insieme} (set) è una collezione di oggetti non ordinata e senza molteplicità (senza ripetizioni). \\
+
+\noindent
+Dato un insieme $X$, per ogni oggetto $o$: \\
+
+$o \in X$ \\
+	\indent\indent
+	$o$ è un elemento di $X$, \\
+	\indent\indent
+	$o$ appartiene ad $X$, \\
+	\indent\indent
+	$X$ contiene $o$, \\
+	\indent\indent
+	$o$ è contenuto in $X$ \\
+
+$\lor$ \\
+
+$o \notin X$ \\
+	\indent\indent
+	$o$ non è un elemento di $X$, \\
+	\indent\indent
+	$o$ non appartiene ad $X$, \\
+	\indent\indent
+	$X$ non contiene $o$, \\
+	\indent\indent
+	$o$ non è contenuto in $X$ \\
 
 
 
-\section{Multiinsiemi o Sistemi}
+\subsection{Modalità di Definizione di un Insieme}
 
-Insieme con molteplicità, ovvero una collezione non ordinata di elementi con ripetizioni. \\
+Un insieme può essere definito: \\
 
-$[a, b, c]$
+- per \textbf{elencazione}: scrivendo gli elementi tra parentesi graffe, separati da virgole. \\
+
+\indent\indent
+e.g. \\
+
+\indent\indent\indent
+$\{ a, b, c \}$ \\
+
+- per \textbf{proprietà caratteristica} o per comprensione (set comprehension / set-builder notation): indicando una proprietà P che caratterizza gli elementi dell'insieme X \\
+
+\indent\indent
+$\forall o \in Y \ldotp o \in X \subseteq Y \iff P(o)$ \\
+
+\indent
+con le scritture: \\
+
+\indent\indent
+$X = \{ o \in Y | P(o) \}$ \\
+
+\indent\indent
+$X = \{ o \in Y : P(o) \}$ \\
+
+\indent\indent
+$X = \{ o | o \in Y \land P(o) \}$ \\
+
+\indent\indent
+$X = \{ o : o \in Y \land P(o) \}$ \\
+
+\indent\indent
+$X = \{ o | o \in Y, P(o) \}$ \\
+
+\indent\indent
+$X = \{ o : o \in Y, P(o) \}$
 
 
 
@@ -81,6 +147,63 @@ $\N_0 = \N \setminus \braces{0}$ \\
 $\Q^x = \Q^* = \Q \setminus \braces{0}$ \\
 $\R^x = \R^* = \R \setminus \braces{0}$ \\
 $\C^x = \C^* = \C \setminus \braces{0}$
+
+
+
+\section{Cardinalità di Insiemi Finiti}
+
+La \textbf{cardinalità} (cardinality) $\card A = n \in \N$ di un insieme $A$ è il numero di elementi in $A$.
+
+
+
+\section{Definizione di Sottoinsieme}
+
+Un insieme $X$ si dice \textbf{sottoinsieme} (subset) di un insieme Y, scritto $X \subseteq Y$, se ogni elemento di $X$ è anche un elemento di $Y$. \\
+
+$X \subseteq Y \iff \forall e \in X \ldotp e \in Y$
+
+
+
+\section{Definizione di Sottoinsieme Proprio}
+
+Un insieme $X$ si dice \textbf{sottoinsieme proprio} (proper subset) di un insieme Y, scritto $X \subset Y$, se $X$ è diverso da $Y$ e ogni elemento di $X$ è anche un elemento di $Y$. \\
+
+$X \subset Y \iff X \neq Y \land \forall e \in X \ldotp e \in Y$
+
+
+
+\section{Unione di Insiemi}
+
+L'\textbf{unione} (union) $A \cup B$ di due insiemi A e B è l'insieme contenente sia gli elementi di A che di B. \\
+
+$A \cup B = \{ e : e \in A \lor e \in B \}$.
+
+
+
+\section{Intersezione di Insiemi}
+
+L'\textbf{intersezione} (intersection) $A \cap B$ di due insiemi A e B è l'insieme contentente gli elementi che sono sia elementi di A che elementi di B. \\
+
+$A \cap B = \{ e : e \in A \land e \in B \}$.
+
+
+
+\section{Differenza di Insiemi}
+
+La \textbf{differenza} (difference) $A - B$ o $A \setminus B$ di due insiemi A e B è l'insieme contentente solo gli elementi di A che non sono elementi di B. \\
+
+$A - B = A \setminus B = \{ e : e \in A \lor e \notin B \}$.
+
+
+
+\section{Multiinsiemi o Sistemi}
+
+Un \textbf{multiinsieme} (multiset) o sistema è una collezione non ordinata di elementi con molteplicità (ovvero un insieme con ripetizioni). \\
+
+\noindent
+e.g.
+
+$[a, b, c]$
 
 
 
@@ -120,13 +243,21 @@ Sequenza di $n$ elementi di $A = a : I_n \rightarrow A$ (funzione di accesso)
 
 
 
+\section{Prodotto Cartesiano}
+
+Il \textbf{prodotto cartesiano} (cartesian product) $A \times B$ di due insiemi $A$ e $B$ è l'insieme contenente tutte le coppie di due elementi dove il primo elemento appartiene ad A ed il secondo elemento appartiene a B. \\
+
+$A \times B = \{ (a, b) : a \in A, b \in B \}$.
+
+
+
 \chapter{Relazioni}
 
 
 
 \section{Definizione di Relazione}
 
-Si dice che $R \subseteq A \times B$ è una relazione (binaria, anche detta corrispondenza) tra due insiemi $A$ e $B$.\\
+Si dice che $R \subseteq A \times B$ è una relazione (binaria, anche detta corrispondenza) ((binary) relation) tra due insiemi $A$ e $B$.\\
 
 \noindent
 Se: \\
@@ -814,10 +945,10 @@ $\LS(\LS(A)) = \LS(A)$
 Siano $V(\K)$ uno spazio vettoriale ed $S = (\overbar v_1, ..., \overbar v_n)$ una sequenza di suoi vettori. \\
 
 \noindent
-$S$ è detta \textbf{libera} se l'unica combinazione lineare dei suoi  elementi che da $\underline 0$ è quella a coefficienti tutti nulli. \\
+$S$ è detta \textbf{libera} se l'unica combinazione lineare dei suoi  elementi che da $\underline 0$ è quella a coefficienti tutti nulli. I vettori di $S$ si dicono \textbf{linearmente indipendenti} (linearly independent). \\
 
 \noindent
-$S$ è detta \textbf{legata} se esiste almeno una combinazione lineare dei suoi elementi a coefficienti non tutti nulli che da {\underline 0}. \\
+$S$ è detta \textbf{legata} se esiste almeno una combinazione lineare dei suoi elementi a coefficienti non tutti nulli che da {\underline 0}. I vettori di $S$ si dicono \textbf{linearmente dipendenti} (linearly dependent). \\
 
 \noindent
 $S$ è legata $= S$ non è libera. \\
@@ -1136,7 +1267,7 @@ $\max(\dim(U), \dim(W)) \leq \dim(U + W) \leq V_n(\K)$
 $U(\K), W(\K) \leq V(\K)$ \\
 
 \noindent
-La somma $U + W$ si dice \textbf{diretta} e si scrive $U \oplus W$ se ogni elemento di $U + W$ si scrive in modo unico come somma di un elemento di $U$ ed un elemento di $W$. \\
+La somma $U + W$ si dice \textbf{diretta} (direct sum) e si scrive $U \oplus W$ se ogni elemento di $U + W$ si scrive in modo unico come somma di un elemento di $U$ ed un elemento di $W$. \\
 
 \noindent
 In simboli: \\
@@ -1153,10 +1284,10 @@ Conseguenze: \\
 
 \noindent
 $B_U$ una base di $U$ e $B_W$ una base di $W$. \\
-$B_U \cap B_W$ è una base di $U \oplus W$ \\
+$B_U \cup B_W$ è una base di $U \oplus W$ \\
 
 \noindent
-$\dim(U \oplus W) = \dim(U \oplus W)$
+$\dim(U \oplus W) = \dim(U) + \dim(W)$
 
 
 \subsubsection{Dimostrazione}
@@ -1488,16 +1619,19 @@ In altre parole $A$ ammette inversa $\iff det(A)$ ammette inverso moltiplicativo
 
 \subsection{Calcolo della Matrice Inversa (Metodo del Complemento Algebrico)}
 
-Data $A = (a_{i,j}) \in \Mat_n(\K)$ si dice \textbf{matrice dei complementi algebrici} o matrice dei cofattori (cofactor matrix) di $A$ la matrice cof $A \in \Mat_n(\K)$ ottenuta sostituendo in $A$ ogni elemento col suo \textbf{complemento algebrico} o cofattore (cofactor) ($c$). \\
+Data $A = (a_{i,j}) \in \Mat_n(\K)$ si dice \textbf{matrice dei complementi algebrici} o matrice dei cofattori (cofactor matrix) di $A$ la matrice $\cof A \in \Mat_n(\K)$ ottenuta sostituendo in $A$ ogni elemento col suo \textbf{complemento algebrico} o cofattore (cofactor) ($c$). \\
 
 \noindent
-$c_{i,j} = (-1)^{i+j} \detm{A_{i,j}}$ \\
+$\cof_{i,j}(A) = c_{i,j} = (-1)^{i+j} \detm{A_{i,j}}$ \\
 
 \noindent
-La trasposta della matrice dei cofattori di A è detta \textbf{matrice aggiunta} $A_a$ (adjugate matrix / classical adjoint of a square matrix / adjunct matrix / ``adjoint'') \\
+La trasposta della matrice dei cofattori di A è detta \textbf{matrice aggiunta} $\adj A$ o $A_a$ o $A^a$ (adjugate matrix / classical adjoint of a square matrix / adjunct matrix / ``adjoint'') \\
 
 \noindent
-$\detm A \neq 0 \implies A^{-1} = \frac{1}{\detm A} \cdot A_a$
+$\adj A = (\cof A)^T$ \\
+
+\noindent
+$\detm A \neq 0 \implies A^{-1} = \frac{1}{\detm A} \cdot \adj A$
 
 
 
